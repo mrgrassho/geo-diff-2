@@ -55,6 +55,5 @@ export default {
         left: 0px;
         top: 0px;
         position: absolute;
-        z-index: -1;
     }
 </style>

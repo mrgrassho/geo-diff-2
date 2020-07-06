@@ -1,6 +1,6 @@
 <template>
     <div id="dates-bar">
-        <div class="date" 
+        <div class="timeline" 
             v-for="date in dates"
             v-bind:key="date.date"
         >
@@ -34,11 +34,16 @@ export default {
 
 <style scoped>
 #dates-bar {
+    grid-area: dates;
     background-color: #d1dcda;
-    display: flex;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-areas: "date-selected timeline";
+    margin-bottom: 5%;
+    z-index: 10;
 }
 
-.date {
+.date-selected {
     padding: 5px;
     border-radius: 4%;
     background-color: #8cc07f;

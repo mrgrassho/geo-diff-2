@@ -34,8 +34,10 @@ export default {
 
 <style scoped>
 #menu-bar {
+    grid-area: menu;
     background-color: #d1dcda;
     display: block;
+    z-index: 10;
 }
 
 .filter {
