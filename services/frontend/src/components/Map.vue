@@ -12,9 +12,24 @@ import XYZ from 'ol/source/XYZ';
 
 export default {
     name: "OpenlayersMap",
+    data () {
+        return {
+            map: '',
+            dateSelected: '',
+            filterSelected: ''
+        }
+    },
+    props: {
+        date: String,
+        filter: String
+    },
+    beforeMount () {
+        this.dateSelected = this.date;
+        this.filterSelected = this.filter;
+    },
     mounted() {
         this.$nextTick(function () {
-            new Map({
+            this.map = new Map({
                 target: 'map',
                 layers: [
                     new TileLayer({
@@ -23,16 +38,13 @@ export default {
                     }),
                     new TileLayer({
                         source: new XYZ({
-                            url: process.env.VUE_APP_BE_URL + '/RAW/2016-01-09/{z}/{y}/{x}?key=' + process.env.VUE_APP_BE_API_TOKEN,
+                            url: `${process.env.VUE_APP_BE_URL}/${this.filterSelected}/${this.dateSelected}/{z}/{y}/{x}?key=${process.env.VUE_APP_BE_API_TOKEN}`,
                             maxZoom: 9
-                            //url: 'https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/MODIS_Aqua_CorrectedReflectance_TrueColor/default/2014-04-09/250m/{z}/{y}/{x}.jpeg'
-                            //url: 'https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_SNPP_CorrectedReflectance_TrueColor/default/2016-04-09/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpeg',
-                            
                         })
                     }),
                     new TileLayer({
                         source: new XYZ({
-                            url: process.env.VUE_APP_MAPTILER_URL  + '?key=' + process.env.VUE_APP_MAPTILER_API_TOKEN
+                            url: `${process.env.VUE_APP_MAPTILER_URL}?key=${process.env.VUE_APP_MAPTILER_API_TOKEN}`
                         }),
                         opacity: 0.7
                     }),

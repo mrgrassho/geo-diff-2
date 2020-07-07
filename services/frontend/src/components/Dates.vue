@@ -3,6 +3,7 @@
         <div class="timeline" 
             v-for="date in dates"
             v-bind:key="date.date"
+            @click="handleSelectDate(date)"
         >
             {{ date.date }}
         </div>
@@ -16,10 +17,17 @@ export default {
     name: "Dates",
     data: function () {
         return {
+            selectedDate: null,
             dates: ''
         }
     },
-    mounted() {
+    methods: {
+        handleSelectDate(date){
+            this.selectedDate = date.date;
+            this.$emit('changeDate', this.selectedDate);
+        }
+    },
+    created() {
         axios
         .get(process.env.VUE_APP_BE_URL + "/dates", {
             headers: {

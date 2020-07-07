@@ -19,7 +19,7 @@ export default {
             filters: ''
         }
     },
-    mounted() {
+    created() {
         axios
         .get(process.env.VUE_APP_BE_URL + "/filters", {
             headers: {

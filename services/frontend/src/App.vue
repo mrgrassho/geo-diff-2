@@ -7,9 +7,9 @@
             <span>Comparing surfaces over time</span>
         </div>
     </div>
-    <OpenlayersMap></OpenlayersMap>
+    <OpenlayersMap v-bind="map_data"></OpenlayersMap>
     <Menu class="box"></Menu>
-    <Dates class="box"></Dates>
+    <Dates class="box" @changeDate="map_data.date = $event"></Dates>
   </div>
 </template>
 
@@ -20,6 +20,14 @@ import Dates from './components/Dates.vue';
 
 export default {
   name: 'App',
+  data () {
+    return {
+      map_data: {
+        date: '2016-01-09',
+        filter: 'RAW'
+      }  
+    }
+  },
   components: {
     OpenlayersMap,
     Menu,
