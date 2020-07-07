@@ -18,7 +18,7 @@ A continuación definiremos los pasos para correr el proyecto.
 git clone https://github.com/mrgrassho/geo-diff
 ```
 
-> En desarrollo...
+> Ver [GUIA.md](GUIA.md) provisoria de instalación.
 
 Este último comando instalará las dependecias de los contenedores y los correrá. Para mas información de que hay en los contenedores analice la siguiente tabla:
 

@@ -9,7 +9,7 @@
 luego en la consola de mongo ejecutar:
 
 ```
-load('.js')
+load('mongo-init.js')
 load('seeds/filters.js')
 load('seeds/users.js')
 ```
