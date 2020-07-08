@@ -7,9 +7,9 @@
             <span>Comparing surfaces over time</span>
         </div>
     </div>
-    <OpenlayersMap v-bind="map_data"></OpenlayersMap>
-    <Menu class="box"></Menu>
-    <Dates class="box" @changeDate="map_data.date = $event"></Dates>
+    <OpenlayersMap v-bind="map_data" ref="map"></OpenlayersMap>
+    <Menu class="box" @changeDate="changeFilter($event)"></Menu>
+    <Dates class="box" @changeDate="updateDate($event)"></Dates>
   </div>
 </template>
 
@@ -26,6 +26,12 @@ export default {
         date: '2016-01-09',
         filter: 'RAW'
       }  
+    }
+  },
+  methods: {
+    updateDate(date) {
+      this.map_data.date = date;
+      this.$refs['map'].updateMap();
     }
   },
   components: {
@@ -47,7 +53,7 @@ body {
 }
 
 #logo img{
-    width: 100%;
+    height: 90%;
     padding: 2px;
 }
 
@@ -59,7 +65,7 @@ body {
 
 #title h2 {
     margin: 5% 0% 0% 2%;
-    transition: margin 1s;
+    transition: margin 500ms;
     font-size: 27px;
 }
 
@@ -115,6 +121,6 @@ body {
     background-color: #d1dcda;
     width: 200px;
     z-index: 10;
-    transition: width 1s, height 1s;
+    transition: width 400ms, height 300ms;
 }
 </style>

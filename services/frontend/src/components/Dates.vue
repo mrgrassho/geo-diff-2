@@ -1,11 +1,17 @@
 <template>
     <div id="dates-bar">
-        <div class="timeline" 
-            v-for="date in dates"
-            v-bind:key="date.date"
-            @click="handleSelectDate(date)"
-        >
-            {{ date.date }}
+        <div id='date-selected'>
+            {{ selectedDate }}
+        </div>
+        <div id="timeline">
+            <div class="timeline-elem" 
+                v-for="date in dates"
+                v-bind:key="date.date"
+                :class="{ 'active': date.date === selectedDate }"
+                @click="handleSelectDate(date)"
+            >
+                {{ date.date }}
+            </div>
         </div>
     </div>
 </template>
@@ -34,7 +40,7 @@ export default {
                 'Authorization': process.env.VUE_APP_BE_API_TOKEN
             }
         })
-        .then(response => { this.dates = response.data })
+        .then(response => { this.dates = response.data; this.selectedDate = this.dates[0].date })
         .catch(e => { this.errors.push(e)})
     }
 }
@@ -47,13 +53,36 @@ export default {
     display: grid;
     grid-template-columns: 20% 80%;
     grid-template-areas: "date-selected timeline";
-    margin-bottom: 5%;
+    margin-bottom: 3%;
     z-index: 10;
 }
 
-.date-selected {
+#date-selected {
+    grid-area: date-selected;
+    font-size: 3vw;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
     padding: 5px;
-    border-radius: 4%;
     background-color: #8cc07f;
+}
+
+#timeline {
+    grid-area: timeline;
+    display: flex;
+    overflow-x: scroll;
+}
+
+.timeline-elem {
+    background-color: #8cc07f;
+}
+
+.timeline-elem:hover {
+    background-color: #7de663;
+}
+
+.active {
+    background-color: #517ddb;
 }
 </style>

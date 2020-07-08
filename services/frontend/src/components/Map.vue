@@ -14,21 +14,32 @@ export default {
     name: "OpenlayersMap",
     data () {
         return {
-            map: '',
-            dateSelected: '',
-            filterSelected: ''
+            map: {
+                type: Object,
+                default: {}
+            },
+            dateSelected: this.date,
+            filterSelected: this.filter
         }
     },
     props: {
         date: String,
         filter: String
     },
-    beforeMount () {
-        this.dateSelected = this.date;
-        this.filterSelected = this.filter;
+    methods : {
+        updateMap: function () {
+            this.dateSelected = this.date;
+            this.filterSelected = this.filter;
+            let s = new XYZ({
+                url: `${process.env.VUE_APP_BE_URL}/${this.filterSelected}/${this.dateSelected}/{z}/{y}/{x}?key=${process.env.VUE_APP_BE_API_TOKEN}`,
+                maxZoom: 9
+            })
+            let l = this.map.getLayers().getArray()[1];
+            l.setSource(s);
+        }
     },
     mounted() {
-        this.$nextTick(function () {
+        this.$nextTick( function() {
             this.map = new Map({
                 target: 'map',
                 layers: [

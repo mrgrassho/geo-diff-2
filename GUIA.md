@@ -68,7 +68,7 @@
 1. Setear variable de entorno y luego ejecutar flask:
 
     ```bash
-    export FLASK_APP=tile_server.py
+    export FLASK_APP="tile_server.py"
     flask run
     ```
 

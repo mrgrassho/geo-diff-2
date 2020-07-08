@@ -3,6 +3,8 @@
         <div class="filter" 
             v-for="filter in filters"
             v-bind:key="filter._id"
+            :class="{ 'active': filter.name === selectedFilter }"
+            @click="handleSelectFilter(filter)"
         >
             {{ filter.longName }}
         </div>
@@ -16,7 +18,14 @@ export default {
     name: "Menu",
     data: function () {
         return {
+            selectedFilter: '',
             filters: ''
+        }
+    },
+    methods: {
+        handleSelectFilter(filter){
+            this.selectedFilter = filter.name;
+            this.$emit('changeFilter', this.selectedFilter);
         }
     },
     created() {
@@ -26,7 +35,7 @@ export default {
                 'Authorization': process.env.VUE_APP_BE_API_TOKEN
             }
         })
-        .then(response => { console.log(response); this.filters = response.data })
+        .then(response => { this.filters = response.data; this.selectedFilter = this.filters[0].name  })
         .catch(e => { this.errors.push(e)})
     }
 }
@@ -44,5 +53,13 @@ export default {
     padding: 2px;
     border-radius: 4%;
     background-color: #8cc07f;
+}
+
+.filter:hover {
+    background-color: #7de663;
+}
+
+.active {
+    background-color: #517ddb;
 }
 </style>
