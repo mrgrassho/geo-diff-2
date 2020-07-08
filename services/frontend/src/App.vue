@@ -8,7 +8,7 @@
         </div>
     </div>
     <OpenlayersMap v-bind="map_data" ref="map"></OpenlayersMap>
-    <Menu class="box" @changeDate="changeFilter($event)"></Menu>
+    <Menu class="box" @changeFilter="updateFilter($event)"></Menu>
     <Dates class="box" @changeDate="updateDate($event)"></Dates>
   </div>
 </template>
@@ -31,6 +31,10 @@ export default {
   methods: {
     updateDate(date) {
       this.map_data.date = date;
+      this.$refs['map'].updateMap();
+    },
+    updateFilter(filter) {
+      this.map_data.filter = filter;
       this.$refs['map'].updateMap();
     }
   },
