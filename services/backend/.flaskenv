@@ -1,0 +1,4 @@
+FLASK_ENV=development
+FLASK_APP=tile_server.py
+FLASK_RUN_HOST=localhost
+FLASK_RUN_PORT=8089

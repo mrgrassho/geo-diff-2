@@ -17,7 +17,7 @@ class JSONEncoder(JSONEncoder):
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
-app = Flask(__name__, static_url_path='/static')
+app = Flask(__name__)
 app.config["MONGO_URI"] = environ.get("MONGO_URI")
 app.config["DIR_TILES"] = environ.get("DIR_TILES")
 app.json_encoder = JSONEncoder
