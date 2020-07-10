@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 from os import environ
 from os.path import join, dirname, isfile
 from flask import Flask, request, send_file, abort, jsonify
