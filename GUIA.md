@@ -47,11 +47,11 @@
 ### Backend - Instalación
 
 1. Descargar python
-1. Instalar dependencias:
+1. Instalar dependencias (pip o pip3 según su versión de python instalada):
 
     ```bash
     cd services/backend/
-    pip install -r requirements
+    pip install -r requirements.txt
     ```
 
 1. Descargar [TILES](https://app.box.com/s/pakte9wz7u0xfoitmktxsspbz01wsijc) y descomprimir en `services/backend/`
