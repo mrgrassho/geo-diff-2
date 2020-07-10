@@ -63,6 +63,25 @@
 
     Dentro del `.env` reemplazar el `DIR_TILES` por la carpeta donde se encuentran las imagenes (usar PATH relativo, ejemplo `DIR_TILES=tiles-full`). Luego reemplazar el `MONGO_URI` por la string de conexión ( ejemplo `mongodb://admin:admin@localhost:27017/geo-mongo`) esta data va a ser la misma que esta en `services/db/mongo-init.js`
 
+#### Utilizando miniconda
+
+1. Instalar miniconda [(LINK)](https://docs.conda.io/en/latest/miniconda.html#linux-installers)
+
+1. Ahora vamos a crear un virtual environment:
+
+    ```bash
+    conda create -n geodiff python=3.8
+    ```
+
+1. Activamos en virtual environment:
+
+    ```bash
+    conda activate geodiff
+    ```
+
+    Instalar la dependecias del paso 1.
+
+
 #### Backend - Ejecución
 
 1. Setear variable de entorno y luego ejecutar flask:
