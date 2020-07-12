@@ -1,0 +1,20 @@
+Diferencias con respecto al css original.
+Lo marcado con [X] es lo que se sacó.
+
+------ En Home.vue ------  
+#App
+    Display:grid  [X]
+  
+#Logo  
+    Position: relative		
+	  
+------ En Menu.vue ------  
+#menu-bar 
+    Position: relative
+
+------- En Dates.vue -------
+#dates-bar 
+    Position: relative;
+
+
+  
