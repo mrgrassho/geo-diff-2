@@ -37,7 +37,7 @@ class GeoDiffWorker(object):
         self._reconection_time = reconection_time
 
 
-    def applyFilter(self, image, filter='DEFORESTATION'):
+    def applyFilter(self, image, filter='FOREST-JUNGLE'):
         """
         Apply Filter to Image (.png).
 
@@ -49,19 +49,19 @@ class GeoDiffWorker(object):
         """
         if (self._debug):
             print(" [x] Applying {} filter to Image".format(filter))
-        if (filter == 'DEFORESTATION'):
+        if (filter == 'FOREST-JUNGLE'):
             # Filtra gama de verdes
             #lower_hsv = self.normalize_HSV(np.array([90,0,0]))
             #upper_hsv = self.normalize_HSV(np.array([150,100,100]))
             lower_hsv = np.array([41, 0, 0])
             upper_hsv = np.array([79, 255, 255])
-        elif (filter == 'DROUGHT'):
+        elif (filter == 'DESERT'):
             # Filtra gama de amarrillos / rojizos
             #lower_hsv = self.normalize_HSV(np.array([40,46,54]))
             #upper_hsv = self.normalize_HSV(np.array([65,100,100]))
             lower_hsv = np.array([80, 0, 0])
             upper_hsv = np.array([135, 255, 255])
-        elif (filter == 'FLOODING'):
+        elif (filter == 'OCEAN-SEA'):
             # Filtra gama de azules / celestes
             #lower_hsv = self.normalize_HSV(np.array([183,41,51]))
             #upper_hsv = self.normalize_HSV(np.array([254,100,100]))
@@ -137,6 +137,7 @@ class GeoDiffWorker(object):
         retval, buffer = cv2.imencode('.png', res)
         return "data:image/png;base64," + base64.b64encode(buffer).decode("utf-8", "ignore")
 
+
     def apply_kmeans(self, _K, img):
         Z = img.reshape((-1,3))
         Z = np.float32(Z)
@@ -178,7 +179,7 @@ class GeoDiffWorker(object):
         return img
 
 
-    def send_to_xchg(self, message, reply_to):
+    def send_to_xchg(self, message):
         """
         Send message to RabbitMQ Exchange.
         """
@@ -190,7 +191,6 @@ class GeoDiffWorker(object):
             body=json_msg,
             properties=pika.BasicProperties(
                 delivery_mode=2,  # make message persistent
-                reply_to=reply_to
             )
         )
         if (self._debug):
@@ -214,6 +214,7 @@ class GeoDiffWorker(object):
         if (self._debug):
             print(" [x] Image sent to {} - Body: {} ".format(queue, json_msg[:10]))
 
+
     def process_image(self, data, filter):
         process_time = time.time()
         filteredImage = self.applyFilter(data['earthImage']['rawImage'], filter)
@@ -233,7 +234,7 @@ class GeoDiffWorker(object):
             print(" [+] Set Background done! Process took {} seconds.".format(time.time() - process_time))
         return {
             'id': self.id_generator(),
-            'filterName': filter.lower(),
+            'filterName': filter,
             'vectorImage': self.img_to_base64(filteredImage)
         }
 
@@ -242,27 +243,26 @@ class GeoDiffWorker(object):
         """
         Callback triggered when message is received.
         """
-        if (self._debug):
-            print(" [x] Received - Body: {}".format(body[:140]))
         start_time = time.time()
         data = json.loads(body)
+        if (self._debug):
+            print(" [x] Received - Body: {}".format(data['earthImage']))
         # Descargamos la imagen si no esta
         if (not 'rawImage' in data['earthImage']):
             data['earthImage']['rawImage'] = self.download_img(data['earthImage']['url'])
 
-        if (data['earthImage']['cloud_score'] < 0.3):
-            filters = ['DEFORESTATION', 'FLOODING', 'DROUGHT']
-            return_values = list()
-            for filter in filters:
-                with concurrent.futures.ThreadPoolExecutor() as executor:
-                    future = executor.submit(self.process_image, data, filter)
-                    return_values.append(future.result())
-            data['filteredImages'] = return_values
-
+        filters = ['FOREST-JUNGLE', 'OCEAN-SEA', 'DESERT']
+        return_values = list()
+        for filter in filters:
+            with concurrent.futures.ThreadPoolExecutor() as executor:
+                future = executor.submit(self.process_image, data, filter)
+                return_values.append(future.result())
+        data['filteredImages'] = return_values
+        data['earthImage'].pop('rawImage')
         if (self._debug):
             print(" [x] Job done! Image processing took {} seconds.".format(time.time() - start_time))
         self._channel.basic_ack(delivery_tag=delivery.delivery_tag)
-        self.send_to_xchg(data, properties.reply_to)
+        self.send_to_xchg(data)
         #  send keep alive message to admin worker.
         message_ka = {'id':self._id_worker,'timestamp':str(datetime.now())}
         self.send_to_queue(message_ka,self._keep_alive_queue)
