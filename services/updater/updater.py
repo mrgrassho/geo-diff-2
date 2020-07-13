@@ -9,7 +9,7 @@ from pathlib import Path
 from time import sleep, time
 from json import dumps, loads
 from base64 import b64encode, b64decode
-import functools
+from functools import partial
 
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
@@ -66,7 +66,7 @@ class Updater(object):
             print(" [x] Channel - Channel state: OPEN. ")
         self._channel = channel
         self._channel.exchange_declare(exchange=self._res_xchg, exchange_type='fanout')
-        cb = functools.partial(self.on_queue_declareok, userdata=self._res_queue)
+        cb = partial(self.on_queue_declareok, userdata=self._res_queue)
         self._channel.queue_declare(queue=self._res_queue, durable=True, callback=cb)
 
 

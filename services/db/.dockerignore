@@ -1,0 +1,2 @@
+# Ignore some files, to avoid innecessary COPY
+README.md

@@ -1,0 +1,6 @@
+# Ignore some files, to avoid innecessary COPY
+__pycache__/
+tiles-*/
+!tiles-test/
+crawler/
+.env.example

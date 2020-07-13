@@ -1,0 +1,77 @@
+version: "3.2"
+services:
+    rabbitmq-server:
+        build: ./rabbitmq
+        image: mrgrassho/geo-diff_rabbitmq-server:latest
+        hostname: rabbitmq-server
+        environment:
+            RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
+        ports:
+            - "15672:15672"
+            - "15674:15674"
+            - "5672:5672"
+        deploy:
+            mode: global
+            restart_policy:
+              condition: on-failure
+        volumes:
+            - ./rabbitmq:/var/lib/rabbitmq:rw
+
+    dealer:
+        build: ./dealer
+        image: mrgrassho/geo-diff_dealer:latest
+        depends_on:
+            - rabbitmq-server
+        deploy:
+            mode: replicated
+            replicas: 3
+            update_config:
+              parallelism: 3
+              delay: 10s
+            restart_policy:
+              condition: on-failure
+        environment:
+            DIR_TILES: tiles-full
+            AMQP_URL: amqp://geoadmin:geoadmin@rabbitmq-server:5672/geovhost
+        volumes: 
+            - 'tiles-data:tiles-full:ro'
+
+    updater:
+        build: ./updater
+        image: mrgrassho/geo-diff_updater:latest
+        depends_on:
+            - rabbitmq-server
+        deploy:
+            mode: replicated
+            replicas: 2
+            update_config:
+                parallelism: 2
+                delay: 10s
+            restart_policy:
+                condition: on-failure
+        environment:
+            DIR_TILES: tiles-full
+            AMQP_URL: amqp://geoadmin:geoadmin@rabbitmq-server:5672/geovhost
+        volumes: 
+            - 'tiles-data:tiles-full:rw'
+
+    worker:
+        build: ./worker
+        image: mrgrassho/geo-diff_worker:latest
+        depends_on:
+            - rabbitmq-server
+        deploy:
+            mode: replicated
+            replicas: 6
+            update_config:
+                parallelism: 6
+                delay: 10s
+            restart_policy:
+                condition: on-failure
+        environment:
+            AMQP_URL: amqp://geoadmin:geoadmin@rabbitmq-server:5672/geovhost
+
+# Host volumes used to store code.
+volumes:
+    tiles-data:
+        external: true

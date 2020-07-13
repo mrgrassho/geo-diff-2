@@ -1,0 +1,64 @@
+version: "3.2"
+services:        
+    mongo-server:
+        build: ./db
+        image: mrgrassho/geo-diff_mongo-server:latest
+        hostname: mongo-server
+        ports:
+            - "27017:27017"
+        deploy:
+            restart_policy:
+              condition: on-failure
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: example
+
+    mongo-express:
+        image: mongo-express
+        restart: always
+        ports:
+            - "8081:8081"
+        deploy:
+            restart_policy:
+              condition: on-failure
+        environment:
+            ME_CONFIG_MONGODB_ADMINUSERNAME: root
+            ME_CONFIG_MONGODB_ADMINPASSWORD: example
+            ME_CONFIG_MONGODB_SERVER: mongo-server
+
+    backend:
+        build: ./backend
+        image: mrgrassho/geo-diff_backend:latest
+        hostname: geodiff-backend
+        restart: always
+        ports:
+            - "5000:5000"
+        depends_on:
+            - mongo-server
+        deploy:
+            restart_policy:
+              condition: on-failure
+        environment:
+            DIR_TILES: tiles-full
+            MONGO_URI: mongodb://admin:admin@mongo-server:27017/geo-mongo
+        volumes:
+            - 'tiles-data:~/tiles-full:rw'
+
+    frontend:
+        build: ./frontend
+        image: mrgrassho/geo-diff_frontend:latest
+        restart: always
+        ports:
+            - "8080:8080"
+        depends_on:
+            - backend
+        deploy:
+            restart_policy:
+              condition: on-failure
+        environment:
+            VUE_APP_BE_URL: http://geodiff-backend:5000
+            
+# Host volumes used to store code.
+volumes:
+    tiles-data:
+        external: true
