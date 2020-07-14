@@ -3,70 +3,25 @@
 </template>
 
 <script>
-import 'ol/ol.css';
-import Map from 'ol/Map';
-import View from 'ol/View';
-import TileLayer from 'ol/layer/Tile';
-import OSM from 'ol/source/OSM';
-import XYZ from 'ol/source/XYZ';
-
+        
 export default {
+        
     name: "OpenlayersMap",
     data () {
         return {
-            map: {
+            mapX: {
                 type: Object,
                 default: {}
-            },
-            dateSelected: this.date,
-            filterSelected: this.filter
+            }
         }
-    },
-    props: {
-        date: String,
-        filter: String
+    },        
+    computed: {
     },
     methods : {
-        updateMap: function () {
-            this.dateSelected = this.date;
-            this.filterSelected = this.filter;
-            let s = new XYZ({
-                url: `${process.env.VUE_APP_BE_URL}/${this.filterSelected}/${this.dateSelected}/{z}/{y}/{x}?key=${process.env.VUE_APP_BE_API_TOKEN}`,
-                maxZoom: 9
-            })
-            let l = this.map.getLayers().getArray()[1];
-            l.setSource(s);
-        }
     },
     mounted() {
-        this.$nextTick( function() {
-            this.map = new Map({
-                target: 'map',
-                layers: [
-                    new TileLayer({
-                        source: new OSM(),
-                        opacity: 0.7
-                    }),
-                    new TileLayer({
-                        source: new XYZ({
-                            url: `${process.env.VUE_APP_BE_URL}/${this.filterSelected}/${this.dateSelected}/{z}/{y}/{x}?key=${process.env.VUE_APP_BE_API_TOKEN}`,
-                            maxZoom: 9
-                        })
-                    }),
-                    new TileLayer({
-                        source: new XYZ({
-                            url: `${process.env.VUE_APP_MAPTILER_URL}?key=${process.env.VUE_APP_MAPTILER_API_TOKEN}`
-                        }),
-                        opacity: 0.7
-                    }),
-                ],
-                view: new View({
-                    //projection: 'EPSG:4326',
-                    center: [0,0],
-                    zoom: 1
-                })
-            });
-        })
+        this.$store.dispatch('getMap');
+        this.mapX = this.$store.state.map
     }
 }
 </script>

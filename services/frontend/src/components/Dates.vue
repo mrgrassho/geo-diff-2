@@ -1,15 +1,14 @@
 <template>
     <div id="dates-bar">
         <div id='date-selected'>
-            {{ selectedDate }}
+            {{ dateSelected }}
         </div>
         <div id="timeline">
             <div class="timeline-elem" 
                 v-for="date in dates"
                 v-bind:key="date.date"
-                :class="{ 'active': date.date === selectedDate }"
-                @click="handleSelectDate(date)"
-            >
+                :class="{ 'active': date.date == dateSelected }"
+                @click="changeDate(date.date)">
                 {{ date.date }}
             </div>
         </div>
@@ -17,37 +16,30 @@
 </template>
 
 <script>
-import axios from 'axios';
+    import {mapState,mapMutations,mapActions} from 'vuex';
 
-export default {
-    name: "Dates",
-    data: function () {
-        return {
-            selectedDate: null,
-            dates: ''
-        }
-    },
-    methods: {
-        handleSelectDate(date){
-            this.selectedDate = date.date;
-            this.$emit('changeDate', this.selectedDate);
-        }
-    },
-    created() {
-        axios
-        .get(process.env.VUE_APP_BE_URL + "/dates", {
-            headers: {
-                'Authorization': process.env.VUE_APP_BE_API_TOKEN
+    export default {
+        name: "Dates",
+        data: function () {
+            return {
             }
-        })
-        .then(response => { this.dates = response.data; this.selectedDate = this.dates[0].date })
-        .catch(e => { this.errors.push(e)})
-    }
+        },
+        computed: {
+            ...mapState(['dates','dateSelected'])
+        },
+        methods: {
+            ...mapMutations(['changeDate']),
+            ...mapActions(['getDates']) 
+        },
+        created() { 
+            this.$store.dispatch('getDates');
+        }
 }
 </script>
 
 <style scoped>
 #dates-bar {
+    position: relative;
     grid-area: dates;
     background-color: #d1dcda;
     display: grid;

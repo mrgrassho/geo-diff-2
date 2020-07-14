@@ -3,46 +3,38 @@
         <div class="filter" 
             v-for="filter in filters"
             v-bind:key="filter._id"
-            :class="{ 'active': filter.name === selectedFilter }"
-            @click="handleSelectFilter(filter)"
-        >
+            :class="{ 'active': filter.name === filterSelected }"
+            @click="changeFilter(filter.name)">
             {{ filter.longName }}
         </div>
     </div>
 </template>
 
 <script>
-import axios from 'axios';
+    import {mapState,mapMutations,mapActions} from 'vuex';
 
-export default {
-    name: "Menu",
-    data: function () {
-        return {
-            selectedFilter: '',
-            filters: ''
-        }
-    },
-    methods: {
-        handleSelectFilter(filter){
-            this.selectedFilter = filter.name;
-            this.$emit('changeFilter', this.selectedFilter);
-        }
-    },
-    created() {
-        axios
-        .get(process.env.VUE_APP_BE_URL + "/filters", {
-            headers: {
-                'Authorization': process.env.VUE_APP_BE_API_TOKEN
+    export default {
+        name: "Menu",
+        data: function () {
+            return {
             }
-        })
-        .then(response => { this.filters = response.data; this.selectedFilter = this.filters[0].name  })
-        .catch(e => { this.errors.push(e)})
+        },
+        computed: {
+            ...mapState(['filters','filterSelected'])
+        },
+        methods: {
+            ...mapMutations(['changeFilter']),
+            ...mapActions(['getFilters']) 
+        },
+        created() { 
+            this.$store.dispatch('getFilters');
+        }
     }
-}
 </script>
 
 <style scoped>
 #menu-bar {
+    position: relative;
     grid-area: menu;
     background-color: #d1dcda;
     display: block;
