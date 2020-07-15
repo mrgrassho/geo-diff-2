@@ -2,7 +2,7 @@ version: "3.2"
 services:
     rabbitmq-server:
         build: ./rabbitmq
-        image: mrgrassho/geo-diff_rabbitmq-server:latest
+        image: mrgrassho/geo-diff-2_rabbitmq-server:latest
         hostname: rabbitmq-server
         environment:
             RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
@@ -19,7 +19,7 @@ services:
 
     dealer:
         build: ./dealer
-        image: mrgrassho/geo-diff_dealer:latest
+        image: mrgrassho/geo-diff-2_dealer:latest
         depends_on:
             - rabbitmq-server
         deploy:
@@ -38,7 +38,7 @@ services:
 
     updater:
         build: ./updater
-        image: mrgrassho/geo-diff_updater:latest
+        image: mrgrassho/geo-diff-2_updater:latest
         depends_on:
             - rabbitmq-server
         deploy:
@@ -57,7 +57,7 @@ services:
 
     worker:
         build: ./worker
-        image: mrgrassho/geo-diff_worker:latest
+        image: mrgrassho/geo-diff-2_worker:latest
         depends_on:
             - rabbitmq-server
         deploy:

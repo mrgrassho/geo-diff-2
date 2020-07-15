@@ -2,7 +2,7 @@ version: "3.2"
 services:        
     mongo-server:
         build: ./db
-        image: mrgrassho/geo-diff_mongo-server:latest
+        image: mrgrassho/geo-diff-2_mongo-server:latest
         hostname: mongo-server
         ports:
             - "27017:27017"
@@ -12,6 +12,8 @@ services:
         environment:
             MONGO_INITDB_ROOT_USERNAME: root
             MONGO_INITDB_ROOT_PASSWORD: example
+        volumes:
+            - ./db/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
 
     mongo-express:
         image: mongo-express
@@ -28,7 +30,7 @@ services:
 
     backend:
         build: ./backend
-        image: mrgrassho/geo-diff_backend:latest
+        image: mrgrassho/geo-diff-2_backend:latest
         hostname: geodiff-backend
         restart: always
         ports:
@@ -39,17 +41,18 @@ services:
             restart_policy:
               condition: on-failure
         environment:
-            DIR_TILES: tiles-full
+            FLASK_RUN_HOST: 0.0.0.0
+            DIR_TILES: /tiles-full
             MONGO_URI: mongodb://admin:admin@mongo-server:27017/geo-mongo
         volumes:
-            - 'tiles-data:~/tiles-full:rw'
+            - 'tiles-data:/tiles-full:rw'
 
     frontend:
         build: ./frontend
-        image: mrgrassho/geo-diff_frontend:latest
+        image: mrgrassho/geo-diff-2_frontend:latest
         restart: always
         ports:
-            - "8080:8080"
+            - "8080:80"
         depends_on:
             - backend
         deploy:

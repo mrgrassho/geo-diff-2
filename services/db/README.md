@@ -4,12 +4,11 @@
 
 ### Mongo DB 
 
-> mongo
+> mongo -u admin -p admin geo-mongo
 
 luego en la consola de mongo ejecutar:
 
 ```
-load('mongo-init.js')
 load('seeds/filters.js')
 load('seeds/users.js')
 ```
