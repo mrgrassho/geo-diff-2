@@ -11,11 +11,16 @@ load_dotenv(dotenv_path)
 client = MongoClient(environ.get("MONGO_URI"))
 DIR_TILES = environ.get("DIR_TILES")
 
+def remove_ds_store(ls):
+    return [ f for f in ls if not f.endswith('.DS_Store')]
+
 def get_index():
     index = []
     filters = listdir(DIR_TILES)
+    filters = remove_ds_store(filters)
     for f in filters:
         dates = listdir(join(DIR_TILES,f))
+        dates = remove_ds_store(dates)
         for date in dates:
             if not isfile(join(DIR_TILES,f,date)):
                 index.append({
