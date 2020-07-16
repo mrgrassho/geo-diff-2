@@ -1,6 +1,6 @@
 # GeoDiff2
 
-## GUIA PROVISORIA (Sin Docker)
+## GUIA (Sin Docker)
 
 1. Descargar repo:
 
@@ -118,3 +118,28 @@
     ```bash
     npm run serve
     ```
+---
+
+## GUIA (Con Docker) - 
+
+### Geo Web
+
+1. Crear volumen, este será el medio donde se almacenarán los tiles
+```bash
+docker volume create --driver local \
+                    --opt type=none \
+                    --opt device=./backend/tiles-full \
+                    --opt o=bind tiles-data
+```
+
+2. Buildear stack web con
+
+```bash
+docker-compose -f docker-compose-web.yml build
+```
+
+3. Deployar stack a swarm con
+
+```bash
+docker stack deploy --compose-file docker-compose-web.yml geo-diff-web
+```

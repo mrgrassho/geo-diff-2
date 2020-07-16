@@ -10,4 +10,4 @@ USER geouser
 
 COPY . .
 
-CMD [ "flask", "run" ]
+CMD python seeds.py && python update_index.py && flask run
