@@ -17,11 +17,10 @@ load_dotenv(dotenv_path)
 class Updater(object):
     def __init__(self, debug=True, prefetch_count=1):
         self._path = environ['DIR_TILES']
-        self._wait = int(environ['WAIT'])
         self._debug = debug
         self._res_queue = environ['RES_QUEUE']
         self._res_xchg = environ['RES_XCHG']
-        self._amqp_url = environ['AMPQ_URL']
+        self._amqp_url = environ['AMQP_URL']
         self._prefetch_count = prefetch_count
         self._reconection_time = int(environ['TIMEOUT'])
 
@@ -117,5 +116,10 @@ class Updater(object):
                 sleep(self._reconection_time)
 
 
-u = Updater()
-u.start()
+def main():
+    u = Updater()
+    u.start()
+
+
+if __name__ == '__main__':
+    main()

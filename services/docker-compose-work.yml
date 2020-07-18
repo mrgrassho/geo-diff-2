@@ -22,25 +22,28 @@ services:
         image: mrgrassho/geo-diff-2_dealer:latest
         depends_on:
             - rabbitmq-server
+        tty: true
         deploy:
             mode: replicated
-            replicas: 3
+            replicas: 2
             update_config:
-              parallelism: 3
+              parallelism: 2
               delay: 10s
             restart_policy:
               condition: on-failure
         environment:
-            DIR_TILES: tiles-full
+            WAIT: 2
+            DIR_TILES: /tiles-full
             AMQP_URL: amqp://geoadmin:geoadmin@rabbitmq-server:5672/geovhost
         volumes: 
-            - 'tiles-data:tiles-full:ro'
+            - tiles-data:/tiles-full:ro
 
     updater:
         build: ./updater
         image: mrgrassho/geo-diff-2_updater:latest
         depends_on:
             - rabbitmq-server
+        tty: true
         deploy:
             mode: replicated
             replicas: 2
@@ -50,16 +53,17 @@ services:
             restart_policy:
                 condition: on-failure
         environment:
-            DIR_TILES: tiles-full
+            DIR_TILES: /tiles-full
             AMQP_URL: amqp://geoadmin:geoadmin@rabbitmq-server:5672/geovhost
         volumes: 
-            - 'tiles-data:tiles-full:rw'
+            - tiles-data:/tiles-full:rw
 
     worker:
         build: ./worker
         image: mrgrassho/geo-diff-2_worker:latest
         depends_on:
             - rabbitmq-server
+        tty: true
         deploy:
             mode: replicated
             replicas: 6

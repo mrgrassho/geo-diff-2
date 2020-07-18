@@ -1,5 +1,8 @@
-FROM rabbitmq:3-management
+FROM rabbitmq:3.8.5-management
 
-COPY . .
+ADD rabbitmq.config /etc/rabbitmq/
+ADD definitions.json /etc/rabbitmq/
 
-CMD [ "set_up.sh" ] 
+RUN chown rabbitmq:rabbitmq /etc/rabbitmq/rabbitmq.config /etc/rabbitmq/definitions.json
+
+CMD ["rabbitmq-server"]

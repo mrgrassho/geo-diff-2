@@ -246,7 +246,7 @@ class GeoDiffWorker(object):
         start_time = time.time()
         data = json.loads(body)
         if (self._debug):
-            print(" [x] Received - Body: {}".format(data['earthImage']))
+            print(" [x] Received - Body: {}".format(data['earthImage']['path']))
         # Descargamos la imagen si no esta
         if (not 'rawImage' in data['earthImage']):
             data['earthImage']['rawImage'] = self.download_img(data['earthImage']['url'])

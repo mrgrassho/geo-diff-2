@@ -10,4 +10,4 @@ USER geouser
 
 COPY . .
 
-CMD [ "python", "./dealer.py" ]
+CMD python dealer.py

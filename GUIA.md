@@ -128,7 +128,7 @@
 ```bash
 docker volume create --driver local \
                     --opt type=none \
-                    --opt device=./backend/tiles-full \
+                    --opt device=$(pwd)/backend/tiles-full \
                     --opt o=bind tiles-data
 ```
 

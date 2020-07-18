@@ -19,7 +19,7 @@ class Dealer(object):
         self._wait = int(environ['WAIT'])
         self._debug = debug
         self._task_queue = environ['TASK_QUEUE']
-        self._amqp_url = environ['AMPQ_URL']
+        self._amqp_url = environ['AMQP_URL']
 
 
     def send_to_queue(self, message, queue):
@@ -73,13 +73,16 @@ class Dealer(object):
             added = [f for f in after if f not in before]
             removed = [f for f in before if f not in after]
             if added: 
-                # Limit zoom 2-5
-                added = [ a for a in added if int(a.split('/')[5]) in (2,3,4,5)]
                 self.process(added)
                 print(f" [+] Added: {len(added)}")
             before = after
             sleep(self._wait)
 
 
-d = Dealer()
-d.watch()
+def main():
+    d = Dealer()
+    d.watch()
+
+
+if __name__ == '__main__':
+    main()

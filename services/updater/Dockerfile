@@ -10,4 +10,4 @@ USER geouser
 
 COPY . .
 
-CMD [ "python", "./updater.py" ]
+CMD python updater.py
