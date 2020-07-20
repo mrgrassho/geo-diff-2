@@ -125,6 +125,7 @@
 ### Geo Web
 
 1. Crear volumen, este será el medio donde se almacenarán los tiles
+
 ```bash
 docker volume create --driver local \
                     --opt type=none \
@@ -132,14 +133,16 @@ docker volume create --driver local \
                     --opt o=bind tiles-data
 ```
 
-2. Buildear stack web con
+2. Buildear stack web y deployar a swarm, el script se encuentra en la folder `services`
 
 ```bash
-docker-compose -f docker-compose-web.yml build
+cd services
+./set_up_stack.sh docker-compose-web.yml geo-diff-web  
 ```
 
-3. Deployar stack a swarm con
+3. Buildear stack work y deployar a swarm
 
 ```bash
-docker stack deploy --compose-file docker-compose-web.yml geo-diff-web
+cd services
+./set_up_stack.sh docker-compose-work.yml geo-diff-work  
 ```

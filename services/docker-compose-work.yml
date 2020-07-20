@@ -25,14 +25,15 @@ services:
         tty: true
         deploy:
             mode: replicated
-            replicas: 2
+            replicas: 1
             update_config:
-              parallelism: 2
+              parallelism: 1
               delay: 10s
             restart_policy:
               condition: on-failure
         environment:
-            WAIT: 2
+            WAIT: 10
+            BATCH: 10
             DIR_TILES: /tiles-full
             AMQP_URL: amqp://geoadmin:geoadmin@rabbitmq-server:5672/geovhost
         volumes: 
@@ -66,14 +67,33 @@ services:
         tty: true
         deploy:
             mode: replicated
-            replicas: 6
+            replicas: 1
             update_config:
-                parallelism: 6
+                parallelism: 1
                 delay: 10s
             restart_policy:
                 condition: on-failure
         environment:
             AMQP_URL: amqp://geoadmin:geoadmin@rabbitmq-server:5672/geovhost
+
+    admin-worker:
+        build: ./admin_worker
+        image: mrgrassho/geo-diff-2_admin_worker:latest
+        depends_on:
+            - rabbitmq-server
+        tty: true
+        environment:
+            RED_LIGHT: 1
+            YELLOW_LIGHT: 0.7
+            GREEN_LIGHT: 0.5
+            GREY_LIGHT: 0.2
+            AMQP_URL: amqp://geoadmin:geoadmin@rabbitmq-server:5672/geovhost
+            TASK_QUEUE: TASK_QUEUE
+            SERVICE_MONITOR: geo-diff-work_worker
+            QTY_TASK: 30
+            MAX_SCALE: 10
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
 
 # Host volumes used to store code.
 volumes:

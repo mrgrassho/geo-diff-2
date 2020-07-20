@@ -16,7 +16,9 @@ load_dotenv(dotenv_path)
 class Dealer(object):
     def __init__(self, debug=True):
         self._path = environ['DIR_TILES']
+        self._reconection_time = int(environ['AMQP_TIMEOUT'])
         self._wait = int(environ['WAIT'])
+        self._batch = int(environ['BATCH'])
         self._debug = debug
         self._task_queue = environ['TASK_QUEUE']
         self._amqp_url = environ['AMQP_URL']
@@ -56,14 +58,26 @@ class Dealer(object):
 
 
     def process(self, files):
-        self._connection = BlockingConnection(URLParameters(self._amqp_url))
-        self._channel = self._connection.channel()
-        for f in files:
-            data = self.img_to_base64(f)
-            message = self.prepare(data, f)
-            self.send_to_queue(message, self._task_queue)
-            sleep(self._wait)
-        self._connection.close()
+        done = False
+        while not done:
+            try:
+                self._connection = BlockingConnection(URLParameters(self._amqp_url))
+                self._channel = self._connection.channel()
+                count = 0
+                for f in files:
+                    data = self.img_to_base64(f)
+                    message = self.prepare(data, f)
+                    self.send_to_queue(message, self._task_queue)
+                    count += 1
+                    if (count == self._batch):
+                        sleep(self._wait)
+                        count = 0
+                self._connection.close()
+                done = True
+            except:
+                if (self._debug):
+                    print(" [!] RabbitMQ Host Unreachable. Reconecting in {} seconds...".format(self._reconection_time))
+                sleep(self._reconection_time)
 
 
     def watch(self):
