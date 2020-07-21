@@ -1,6 +1,6 @@
 # GeoDiff2
 
-## GUIA (Sin Docker)
+## GUIA (Sin Docker) - Stack Web (sin workers)
 
 1. Descargar repo:
 
@@ -120,9 +120,7 @@
     ```
 ---
 
-## GUIA (Con Docker) - 
-
-### Geo Web
+## GUIA (Con Docker) - Ambas Stacks Web y Workers
 
 1. Crear volumen, este será el medio donde se almacenarán los tiles
 
