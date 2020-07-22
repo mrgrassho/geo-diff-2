@@ -50,18 +50,18 @@
             ...mapActions(['getDates']),
             monthToName(month){
                 var month_name = ""
-                if (month=="01") {month_name = "ENE"};
+                if (month=="01") {month_name = "JAN"};
                 if (month=="02") {month_name = "FEB"}
                 if (month=="03") {month_name = "MAR"}
-                if (month=="04") {month_name = "ABR"}
+                if (month=="04") {month_name = "APR"}
                 if (month=="05") {month_name = "MAY"}
-                if (month=="06") {month_name = "JUN"}
-                if (month=="07") {month_name = "JUL"}
-                if (month=="08") {month_name = "AGO"}
-                if (month=="09") {month_name = "SEP"}
+                if (month=="06") {month_name = "JUNE"}
+                if (month=="07") {month_name = "JULY"}
+                if (month=="08") {month_name = "AUG"}
+                if (month=="09") {month_name = "SEPT"}
                 if (month=="10") {month_name = "OCT"}
                 if (month=="11") {month_name = "NOV"}
-                if (month=="12") {month_name = "DIC"}
+                if (month=="12") {month_name = "DEC"}
                 return month_name
             },
 
@@ -140,27 +140,26 @@
 }
 
 #dates-bar {
-    position: relative;
-    grid-area: dates;
-    /*background-color: #d1dcda;*/
-    background-color: #8cc07f;
+    background-color: var(--primary-bg-color);
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-area: dates;
     grid-template-areas: "date-selected timeline-years";
+    grid-template-columns: 18% 82%;
     height: 94px;
+    position: relative;
 /*    margin-bottom: 20px;*/
     z-index: 10;
 }
 
 #date-selected {
-    grid-area: date-selected;
-    font-size: 3vw;
-    display: flex;
-    justify-content: center;
     align-content: center;
+    background-color: var(--secondary-bg-color);
+    display: flex;
     flex-direction: column;
+    font-size: 3vw;
+    grid-area: date-selected;
+    justify-content: center;
     padding: 5px;
-    background-color: #8cc07f;
 }
 
 #timeline-years {
@@ -208,11 +207,11 @@
     background-color: #38C986;
 }
 .day.value:hover{
-    background-color: #7de663;
+    background-color: var(--hover-color);
     cursor: pointer;
 }
 
-.active {
+.day.value.active {
     background-color: #517ddb;
 }
 
@@ -228,8 +227,8 @@
 }
 
 .scroll:hover{
-    opacity: 100%;
     cursor: pointer;
+    opacity: 100%;
 }
 
 .right.scroll{
