@@ -36,9 +36,18 @@ export default {
     }
 
     .ol-zoom.ol-unselectable.ol-control{
-        top: 5em;
-        left: 1em;
-        background-color: white;
-        opacity: 80%;
+        margin-right: 1%;
+        right: 0%;
+        left: auto;
+        background-color:var(--secondary-bg-color);
+    }
+
+    .ol-zoom.ol-unselectable.ol-control button{
+        background-color: var(--select-color);
+        opacity: 70%;
+    }
+
+    .ol-zoom.ol-unselectable.ol-control button:hover{
+        opacity: 100%;
     }
 </style>

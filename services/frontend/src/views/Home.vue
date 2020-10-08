@@ -34,18 +34,65 @@ export default {
 
 
 <style>
+/*VARIABLES GENERALES*/
+
+
 html, body {
   height: 100%;
   margin: 0px;
+  --primary-bg-color: #8cc07f;
+  --secondary-bg-color: #d1dcda;
+  --select-color: #097e68;
+  --hover-color:#7de663;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
 }
 
+#app{
+  width: 100%;
+  height: 100%;
+}
+
+.box {
+    border: 2px outset #afc7a9;
+    margin: 7px;
+    box-shadow: 2px 2px rgb(0, 0, 0, 20%);
+    border-radius: 2% 2% 2% 2%;
+    background-color: var(--secondary-bg-color);
+}
+
+.home {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 12% 70% 18%;
+    grid-template-areas:
+        "logo . "
+        "menu . "
+        "dates dates";                 
+}
+
+#logo {
+    grid-area: logo;
+    border-radius: 58px 58px 58px 58px;
+    -moz-border-radius: 58px 58px 58px 58px;
+    -webkit-border-radius: 58px 58px 58px 58px;
+    border: 2px outset #afc7a9;
+    display: flex;
+    height: 60px;
+    background-color: var(--secondary-bg-color);
+    width: 200px;
+    z-index: 10;
+    transition: width 400ms, height 300ms;
+}
+
 #logo img{
     height: 90%;
-    padding: 2px;
+    padding: 5px 2px 0px 5px;
+    transition: 0.4s;
 }
 
 #title{
@@ -68,33 +115,12 @@ body {
   transition: visibility 0s;
 }
 
-.home {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 5% 80% 15%;
-    grid-template-rows: 10% 70% 20%;
-    grid-template-areas: "logo  .  	."
-                        ".     .   	menu"
-                        "dates dates dates";
-}
-
-#app{
-  width: 100%;
-  height: 100%;
-}
-
-.box {
-    border: 2px outset #afc7a9;
-    margin: 7px;
-    box-shadow: 2px 2px rgb(0, 0, 0, 20%);
-    border-radius: 2% 2%;
-    background-color: #d1dcda;
-}
 
 #logo:hover { 
     width: 300px;
-    height: 55px;
+}
+#logo:hover > img{
+  height: 80%;
 }
 
 #logo:hover > #title span {
@@ -105,18 +131,4 @@ body {
     margin: 0%;
 }
 
-
-#logo {
-    grid-area: logo;
-    border-radius: 58px 58px 58px 58px;
-    -moz-border-radius: 58px 58px 58px 58px;
-    -webkit-border-radius: 58px 58px 58px 58px;
-    border: 2px outset #afc7a9;
-    display: flex;
-    height: 60px;
-    background-color: #d1dcda;
-    width: 200px;
-    z-index: 10;
-    transition: width 400ms, height 300ms;
-}
 </style>
