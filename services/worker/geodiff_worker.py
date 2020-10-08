@@ -111,7 +111,7 @@ class GeoDiffWorker(object):
         """Replace white spots (clouds) with the colors around."""
         rows, cols, _ = img.shape
         last_color = [random.randrange(rows), random.randrange(cols)]
-        step = 2
+        step = 1
         for i in range(0, rows, step):
             for j in range(0, cols, step):
                 if (img[i,j] > [55, 55, 55]).all():
@@ -129,8 +129,10 @@ class GeoDiffWorker(object):
     def set_transparent_background(self, img):
         """Sets Alpha Channel from black to transparent."""
         *_, alpha = cv2.split(img)
-        alpha[np.where(alpha != 0)] = 1000
-        return cv2.merge((img, alpha))
+        blank_pixels = np.where(alpha != 0)
+        alpha[blank_pixels] = 1000
+        total_pixels = (img.shape[0]*img.shape[1])
+        return cv2.merge((img, alpha)), (total_pixels-len(blank_pixels))/total_pixels
 
 
     def img_to_base64(self, res):
@@ -221,21 +223,22 @@ class GeoDiffWorker(object):
         #geoOutput = self.pngToGeoJson(filteredImage)
         if (self._debug):
             print(" [+] Filter applied! Process took {} seconds.".format(time.time() - process_time))
-        process_time = time.time()
-        filteredImage = self.erase_clouds(filteredImage)
-        if (self._debug):
-            print(" [+] Erase Clouds done! Process took {} seconds.".format(time.time() - process_time))
+        # process_time = time.time()
+        # filteredImage = self.erase_clouds(filteredImage)
+        # if (self._debug):
+        #     print(" [+] Erase Clouds done! Process took {} seconds.".format(time.time() - process_time))
         process_time = time.time()
         filteredImage = self.apply_kmeans(8, filteredImage)
         if (self._debug):
             print(" [+] Apply KMeans done! Process took {} seconds.".format(time.time() - process_time))
-        filteredImage = self.set_transparent_background(filteredImage)
+        filteredImage, surface_covered = self.set_transparent_background(filteredImage)
         if (self._debug):
             print(" [+] Set Background done! Process took {} seconds.".format(time.time() - process_time))
         return {
             'id': self.id_generator(),
             'filterName': filter,
-            'vectorImage': self.img_to_base64(filteredImage)
+            'vectorImage': self.img_to_base64(filteredImage),
+            'surfaceCovered': surface_covered
         }
 
 
