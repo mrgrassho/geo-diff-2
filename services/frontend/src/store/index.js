@@ -39,7 +39,7 @@ export default new Vuex.Store({
     updateMap(state) {
       console.log('Actualizando filtro/fecha en el mapa');
       let s = new XYZ({
-          url: `${process.env.VUE_APP_BE_URL}/${state.filterSelected}/${state.dateSelected}/{z}/{y}/{x}?key=${process.env.VUE_APP_BE_API_TOKEN}`,
+          url: `${window.location.hostname}:${process.env.VUE_APP_BE_PORT}/${state.filterSelected}/${state.dateSelected}/{z}/{y}/{x}?key=${process.env.VUE_APP_BE_API_TOKEN}`,
           maxZoom: 9
       });
       let l = state.map.getLayers().getArray()[1];
@@ -51,7 +51,7 @@ export default new Vuex.Store({
     getFilters({commit}){
       console.log("Obteniendo filtros de la API...");
       axios //Libreria para consumir de una API.
-      .get(process.env.VUE_APP_BE_URL + "/filters", {
+      .get(`${window.location.hostname}:${process.env.VUE_APP_BE_PORT}` + "/filters", {
           headers: {
               'Authorization': process.env.VUE_APP_BE_API_TOKEN
           }
@@ -66,7 +66,7 @@ export default new Vuex.Store({
     getDates({commit}){
       console.log("Obteniendo fechas de la API...");
       axios //Libreria para consumir de una API.
-      .get(process.env.VUE_APP_BE_URL + "/dates", {
+      .get(`${window.location.hostname}:${process.env.VUE_APP_BE_PORT}` + "/dates", {
           headers: {
               'Authorization': process.env.VUE_APP_BE_API_TOKEN
           }
@@ -89,7 +89,7 @@ export default new Vuex.Store({
               }),
               new TileLayer({
                   source: new XYZ({
-                      url: `${process.env.VUE_APP_BE_URL}/${this.state.filterSelected}/${this.state.dateSelected}/{z}/{y}/{x}?key=${process.env.VUE_APP_BE_API_TOKEN}`,
+                      url: `${window.location.hostname}:${process.env.VUE_APP_BE_PORT}/${this.state.filterSelected}/${this.state.dateSelected}/{z}/{y}/{x}?key=${process.env.VUE_APP_BE_API_TOKEN}`,
                       maxZoom: 9
                   })
               }),

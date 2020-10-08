@@ -54,7 +54,7 @@ Buildear stack work y deployar a swarm
 | Aplicación     | Función     |
 | :------------- | :------------- |
 | MongoDB        | Base de Datos no relacional      |
-| Mongo-Express  | Administrador de MondoDB  |
+| Mongo-Express  | Administrador de MongoDB  |
 | Backend  | Tile Server (Flask) |
 | Frontend  | UI Web (VueJS) |
 
@@ -84,7 +84,7 @@ A continuación describiremos los pasos que realiza la aplicación para realizar
 
 * [RabbitMQ](https://www.rabbitmq.com/) - Message Broker
 * [Flask](https://flask.palletsprojects.com/en/1.1.x/) - Micro Web Server in Python
-* [MongoDB](https://www.rabbitmq.com/) - NoSQL Database
+* [MongoDB](https://www.mongodb.com/es) - NoSQL Database
 * [VueJS](https://vuejs.org/v2/guide/) - Frontend progressive framework
 * [OpenLayers](https://openlayers.org/) - Used for Map render
 

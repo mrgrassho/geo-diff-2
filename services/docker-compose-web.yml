@@ -31,7 +31,6 @@ services:
     backend:
         build: ./backend
         image: mrgrassho/geo-diff-2_backend:latest
-        hostname: geodiff-backend
         restart: always
         ports:
             - "5000:5000"
@@ -58,8 +57,7 @@ services:
         deploy:
             restart_policy:
               condition: on-failure
-        environment:
-            VUE_APP_BE_URL: http://geodiff-backend:5000
+            
             
 # Host volumes used to store code.
 volumes:

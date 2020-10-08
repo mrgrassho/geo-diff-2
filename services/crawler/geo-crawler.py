@@ -20,6 +20,7 @@ BASE_URL = environ.get("BASE_URL")
 PRODUCT = environ.get("PRODUCT")
 TILE_MATRIX_SET = environ.get("TILE_MATRIX_SET")
 FILE_FORMAT = environ.get("FILE_FORMAT")
+DIR_TILES = environ.get("DIR_TILES")
 
 
 class bcolors:
@@ -35,12 +36,15 @@ class bcolors:
 
 class GeoCrawler(object):
     
-    def __init__(self, fdates, out_dir, fbound=None, zoom_level_end=6, concurrency_level=20, timeout=40, verbose=False, coord_img_only=False):
+    def __init__(self, fdates, out_dir=DIR_TILES, fbound=None, zoom_level_end=6, concurrency_level=20, timeout=40, verbose=False, coord_img_only=False):
         if (not exists(fdates)):
             raise Exception(f" {bcolors.FAIL}[-]{bcolors.ENDC} File '{fdates}' not found.")
         with open(fdates, 'r') as f:
             self.dates = [ s.split("\n")[0] for s in f.readlines()]
-        self.out_dir = out_dir
+        
+        self.out_dir = join(out_dir, "RAW")
+        if (not exists(out_dir)):
+            mkdir(out_dir)
         if (not exists(self.out_dir)):
             mkdir(self.out_dir)
         if (fbound is not None):
@@ -111,7 +115,9 @@ class GeoCrawler(object):
                             mkdir(prev_path)
                         url = f"{BASE_URL}/{PRODUCT}/default/{date}/{TILE_MATRIX_SET}/{z}/{y}/{x}.{FILE_FORMAT}"
                         fpath = join(self.out_dir, date, f"{z}", f"{y}", f"{x}")
-                        res.append((fpath, url))                        
+                        # Avoid duplicates
+                        if (not exists(fpath)):
+                            res.append((fpath, url))                        
                         if (self.coord_img_only):
                             self.coord_img(z, y, x, fpath)
         return res
@@ -145,7 +151,7 @@ class GeoCrawler(object):
 def main():
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('fdates', type=str, help="Specify file with dates to process")
-    parser.add_argument('out_dir', type=str, help="Specify output directory")
+    parser.add_argument('-o', '--out_dir', type=str, default=DIR_TILES, help="Specify output directory")
     parser.add_argument('-b', '--boundaries', type=str, default=None, help="Specify file with boundaries")
     parser.add_argument('-c', '--concurrency', type=int, default=20, help="Specify number of concurrent HTTP requests")
     parser.add_argument('-t', '--timeout', type=int, default=20, help="Specify HTTP Timeout (in seconds)")
@@ -153,7 +159,7 @@ def main():
     parser.add_argument('-nv', '--not-verbose', action='store_false', default=True, help="Show no messages during process")
     parser.add_argument('-ci', '--coord-img-only', action='store_true', default=False, help="Generate just images with the coord, useful to select certain part of the map instead of downloading everything")
     args = parser.parse_args()
-    c = GeoCrawler(args.fdates, args.out_dir, fbound=args.boundaries, zoom_level_end=args.zoom_level_end, concurrency_level=args.concurrency, timeout=args.timeout, verbose=args.not_verbose, coord_img_only=args.coord_img_only)
+    c = GeoCrawler(args.fdates, out_dir=args.out_dir, fbound=args.boundaries, zoom_level_end=args.zoom_level_end, concurrency_level=args.concurrency, timeout=args.timeout, verbose=args.not_verbose, coord_img_only=args.coord_img_only)
     c.process()
 
 if __name__ == '__main__':
