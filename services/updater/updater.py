@@ -46,7 +46,7 @@ class Updater(object):
                 print(" [x] Saving Images...")
             for image in data['filteredImages']:
                 new_path = Path(path.replace('RAW', image['filterName']))
-                dirs = new_path.parts[1:-1]
+                dirs = new_path.parts[:-1]
                 # create dirs
                 Path("/".join(dirs)).mkdir(parents=True, exist_ok=True)
                 self.base64_to_img(image['vectorImage'], new_path)

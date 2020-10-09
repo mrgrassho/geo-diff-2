@@ -31,7 +31,7 @@ def get_index():
                     'date': date
                 })
                 if (date not in all_filters):
-                    all_filters[date] = 0
+                    all_filters[date] = 1
                 else:
                     all_filters[date] += 1
     dates_all_filters = [key for (key,value) in all_filters.items() if value >= len(filters)]
