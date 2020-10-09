@@ -4,7 +4,7 @@
 from pika import BlockingConnection, URLParameters, BasicProperties
 from dotenv import load_dotenv
 from os import walk, environ
-from os.path import join, dirname
+from os.path import join, dirname, exists
 from time import sleep
 from json import dumps
 from base64 import b64encode
@@ -65,13 +65,16 @@ class Dealer(object):
                 self._channel = self._connection.channel()
                 count = 0
                 for f in files:
-                    data = self.img_to_base64(f)
-                    message = self.prepare(data, f)
-                    self.send_to_queue(message, self._task_queue)
-                    count += 1
-                    if (count == self._batch):
-                        sleep(self._wait)
-                        count = 0
+                    file_already_processed = [ exists(f.replace('RAW', i)) for i in ['DESERT', 'OCEAN-SEA', 'FOREST-JUNGLE']]
+                    # Only send imgs if they haven't been already processed.
+                    if (not all(file_already_processed)):
+                        data = self.img_to_base64(f)
+                        message = self.prepare(data, f)
+                        self.send_to_queue(message, self._task_queue)
+                        count += 1
+                        if (count == self._batch):
+                            sleep(self._wait)
+                            count = 0
                 self._connection.close()
                 done = True
             except:

@@ -15,8 +15,7 @@ new_filters = [
     { "_id": 1, "name": 'RAW', "longName": 'Raw Image', "active": True },
     { "_id": 2, "name": 'DESERT', "longName": 'Desert filtered Image', "active": True },
     { "_id": 3, "name": 'FOREST-JUNGLE', "longName": 'Forest/Jungle filtered Image', "active": True },
-    { "_id": 4, "name": 'URBAN', "longName": 'Urbanization filtered Image', "active": False },
-    { "_id": 5, "name": 'OCEAN-SEA', "longName": 'Ocean/Sea filtered Image', "active": True }
+    { "_id": 4, "name": 'OCEAN-SEA', "longName": 'Ocean/Sea filtered Image', "active": True }
 ]
 
 new_users = [

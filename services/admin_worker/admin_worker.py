@@ -70,20 +70,25 @@ class AdminWorker(object):
 
 
     def response_to_light(self):
+        count = 0
         while (True):
             self.update_queue_data()
             print(BColors.__dict__[self._current_state['ligth']] + f" [+] Workers State - Work Load: {self._current_state['load']:.2f} - Active replicas: {self._current_state['replica_count']} - Msg count: {self._current_state['msg_count']}" + BColors.ENDC)
             if (self._current_state['ligth'] == 'GREY'):
                 # Our workers are idle so we kill some
-                self.remove_worker()
+                count += 1
+                if (count >= 3):
+                    self.remove_worker()
             elif (self._current_state['ligth'] == 'GREEN'):
                 # Our workers are good so we do nothing
-                pass
+                count = 0
             elif (self._current_state['ligth'] == 'YELLOW'):
                 # Our workers are busy so we create more
+                count = 0
                 self.create_worker()
             elif (self._current_state['ligth'] == 'RED'):
                 # Our workers are very busy so we create a lot more (2x)
+                count = 0
                 self.create_worker(2)
             sleep(10)
 
