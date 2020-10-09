@@ -9,6 +9,8 @@ from flask_pymongo import PyMongo
 from dotenv import load_dotenv
 from json import JSONEncoder
 from bson import ObjectId
+import update_index
+from threading import Thread
 
 class JSONEncoder(JSONEncoder):
     def default(self, o):
@@ -26,6 +28,9 @@ app.config["DIR_TILES"] = environ.get("DIR_TILES")
 app.json_encoder = JSONEncoder
 mongo = PyMongo(app)
 cors = CORS(app)
+# Update Index thread
+t = Thread(target=update_index.update)
+t.start()
 
 
 @app.route('/<filter_name>/<date>/<z>/<y>/<x>', methods=['GET', 'POST'])

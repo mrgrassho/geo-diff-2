@@ -43,14 +43,8 @@ def get_index():
     return index
 
 def update():
-    db = client['geo-mongo']
-    db.geo_index.drop()
-    db.geo_index.insert_many(get_index())
-
-def main():
     while True:
-        update()
+        db = client['geo-mongo']
+        db.geo_index.drop()
+        db.geo_index.insert_many(get_index())
         sleep(UPDATE_WAIT)
-
-if __name__ == '__main__':
-    main()
