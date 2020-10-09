@@ -71,6 +71,7 @@ class GeoDiffWorker(object):
             # Filtra gama del blanco al negro
             lower_hsv = self.normalize_HSV(np.array([0,40,100]))
             upper_hsv = self.normalize_HSV(np.array([360,0,100]))
+        img = self.data_uri_to_cv2_img(image)
         # blurredImage = cv2.blur(img,(2,2))
         hsv = cv2.cvtColor(img, cv2.COLOR_RGB2HSV)
         mask = cv2.inRange(hsv, lower_hsv, upper_hsv)
@@ -79,6 +80,7 @@ class GeoDiffWorker(object):
         # cv2.imwrite("tsti.png", img)
         if (self._debug):
             print(" [x] Filter applied in hsv.")
+
         return res
 
 
@@ -109,7 +111,7 @@ class GeoDiffWorker(object):
         """Replace white spots (clouds) with the colors around."""
         rows, cols, _ = img.shape
         last_color = [random.randrange(rows), random.randrange(cols)]
-        step = 1
+        step = 2
         for i in range(0, rows, step):
             for j in range(0, cols, step):
                 if (img[i,j] > [55, 55, 55]).all():
@@ -215,9 +217,10 @@ class GeoDiffWorker(object):
             print(" [x] Image sent to {} - Body: {} ".format(queue, json_msg[:10]))
 
 
-    def process_image(self, img, filter):
+    def process_image(self, data, filter):
         process_time = time.time()
-        filteredImage = self.applyFilter(img, filter)
+        filteredImage = self.applyFilter(data['earthImage']['rawImage'], filter)
+        #geoOutput = self.pngToGeoJson(filteredImage)
         if (self._debug):
             print(" [+] Filter applied! Process took {} seconds.".format(time.time() - process_time))
         # process_time = time.time()
@@ -228,6 +231,7 @@ class GeoDiffWorker(object):
         # filteredImage = self.apply_kmeans(8, filteredImage)
         # if (self._debug):
         #     print(" [+] Apply KMeans done! Process took {} seconds.".format(time.time() - process_time))
+        process_time = time.time()
         filteredImage, surface_covered = self.set_transparent_background(filteredImage)
         if (self._debug):
             print(" [+] Set Background done! Process took {} seconds.".format(time.time() - process_time))
@@ -250,16 +254,12 @@ class GeoDiffWorker(object):
         # Descargamos la imagen si no esta
         if (not 'rawImage' in data['earthImage']):
             data['earthImage']['rawImage'] = self.download_img(data['earthImage']['url'])
-        img = self.data_uri_to_cv2_img(data['earthImage']['rawImage'])
-        process_time = time.time()
-        img = self.apply_kmeans(8, img)
-        if (self._debug):
-            print(" [+] Apply KMeans done! Process took {} seconds.".format(time.time() - process_time))
+
         filters = ['FOREST-JUNGLE', 'OCEAN-SEA', 'DESERT']
         return_values = list()
         for filter in filters:
             with concurrent.futures.ThreadPoolExecutor() as executor:
-                future = executor.submit(self.process_image, img, filter)
+                future = executor.submit(self.process_image, data, filter)
                 return_values.append(future.result())
         data['filteredImages'] = return_values
         data['earthImage'].pop('rawImage')
