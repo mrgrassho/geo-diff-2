@@ -66,7 +66,7 @@ export default new Vuex.Store({
     getDates({commit}){
       console.log("Obteniendo fechas de la API...");
       axios //Libreria para consumir de una API.
-      .get(`http://${document.location.hostname}:${process.env.VUE_APP_BE_PORT}` + "/dates", {
+      .get(`http://${document.location.hostname}:${process.env.VUE_APP_BE_PORT}` + "/dates?filter=ALL", {
           headers: {
               'Authorization': process.env.VUE_APP_BE_API_TOKEN
           }

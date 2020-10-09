@@ -18,6 +18,7 @@ def get_index():
     index = []
     filters = listdir(DIR_TILES)
     filters = remove_ds_store(filters)
+    all_filters = {}
     for f in filters:
         dates = listdir(join(DIR_TILES,f))
         dates = remove_ds_store(dates)
@@ -27,6 +28,16 @@ def get_index():
                     'filterName': f,
                     'date': date
                 })
+                if (date not in all_filters):
+                    all_filters[date] = 0
+                else:
+                    all_filters[date] += 1
+    dates_all_filters = [key for (key,value) in all_filters.items() if value >= len(filters)]
+    for date in dates_all_filters: 
+        index.append({
+            'filterName': 'ALL',
+            'date': date
+        })
     return index
 
 def update():
