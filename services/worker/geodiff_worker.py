@@ -227,10 +227,10 @@ class GeoDiffWorker(object):
         # filteredImage = self.erase_clouds(filteredImage)
         # if (self._debug):
         #     print(" [+] Erase Clouds done! Process took {} seconds.".format(time.time() - process_time))
-        process_time = time.time()
-        filteredImage = self.apply_kmeans(8, filteredImage)
-        if (self._debug):
-            print(" [+] Apply KMeans done! Process took {} seconds.".format(time.time() - process_time))
+        # process_time = time.time()
+        # filteredImage = self.apply_kmeans(8, filteredImage)
+        # if (self._debug):
+        #     print(" [+] Apply KMeans done! Process took {} seconds.".format(time.time() - process_time))
         filteredImage, surface_covered = self.set_transparent_background(filteredImage)
         if (self._debug):
             print(" [+] Set Background done! Process took {} seconds.".format(time.time() - process_time))
