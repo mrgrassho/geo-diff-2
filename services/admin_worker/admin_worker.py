@@ -80,7 +80,7 @@ class AdminWorker(object):
     
 
     def update_queue_data(self):
-        if (self._rabbitmq_client._queues[]):
+        if (self._rabbitmq_client.queue_obj(self._task_queue)):
             self._current_state['replica_count'] = self._docker_client.get_service_replica_count(service_name=self._service_monitor)
             self._current_state['msg_count'] = self._rabbitmq_client.queue_obj(self._task_queue).method.message_count
             self._current_state['load'] = self._current_state['msg_count'] / (self._current_state['replica_count'] * self._qty_task)
