@@ -35,7 +35,7 @@ class GeoDiffWorker(object):
         self._debug = debug
         self._connection = None
         self._prefetch_count = prefetch_count
-        self._reconection_time = reconection_time
+        self._reconnection_time = reconection_time
 
 
     def applyFilter(self, image, filter='FOREST-JUNGLE'):
@@ -330,5 +330,5 @@ class GeoDiffWorker(object):
                 self._connection.ioloop.start()
             except :
                 if (self._debug):
-                    print(" [!] RabbitMQ Host Unreachable. Reconecting in {} seconds...".format(self._reconection_time))
-                time.sleep(self._reconection_time)
+                    print(" [!] RabbitMQ Host Unreachable. Reconnecting in {} seconds...".format(self._reconnection_time))
+                time.sleep(self._reconnection_time)

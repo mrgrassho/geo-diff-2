@@ -16,7 +16,7 @@ load_dotenv(dotenv_path)
 class Dealer(object):
     def __init__(self, debug=True):
         self._path = environ['DIR_TILES']
-        self._reconection_time = int(environ['AMQP_TIMEOUT'])
+        self._reconnection_time = int(environ['AMQP_TIMEOUT'])
         self._wait = int(environ['WAIT'])
         self._batch = int(environ['BATCH'])
         self._debug = debug
@@ -79,8 +79,8 @@ class Dealer(object):
                 done = True
             except:
                 if (self._debug):
-                    print(" [!] RabbitMQ Host Unreachable. Reconecting in {} seconds...".format(self._reconection_time))
-                sleep(self._reconection_time)
+                    print(" [!] RabbitMQ Host Unreachable. Reconnecting in {} seconds...".format(self._reconnection_time))
+                sleep(self._reconnection_time)
 
 
     def watch(self):

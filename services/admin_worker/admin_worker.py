@@ -153,7 +153,7 @@ class AdminWorker(object):
                 else:
                     status = ('OK', BColors.GREEN) 
                 if (self._debug):
-                    print(f"\t{status[1]}{worker}\t\t{timestamp}\\t{status[0]}{BColors.ENDC}")
+                    print(f"\t{status[1]}{worker}\t\t{timestamp}\t\t{status[0]}{BColors.ENDC}")
             for removed_worker in removed_workers:
                 if (self._debug):
                     print(f' [!] Worker {removed_worker} is NOT responding.')
@@ -165,6 +165,7 @@ class AdminWorker(object):
         self._rabbitmq_client.start()
         self._docker_client = DockerAPIClient()
         self._current_state = {
+            'msg_count': -1,
             'ligth': 'GREEN', 
             'load': 0.4,
             'replica_count': self._docker_client.get_service_replica_count(service_name=self._service_monitor)

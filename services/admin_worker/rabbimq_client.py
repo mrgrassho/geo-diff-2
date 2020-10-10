@@ -91,5 +91,5 @@ class RabbitMQClient(object):
             self._connection.ioloop.start()
         except :
             if (self._debug):
-                print(" [!] RabbitMQ Host Unrecheable. Reconecting in {} seconds...".format(self._reconection_time))
+                print(" [!] RabbitMQ Host Unrecheable. Reconnecting in {} seconds...".format(self._reconection_time))
             time.sleep(self._reconection_time)

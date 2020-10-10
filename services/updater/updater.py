@@ -22,7 +22,7 @@ class Updater(object):
         self._res_xchg = environ['RES_XCHG']
         self._amqp_url = environ['AMQP_URL']
         self._prefetch_count = prefetch_count
-        self._reconection_time = int(environ['TIMEOUT'])
+        self._reconnection_time = int(environ['TIMEOUT'])
 
 
     def base64_to_img(self, buff, fpath):
@@ -112,8 +112,8 @@ class Updater(object):
                 self._connection.ioloop.start()
             except :
                 if (self._debug):
-                    print(" [!] RabbitMQ Host Unreachable. Reconecting in {} seconds...".format(self._reconection_time))
-                sleep(self._reconection_time)
+                    print(" [!] RabbitMQ Host Unreachable. Reconnecting in {} seconds...".format(self._reconnection_time))
+                sleep(self._reconnection_time)
 
 
 def main():
