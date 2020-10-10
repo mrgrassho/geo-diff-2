@@ -16,9 +16,9 @@ class RabbitMQClient(object):
     
     def queue_obj(self, name):
         if (name in self._queues):
-            return self._queues[name]['obj']
-        else:
-            return None
+            if ('obj' in self._queues[name]):
+                return self._queues[name]['obj']
+        return None
 
 
     def on_open_connection(self, _unused_frame):
