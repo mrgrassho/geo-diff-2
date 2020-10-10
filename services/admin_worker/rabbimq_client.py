@@ -29,7 +29,7 @@ class RabbitMQClient(object):
         if (self._debug):
             print(" [x] Channel - Channel state: OPEN. ")
         self._channel = channel
-        for key, queue in self._queues:
+        for key, queue in self._queues.items():
             cb = functools.partial(self.on_queue_declareok, userdata=key)
             self._queues[key]['obj'] = self._channel.queue_declare(
                 queue=key, 
@@ -64,7 +64,7 @@ class RabbitMQClient(object):
         """Start consuming from task queue."""
         if (self._debug):
             print(" [x] Waiting for messages...")
-        for key, queue in self._queues:
+        for key, queue in self._queues.items():
             self._channel.basic_consume(
                 key, 
                 queue['callback'], 
