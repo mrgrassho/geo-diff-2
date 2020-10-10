@@ -1,4 +1,5 @@
 import time
+import functools
 from pika import SelectConnection, URLParameters
 
 class RabbitMQClient(object):
@@ -53,26 +54,27 @@ class RabbitMQClient(object):
         queue_name = userdata
         if (self._debug):
             print(" [x] Queue declared - Queue: {}".format(queue_name))
-        self._channel.basic_qos(prefetch_count=self._prefetch_count, callback=self.on_qos)
+        cb = functools.partial(self.on_qos, userdata=queue_name)
+        self._channel.basic_qos(prefetch_count=self._prefetch_count, callback=cb)
 
 
-    def on_qos(self, _unused_frame):
+    def on_qos(self, _unused_frame, userdata):
         """Callback when Basic.QOS has completed."""
         if (self._debug):
             print(" [x] QOS set to {}".format(self._prefetch_count))
-        self.start_consuming()
+        queue_name = userdata
+        self.start_consuming(queue_name)
 
 
-    def start_consuming(self):
+    def start_consuming(self, queue_name):
         """Start consuming from task queue."""
         if (self._debug):
             print(" [x] Waiting for messages...")
-        for key, queue in self._queues.items():
-            self._channel.basic_consume(
-                key, 
-                queue['callback'], 
-                auto_ack=queue['auto_ack']
-            )
+        self._channel.basic_consume(
+            queue_name, 
+            self._queues[queue_name]['callback'], 
+            auto_ack=self._queues[queue_name]['auto_ack']
+        )
 
 
     def start(self):
