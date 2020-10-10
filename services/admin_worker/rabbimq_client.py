@@ -15,7 +15,7 @@ class RabbitMQClient(object):
 
     
     def queue_obj(self, name):
-        if (name in self._queues)
+        if (name in self._queues):
             return self._queues[name]['obj']
         else:
             return None
