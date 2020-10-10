@@ -102,6 +102,7 @@ services:
             GREY_LIGHT: 0.2
             AMQP_URL: amqp://geoadmin:geoadmin@rabbitmq-server:5672/geovhost
             TASK_QUEUE: TASK_QUEUE
+            KEEP_ALIVE_QUEUE: KEEP_ALIVE_QUEUE
             SERVICE_MONITOR: geo-diff-work_worker
             QTY_TASK: 30
             MAX_SCALE: 10
