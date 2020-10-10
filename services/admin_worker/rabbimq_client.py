@@ -3,7 +3,7 @@ from pika import SelectConnection, URLParameters
 
 class RabbitMQClient(object):
 
-    def __init__(self, amqp_url, queues={}, reconection_time, prefetch_count=1, debug=True):
+    def __init__(self, amqp_url, queues={}, reconection_time=10, prefetch_count=1, debug=True):
         self._amqp_url = amqp_url
         self._queues = queues
         self._reconection_time = reconection_time # 10 seconds
