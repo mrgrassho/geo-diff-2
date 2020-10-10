@@ -162,18 +162,17 @@ class AdminWorker(object):
 
 
     def start(self):
-        while True:
-            self._rabbitmq_client.start()
-            self._docker_client = DockerAPIClient()
-            self._current_state = {
-                'ligth': 'GREEN', 
-                'load': 0.4,
-                'replica_count': self._docker_client.get_service_replica_count(service_name=self._service_monitor)
-            }
-            t1 = Thread(target=self.response_to_light)
-            t1.start()
-            t2 = Thread(target=self.calculate_timeout_workers)
-            t2.start()
+        self._rabbitmq_client.start()
+        self._docker_client = DockerAPIClient()
+        self._current_state = {
+            'ligth': 'GREEN', 
+            'load': 0.4,
+            'replica_count': self._docker_client.get_service_replica_count(service_name=self._service_monitor)
+        }
+        t1 = Thread(target=self.response_to_light)
+        t1.start()
+        t2 = Thread(target=self.calculate_timeout_workers)
+        t2.start()
             
 def main():
     """Main entry point to the program."""

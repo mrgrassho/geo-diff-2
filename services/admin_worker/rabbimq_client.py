@@ -75,17 +75,16 @@ class RabbitMQClient(object):
     def start(self):
         """Start worker."""
         # Define connection
-        while True:
-            try:
-                self._connection = SelectConnection(URLParameters(self._amqp_url), on_open_callback=self.on_open_connection)
-                self._connection.ioloop.start()
-            # Catch a Keyboard Interrupt to make sure that the connection is closed cleanly
-            except KeyboardInterrupt:
-                # Gracefully close the connection
-                self._connection.close()
-                # Start the IOLoop again so Pika can communicate, it will stop on its own when the connection is closed
-                self._connection.ioloop.start()
-            except :
-                if (self._debug):
-                    print(" [!] RabbitMQ Host Unrecheable. Reconecting in {} seconds...".format(self._reconection_time))
-                time.sleep(self._reconection_time)
+        try:
+            self._connection = SelectConnection(URLParameters(self._amqp_url), on_open_callback=self.on_open_connection)
+            self._connection.ioloop.start()
+        # Catch a Keyboard Interrupt to make sure that the connection is closed cleanly
+        except KeyboardInterrupt:
+            # Gracefully close the connection
+            self._connection.close()
+            # Start the IOLoop again so Pika can communicate, it will stop on its own when the connection is closed
+            self._connection.ioloop.start()
+        except :
+            if (self._debug):
+                print(" [!] RabbitMQ Host Unrecheable. Reconecting in {} seconds...".format(self._reconection_time))
+            time.sleep(self._reconection_time)
