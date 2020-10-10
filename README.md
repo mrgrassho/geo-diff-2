@@ -10,7 +10,7 @@ A continuación definiremos las instrucciones para poder tener el proyecto corri
 
 Para la instalación del proyecto es necesario descargar [Docker](https://docs.docker.com/desktop/)
 
-También es necesario descargar los [TILES](https://app.box.com/s/pakte9wz7u0xfoitmktxsspbz01wsijc), que son las imagenes que conforman el mapa.
+También es necesario descargar los [TILES](https://app.box.com/s/pakte9wz7u0xfoitmktxsspbz01wsijc), que son las imagenes que conforman el mapa. Se puede omitir esta descarga utilizando los tiles ubicados en `test-data/tiles-mini`
 
 > Tip: El path donde extraigamos los resultados es conveniente asignarlo a una variable de entorno ya que luego lo utilizaremos `export TILES="/home/tiles"`
 
@@ -36,6 +36,8 @@ docker volume create --driver local \
                     --opt device=$TILES \
                     --opt o=bind tiles-data
 ```
+
+> _Nota: Asegurar que el directorio de las imagenes no sea propiedad del usuario `root`. Para ello correr `chwon TU_NOMBRE_USUARIO:TU_NOMBRE_USUARIO $TILES`_
 
 Buildear stack web y deployar a swarm, el script se encuentra en la folder `services`
 

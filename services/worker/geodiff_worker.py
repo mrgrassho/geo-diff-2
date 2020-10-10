@@ -14,6 +14,7 @@ import http.client
 import mimetypes
 from datetime import datetime
 import concurrent.futures
+from socket import gethostname
 
 class GeoDiffWorker(object):
     """docstring for GeoDiffWorker."""
@@ -25,7 +26,7 @@ class GeoDiffWorker(object):
     GOOGLE_MAX_VAL = 100
 
     def __init__(self, amqp_url, task_queue, res_xchg, keep_alive_queue, prefetch_count=1, reconection_time=10, debug=True):
-        self._id_worker = self.id_generator()
+        self._id_worker = gethostname()
         self._amqp_url = amqp_url
         self._task_queue = task_queue
         self._res_xchg = res_xchg
