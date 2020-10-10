@@ -134,7 +134,7 @@ class AdminWorker(object):
             self._docker_client.scale_service(service_name=self._service_monitor, replica_count=scale_to)
 
 
-    def calculate_timeout_workers():
+    def calculate_timeout_workers(self):
         # Calculo si algun worker lleva demasiado tiempo sin responder
         while (True):  # recorro array con workers y sus tiempos.
             if (self._debug):
