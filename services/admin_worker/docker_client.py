@@ -26,9 +26,16 @@ class DockerAPIClient(object):
         service.update(mode=ServiceMode("replicated", replicas=replica_count))
 
 
+    def get_container(self, container_id):
+        try:
+            return self.native_docker_client.containers.get(container_id)
+        except docker.errors.NotFound:
+            return None
+
+
     def get_containers(self, service_name):
         containers = []
         for container in self.native_docker_client.containers.list():
-            if container.attrs["HostConfig"]["Config"]["Labels"]["com.docker.swarm.service.name"] == service_name:
-                containers.push(container.attrs["HostConfig"]["Config"]["Hostname"])
+            if container.attrs["Config"]["Labels"]["com.docker.swarm.service.name"] == service_name:
+                containers.append(container.attrs["Config"]["Hostname"])
         return containers

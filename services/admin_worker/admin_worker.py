@@ -13,6 +13,7 @@ from dotenv import load_dotenv
 from datetime import datetime, timedelta
 from rabbimq_client import RabbitMQClient
 from json import loads
+from copy import copy
 
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
@@ -74,7 +75,9 @@ class AdminWorker(object):
 
     def callback_keep_alive_queue(self, ch, method, properties, body):
         data = loads(body)
-        self._last_timestamps[data['id']] = data['timestamp']
+        worker = data['id']
+        if (self._docker_client.get_container(worker)):
+            self._last_timestamps[worker] = data['timestamp']
 
 
     def update_queue_data(self):
@@ -131,38 +134,41 @@ class AdminWorker(object):
             if (self._debug):
                 print(f"Scaling down {self._service_monitor} from {self._current_state['replica_count']} to {scale_to} replicas")
             self._docker_client.scale_service(service_name=self._service_monitor, replica_count=scale_to)
-            sleep(1)
-            containers = self._docker_client.get_containers()
-            for container in containers:
-                if container in self._last_timestamps:
-                    self._last_timestamps.pop(container)
-
 
 
     def calculate_timeout_workers(self):
         # Calculo si algun worker lleva demasiado tiempo sin responder
         while (True):  # recorro array con workers y sus tiempos.
+            p = None
             if (len(self._last_timestamps) > 0 and self._debug):
-                print(f"{BColors.GREY}\tWORKER\t\tLAST SEEN\t\t\tSTATUS{BColors.ENDC}")
+                p = f"{'-'*80}\n{BColors.GREY}\tWORKER\t\tLAST SEEN\t\t\tSTATUS\t{BColors.ENDC}\n"
+            last_timestamps_tmp = copy(self._last_timestamps)
             removed_workers = []
-            for worker, timestamp in self._last_timestamps.items():
+            for worker, timestamp in last_timestamps_tmp.items():
                 timeout_worker = datetime.strptime(timestamp, '%Y-%m-%d %H:%M:%S.%f')
                 diff = datetime.now() - timeout_worker
-                if (diff > self._max_timeout):
-                    status = ('NOT RESPONDING', BColors.RED) 
-                    container = self._docker_client.containers.get(worker)
-                    container.remove()
-                    removed_workers.push(worker)
-                elif (diff > self._max_timeout/2): # excede la mitad del tiempo de timeout
-                    status = ('WARNING', BColors.YELLOW) 
+                container = self._docker_client.get_container(worker)
+                if (not container):
+                    removed_workers.append((worker, 0))
                 else:
-                    status = ('OK', BColors.GREEN) 
-                if (self._debug):
-                    print(f"\t{status[1]}{worker}\t{timestamp}\t\t{status[0]}{BColors.ENDC}")
+                    if (diff > self._max_timeout):
+                        status = ('NOT RESPONDING', BColors.RED) 
+                        if (container):
+                            container.remove()
+                        removed_workers.append((worker, 1))
+                    elif (diff > self._max_timeout/2): # excede la mitad del tiempo de timeout
+                        status = ('WARNING', BColors.YELLOW) 
+                    else:
+                        status = ('OK', BColors.GREEN) 
+                    if (self._debug):
+                        p += f"\t{status[1]}{worker}\t{timestamp}\t{status[0]}\t{BColors.ENDC}\n"
+            if (self._debug and p is not None):
+                print(p)
             for removed_worker in removed_workers:
-                if (self._debug):
-                    print(f' [!] Worker {removed_worker} is NOT responding.')
-                    print(f' [+] Worker {removed_worker} removed.')
+                self._last_timestamps.pop(removed_worker[0])
+                if (self._debug and removed_worker[1] == 1):
+                    print(f' [!] Worker {removed_worker[0]} is NOT responding.')
+                    print(f' [+] Worker {removed_worker[0]} removed.')
             sleep(self._refresh_rate)
 
 

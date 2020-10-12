@@ -36,8 +36,8 @@ services:
             RES_QUEUE: RESULT_QUEUE
             RES_XCHG: RES_XCHG
             AMQP_TIMEOUT: 10
-            WAIT: 10
-            BATCH: 10
+            WAIT: 2
+            BATCH: 100
             DIR_TILES: /tiles-full
             AMQP_URL: amqp://geoadmin:geoadmin@rabbitmq-server:5672/geovhost
         volumes: 
@@ -104,8 +104,9 @@ services:
             TASK_QUEUE: TASK_QUEUE
             KEEP_ALIVE_QUEUE: KEEP_ALIVE_QUEUE
             SERVICE_MONITOR: geo-diff-work_worker
-            QTY_TASK: 30
-            MAX_SCALE: 10
+            QTY_TASK: 100
+            REFRESH_RATE: 5
+            MAX_SCALE: 15
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
 
