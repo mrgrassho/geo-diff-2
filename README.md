@@ -51,7 +51,15 @@ Buildear stack work y deployar a swarm
 ./set_up_stack.sh docker-compose-work.yml geo-diff-work  
 ```
 
-### Stacks Web
+---
+
+## Documentación
+
+## Arquitectura del Sistema
+
+![Arquitectura](diagrams/GeoDiffDiagram.png)
+
+### Web Stack 
 
 | Aplicación     | Función     |
 | :------------- | :------------- |
@@ -60,27 +68,38 @@ Buildear stack work y deployar a swarm
 | Backend  | Tile Server (Flask) |
 | Frontend  | UI Web (VueJS) |
 
-### Stacks Work
+### Work Stack 
 
 | Aplicación     | Función     |
 | :------------- | :------------- |
 | RabbitMQ       | Servidor de Mesajeria   |
-| Worker         | Procesador de tareas   |
+| Crawler        | Encargado de descargar los tiles |
 | Updater        | Actualiza resultados procesados por los workers   |
 | Dealer         | Repartidor de tareas a los workers   |
-| Admin-Worker  | Administrador de workers, garantiza que esten activos y realiza autoscaling de workers  |
+| Worker         | Procesador de tareas   |
+| Admin-Worker  | Administrador de workers, garantiza que esten activos y realiza autoscaling de workers. Este container tiene acceso a la Docker API por la cual puede crear y eliminar workers a demanda |
 
-## Documentación
+### Arquitectura de Queues
 
-### Arquitectura del Sistema
+El servidor de mensajeria tiene 3 queues, las cuales tiene las siguientes funciones:
 
-![Arquitectura](diagrams/arquitecture.png)
+| Queue     | Función     |
+| :------------- | :------------- |
+| Task Queue     | Utilizado para alimentar a los workers. Cada worker tomará imagenes a procesar de esta cola |
+| Result Queue   | Utilizado para almacenar temporalmente los resultados devueltos por los workers, hasta que el updater consuma el recurso y lo desencole |
+| Keep Alive | Esta cola es utilizada por el worker para notificar al admin worker que sigue corriendo |
 
-### ¿Como funciona?
+### Recursos (Imagenes)
 
-A continuación describiremos los pasos que realiza la aplicación para realizar una tarea.
+La principal materia prima del sistema son los tiles crudos (RAW), que serán las imagenes satelitales en formato [XYZ - Tiled Web Map](https://en.wikipedia.org/wiki/Tiled_web_map) que procesará la work stack.
 
-> En desarrollo...
+#### GIBS API
+
+Los recursos son provistos por NASA utilizando la [GIBS API](https://wiki.earthdata.nasa.gov/display/GIBS/GIBS+API+for+Developers#GIBSAPIforDevelopers-GenericXYZTileAccess). Esta API brinda la posibilidad de descargar los recursos en diferentes formatos, en este caso, utilizando el acceso generico [XYZ - Tiled Web Map](https://en.wikipedia.org/wiki/Tiled_web_map) es lo mas fácil para crawlear JPEG/PNG que luego proces
+
+#### Docker Volume
+
+Para comunicar los resultados entre ambas stacks se utiliza un volumen de Docker que seria una abstracción de un File System, esto permite que ambas stacks corran independientemente una de otra.
 
 ## Built With
 
@@ -89,6 +108,8 @@ A continuación describiremos los pasos que realiza la aplicación para realizar
 * [MongoDB](https://www.mongodb.com/es) - NoSQL Database
 * [VueJS](https://vuejs.org/v2/guide/) - Frontend progressive framework
 * [OpenLayers](https://openlayers.org/) - Used for Map render
+
+---
 
 ## License
 
