@@ -1,6 +1,10 @@
 # GeoDiff
 
-Sistema de detección de diferencias sobre superficies terrestres.
+Sistema de segmentación de superficies terrestres.
+
+## Demo
+
+![Demo Geo-Diff](/diagrams/demo.gif "Demo Geo-Diff")
 
 ## Getting Started
 
