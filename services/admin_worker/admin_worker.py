@@ -101,6 +101,7 @@ class AdminWorker(object):
         while (True):
             self.update_queue_data()
             print(BColors.__dict__[self._current_state['ligth']] + f" [+] Workers State - Work Load: {self._current_state['load']:.2f} - Active replicas: {self._current_state['replica_count']} - Msg count: {self._current_state['msg_count']}" + BColors.ENDC)
+            print(f" [#] {datetime.now().strftime('%H:%M:%S.%f')} {self._current_state['load']:.2f} {self._current_state['ligth']}")
             if (self._current_state['ligth'] == 'GREY'):
                 # Our workers are idle so we kill some
                 count += 1
