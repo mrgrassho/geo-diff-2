@@ -12,7 +12,7 @@ A continuación definiremos las instrucciones para poder tener el proyecto corri
 
 ### Prerequisitos
 
-Para la instalación del proyecto es necesario descargar [Docker](https://docs.docker.com/desktop/)
+Para la instalación del proyecto es necesario descargar [Docker](https://docs.docker.com/desktop/) y [Docker Compose](https://docs.docker.com/compose/install/)
 
 También es necesario descargar los [TILES](https://app.box.com/s/pakte9wz7u0xfoitmktxsspbz01wsijc), que son las imagenes que conforman el mapa. Se puede omitir esta descarga utilizando los tiles ubicados en `test-data/tiles-mini`
 
