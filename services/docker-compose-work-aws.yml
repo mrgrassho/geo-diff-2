@@ -1,0 +1,169 @@
+version: "3.2"
+services:
+    rabbitmq-server:
+        build: ./rabbitmq
+        image: mrgrassho/geo-diff-2_rabbitmq-server:latest
+        hostname: rabbitmq-server
+        environment:
+            RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
+        ports:
+            - "15672:15672"
+            - "15674:15674"
+            - "5672:5672"
+        deploy:
+            mode: replicated
+            restart_policy:
+                condition: on-failure
+            placement:
+                constraints:
+                    - node.labels.typeNode==master
+            resources:
+                limits:
+                    cpus: 0.50
+                    memory: 512M
+                reservations:
+                    cpus: 0.25
+                    memory: 200M
+        volumes:
+            - ./rabbitmq:/var/lib/rabbitmq:rw
+
+    dealer:
+        build: ./dealer
+        image: mrgrassho/geo-diff-2_dealer:latest
+        depends_on:
+            - rabbitmq-server
+        tty: true
+        deploy:
+            mode: replicated
+            replicas: 1
+            update_config:
+                parallelism: 1
+                delay: 10s
+            restart_policy:
+                condition: on-failurle
+            resources:
+                limits:
+                    cpus: 0.30
+                    memory: 200M
+                reservations:
+                    cpus: 0.05
+                    memory: 30M
+        environment:
+            TASK_QUEUE: TASK_QUEUE
+            RES_QUEUE: RESULT_QUEUE
+            RES_XCHG: RES_XCHG
+            AMQP_TIMEOUT: 10
+            WAIT: 2
+            BATCH: 100
+            DIR_TILES: /tiles-full
+            AMQP_URL: amqp://geoadmin:geoadmin@rabbitmq-server:5672/geovhost
+        volumes:
+            - tiles-data:/tiles-full:ro
+
+    updater:
+        build: ./updater
+        image: mrgrassho/geo-diff-2_updater:latest
+        depends_on:
+            - rabbitmq-server
+        tty: true
+        deploy:
+            mode: replicated
+            replicas: 2
+            update_config:
+                parallelism: 2
+                delay: 10s
+            restart_policy:
+                condition: on-failure
+            resources:
+                limits:
+                    cpus: 0.30
+                    memory: 200M
+                reservations:
+                    cpus: 0.05
+                    memory: 20M
+        environment:
+            TIMEOUT: 10
+            TASK_QUEUE: TASK_QUEUE
+            RES_QUEUE: RESULT_QUEUE
+            RES_XCHG: RES_XCHG
+            DIR_TILES: /tiles-full
+            AMQP_URL: amqp://geoadmin:geoadmin@rabbitmq-server:5672/geovhost
+        volumes:
+            - tiles-data:/tiles-full:rw
+
+    worker:
+        build: ./worker
+        image: mrgrassho/geo-diff-2_worker:latest
+        depends_on:
+            - rabbitmq-server
+        tty: true
+        deploy:
+            mode: replicated
+            replicas: 1
+            update_config:
+                parallelism: 1
+                delay: 10s
+            restart_policy:
+                condition: on-failure
+            placement:
+                constraints:
+                    - node.labels.typeNode!=master
+            resources:
+                limits:
+                    cpus: 0.75
+                    memory: 400M
+                reservations:
+                    cpus: 0.3
+                    memory: 100M
+        environment:
+            TASK_QUEUE: TASK_QUEUE
+            RES_QUEUE: RESULT_QUEUE
+            RES_XCHG: RES_XCHG
+            KEEP_ALIVE_QUEUE: KEEP_ALIVE_QUEUE
+            AMQP_URL: amqp://geoadmin:geoadmin@rabbitmq-server:5672/geovhost
+
+    admin-worker:
+        build: ./admin_worker
+        image: mrgrassho/geo-diff-2_admin_worker:latest
+        depends_on:
+            - rabbitmq-server
+        tty: true
+        deploy:
+            mode: replicated
+            replicas: 1
+            update_config:
+                parallelism: 1
+                delay: 10s
+            restart_policy:
+                condition: on-failure
+            placement:
+                constraints:
+                    - node.labels.typeNode==master
+            resources:
+                limits:
+                    cpus: 0.5
+                    memory: 400M
+                reservations:
+                    cpus: 0.1
+                    memory: 50M
+        environment:
+            AMQP_TIMEOUT: 10
+            RED_LIGHT: 1
+            YELLOW_LIGHT: 0.7
+            GREEN_LIGHT: 0.5
+            GREY_LIGHT: 0.2
+            AMQP_URL: amqp://geoadmin:geoadmin@rabbitmq-server:5672/geovhost
+            TASK_QUEUE: TASK_QUEUE
+            KEEP_ALIVE_QUEUE: KEEP_ALIVE_QUEUE
+            SERVICE_MONITOR: geo-diff-work_worker
+            QTY_TASK: 100
+            REFRESH_RATE: 5
+            MIN_SCALE: 1
+            MAX_SCALE: 15
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+
+# Host volumes used to store code.
+volumes:
+    tiles-data:
+        external: true
