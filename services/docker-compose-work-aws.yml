@@ -19,10 +19,10 @@ services:
                     - node.labels.typeNode==master
             resources:
                 limits:
-                    cpus: 0.50
+                    cpus: "0.50"
                     memory: 512M
                 reservations:
-                    cpus: 0.25
+                    cpus: "0.25"
                     memory: 200M
         volumes:
             - ./rabbitmq:/var/lib/rabbitmq:rw
@@ -43,10 +43,10 @@ services:
                 condition: on-failurle
             resources:
                 limits:
-                    cpus: 0.30
+                    cpus: "0.30"
                     memory: 200M
                 reservations:
-                    cpus: 0.05
+                    cpus: "0.05"
                     memory: 30M
         environment:
             TASK_QUEUE: TASK_QUEUE
@@ -76,10 +76,10 @@ services:
                 condition: on-failure
             resources:
                 limits:
-                    cpus: 0.30
+                    cpus: "0.30"
                     memory: 200M
                 reservations:
-                    cpus: 0.05
+                    cpus: "0.05"
                     memory: 20M
         environment:
             TIMEOUT: 10
@@ -110,10 +110,10 @@ services:
                     - node.labels.typeNode!=master
             resources:
                 limits:
-                    cpus: 0.75
+                    cpus: "0.75"
                     memory: 400M
                 reservations:
-                    cpus: 0.3
+                    cpus: "0.3"
                     memory: 100M
         environment:
             TASK_QUEUE: TASK_QUEUE
@@ -141,10 +141,10 @@ services:
                     - node.labels.typeNode==master
             resources:
                 limits:
-                    cpus: 0.5
+                    cpus: "0.5"
                     memory: 400M
                 reservations:
-                    cpus: 0.1
+                    cpus: "0.1"
                     memory: 50M
         environment:
             AMQP_TIMEOUT: 10
