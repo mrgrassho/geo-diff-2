@@ -40,7 +40,7 @@ services:
                 parallelism: 1
                 delay: 10s
             restart_policy:
-                condition: on-failurle
+                condition: on-failure
             resources:
                 limits:
                     cpus: "0.30"

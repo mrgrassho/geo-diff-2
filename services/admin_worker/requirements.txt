@@ -1,3 +1,4 @@
 python-dotenv==0.14.0
 pika==1.1.0
 docker==4.2.2
+requests

@@ -47,7 +47,7 @@ services:
               condition: on-failure
             placement:
                 constraints:
-                    - node.labels.typeNode==master-web
+                    - node.labels.typeNode==master
         environment:
             FLASK_RUN_HOST: 0.0.0.0
             DIR_TILES: /tiles-full
