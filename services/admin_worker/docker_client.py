@@ -3,7 +3,10 @@
 
 import docker
 from docker.types import ServiceMode
+from ast import literal_eval
 
+env_to_dict = lambda l : {i.split("=")[0]: i.split("=")[1] for i in l}
+dict_to_env = lambda d : [ '='.join([k, v]) for k, v in d.items()]        
 
 class DockerAPIClient(object):
 
@@ -31,6 +34,22 @@ class DockerAPIClient(object):
             return self.native_docker_client.containers.get(container_id)
         except docker.errors.NotFound:
             return None
+
+
+    def get_service_env(self, service_name):
+        service = self._get_service(service_name)
+        return env_to_dict(service.attrs['Spec']['TaskTemplate']['ContainerSpec']['Env']) if service is not None else None
+
+
+    def update_service_env_add(self, service_name, new_env={'BATCH': 10}):
+        service = self._get_service(service_name)
+        old_env = self.get_service_env(service_name)
+        if all([old_env, service]): # if both values are not None
+            for k, v in new_env.items():
+                if (k in old_env and v is not None):
+                    old_env[k] = str(literal_eval(old_env[k]) + v)
+            env_list = dict_to_env(old_env)
+            service.update(env=env_list)
 
 
     def get_containers(self, service_name):

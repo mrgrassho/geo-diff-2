@@ -156,6 +156,8 @@ services:
             TASK_QUEUE: TASK_QUEUE
             KEEP_ALIVE_QUEUE: KEEP_ALIVE_QUEUE
             SERVICE_MONITOR: geo-diff-work_worker
+            SERVICE_DEALER: geo-diff-work_dealer
+            STEP_BATCH_DEALER: 100
             QTY_TASK: 100
             REFRESH_RATE: 5
             MIN_SCALE: 1

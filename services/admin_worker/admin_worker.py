@@ -14,6 +14,7 @@ from datetime import datetime, timedelta
 from rabbimq_client import RabbitMQClient
 from json import loads
 from copy import copy
+from random import choices
 
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
@@ -45,6 +46,10 @@ class AdminWorker(object):
         self._max_scale = int(environ['MAX_SCALE'])
         self._min_scale = int(environ['MIN_SCALE'])
         self._service_monitor = environ['SERVICE_MONITOR']
+        self._service_dealer = environ['SERVICE_DEALER']
+        self._step_batch_dealer = environ['STEP_BATCH_DEALER']
+        self._min_batch_dealer = environ['MIN_BATCH_DEALER']
+        self._max_batch_dealer = environ['MAX_BATCH_DEALER']
         self._debug = debug
         self._refresh_rate = int(environ['REFRESH_RATE'])
         self._max_timeout = timedelta(seconds=int(environ['MAX_TIMEOUT']))
@@ -106,7 +111,13 @@ class AdminWorker(object):
                 # Our workers are idle so we kill some
                 count += 1
                 if (count >= 3):
-                    self.remove_worker()
+                    population = [1, 2]
+                    weights = [0.4, 0.6]
+                    if choices(population, weights)[0] == 1:
+                        self.update_delivery(self._step_batch_dealer)
+                    else:
+                        self.remove_worker()
+                    count = 0
             elif (self._current_state['ligth'] == 'GREEN'):
                 # Our workers are good so we do nothing
                 count = 0
@@ -127,6 +138,22 @@ class AdminWorker(object):
             if (self._debug):
                 print(f"Scaling up {self._service_monitor} from {self._current_state['replica_count']} to {scale_to} replicas")
             self._docker_client.scale_service(service_name=self._service_monitor, replica_count=scale_to)
+        else:
+            self.update_delivery(-1*self._step_batch_dealer)
+
+
+    def update_delivery(self, batch=100, wait=None):
+        envs = self._docker_client.get_service_env(self._service_dealer)
+        if envs is None: return
+        if self._min_batch_dealer < envs['BATCH'] < self._max_batch_dealer:
+            if (self._debug): print(f"Updating {self._service_dealer}. BATCH += {batch} and WAIT += {wait} ")
+            self._docker_client.update_service_env_add(
+                self._service_dealer,
+                new_env= {
+                    'BATCH': batch,
+                    'WAIT': wait,
+                }
+            )
 
 
     def remove_worker(self, scale_step=1):
