@@ -51,7 +51,7 @@ class AdminWorker(object):
         self._min_batch_dealer = environ['MIN_BATCH_DEALER']
         self._max_batch_dealer = environ['MAX_BATCH_DEALER']
         self._debug = debug
-        self._refresh_rate = int(environ['REFRESH_RATE'])
+        self._refresh_rate = float(environ['REFRESH_RATE'])
         self._max_timeout = timedelta(seconds=int(environ['MAX_TIMEOUT']))
         self._rabbitmq_client = RabbitMQClient(
             self,
