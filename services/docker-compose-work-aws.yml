@@ -40,7 +40,10 @@ services:
                 parallelism: 1
                 delay: 10s
             restart_policy:
-                condition: on-failurle
+                condition: on-failure
+            placement:
+                constraints:
+                    - node.labels.typeNode==master
             resources:
                 limits:
                     cpus: "0.30"
@@ -54,7 +57,7 @@ services:
             RES_XCHG: RES_XCHG
             AMQP_TIMEOUT: 10
             WAIT: 2
-            BATCH: 100
+            BATCH: 600
             DIR_TILES: /tiles-full
             AMQP_URL: amqp://geoadmin:geoadmin@rabbitmq-server:5672/geovhost
         volumes:
@@ -74,6 +77,9 @@ services:
                 delay: 10s
             restart_policy:
                 condition: on-failure
+            placement:
+                constraints:
+                    - node.labels.typeNode==master
             resources:
                 limits:
                     cpus: "0.30"
@@ -99,7 +105,7 @@ services:
         tty: true
         deploy:
             mode: replicated
-            replicas: 1
+            replicas: 12
             update_config:
                 parallelism: 1
                 delay: 10s
@@ -156,10 +162,10 @@ services:
             TASK_QUEUE: TASK_QUEUE
             KEEP_ALIVE_QUEUE: KEEP_ALIVE_QUEUE
             SERVICE_MONITOR: geo-diff-work_worker
-            QTY_TASK: 100
-            REFRESH_RATE: 5
-            MIN_SCALE: 1
-            MAX_SCALE: 15
+            QTY_TASK: 1
+            REFRESH_RATE: 0.2
+            MIN_SCALE: 12
+            MAX_SCALE: 12
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
 

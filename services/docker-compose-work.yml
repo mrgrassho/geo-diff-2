@@ -106,7 +106,8 @@ services:
             SERVICE_MONITOR: geo-diff-work_worker
             QTY_TASK: 100
             REFRESH_RATE: 5
-            MAX_SCALE: 15
+            MIN_SCALE: 8
+            MAX_SCALE: 8
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
 
