@@ -1,6 +1,7 @@
 import time
 import functools
 from pika import BlockingConnection, SelectConnection, URLParameters
+import requests
 
 class RabbitMQClient(object):
 
@@ -15,21 +16,17 @@ class RabbitMQClient(object):
         self._debug = debug
         self._client = client
         self._blocking_connection = None
-        self._blocking_channel = None
 
 
-    def message_count(self, name):
-        if (name in self._queues and self._blocking_channel):
-            queue = self._blocking_channel.queue_declare(
-                queue=name,
-                durable=self._queues[name]['durable'],
-                exclusive=self._queues[name]['exclusive'], 
-                auto_delete=self._queues[name]['auto_delete'],
-                passive=True
-            )
-            return queue.method.message_count
-        else:
+    def message_count(self, queue_name):
+        try:
+            url = f"http://{self._host}:{self._port}/api/queues/{self._vhost}/{queue_name}?columns=message_stats.publish_details.rate"
+            r = requests.get(url, auth=(self._creds.split(":")[0], self._creds.split(":")[1]))
+            return r.json()["message_stats"]["publish_details"]["rate"]
+        except requests.exceptions.RequestException as e:
             return None
+        except :
+            return 0
 
 
     def on_open_connection(self, _unused_frame):
@@ -100,8 +97,12 @@ class RabbitMQClient(object):
         # Define connection
         while (not connected):
             try:
-                self._blocking_connection = BlockingConnection(URLParameters(self._amqp_url))
-                self._blocking_channel = self._blocking_connection.channel()
+                self._creds = self._amqp_url.split('amqp://')[1].split("@")[0]
+                parameters = URLParameters(self._amqp_url)
+                self._host = parameters.host
+                self._port = "15672"
+                self._vhost = parameters.virtual_host
+                self._blocking_connection = BlockingConnection(parameters)
                 self._connection = SelectConnection(URLParameters(self._amqp_url), on_open_callback=self.on_open_connection)
                 self._connection.ioloop.start()
                 connected = True
