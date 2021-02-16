@@ -145,7 +145,7 @@ class AdminWorker(object):
     def update_delivery(self, batch=100, wait=None):
         envs = self._docker_client.get_service_env(self._service_dealer)
         if envs is None: return
-        if self._min_batch_dealer < envs['BATCH'] < self._max_batch_dealer:
+        if self._min_batch_dealer <= envs['BATCH'] + batch <= self._max_batch_dealer:
             if (self._debug): print(f"Updating {self._service_dealer}. BATCH += {batch} and WAIT += {wait} ")
             self._docker_client.update_service_env_add(
                 self._service_dealer,

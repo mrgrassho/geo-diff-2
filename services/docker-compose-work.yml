@@ -107,7 +107,7 @@ services:
             SERVICE_DEALER: geo-diff-work_dealer
             STEP_BATCH_DEALER: 100
             MIN_BATCH_DEALER: 400
-            MIN_BATCH_DEALER: 1500
+            MAX_BATCH_DEALER: 1500
             QTY_TASK: 15
             REFRESH_RATE: 5
             MIN_SCALE: 8
