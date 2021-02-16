@@ -28,9 +28,12 @@ class DockerAPIClient(object):
 
 
     def scale_service(self, service_name, replica_count):
-        service = self._get_service(service_name)
-        service.update(mode=ServiceMode("replicated", replicas=replica_count))
-
+        try:
+            service = self._get_service(service_name)
+            service.update(mode=ServiceMode("replicated", replicas=replica_count))
+        except :
+            pass
+        
 
     def get_container(self, container_id):
         try:
