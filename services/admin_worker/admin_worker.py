@@ -14,8 +14,11 @@ from datetime import datetime, timedelta
 from rabbimq_client import RabbitMQClient
 from json import loads
 from copy import copy
+<<<<<<< HEAD
 from random import choices
 from ast import literal_eval
+=======
+>>>>>>> f21729471cdc8a3d7943af31054b6e11918241c3
 
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
@@ -112,12 +115,7 @@ class AdminWorker(object):
                 # Our workers are idle so we kill some
                 count += 1
                 if (count >= 3):
-                    population = [1, 2]
-                    weights = [0.4, 0.6]
-                    if choices(population, weights)[0] == 1:
-                        self.update_delivery(self._step_batch_dealer)
-                    else:
-                        self.remove_worker()
+                    self.remove_worker()
                     count = 0
             elif (self._current_state['ligth'] == 'GREEN'):
                 # Our workers are good so we do nothing
