@@ -21,7 +21,10 @@ class DockerAPIClient(object):
 
     def get_service_replica_count(self, service_name):
         service = self._get_service(service_name)
-        return service.attrs['Spec']['Mode']['Replicated']['Replicas'] if service is not None else -1
+        if service is None: return (-1, -1)
+        active_replicas = len([t for t in service.tasks() if t["Status"]["State"] == "running"])
+        desired_replicas = service.attrs['Spec']['Mode']['Replicated']['Replicas']
+        return [active_replicas, desired_replicas]
 
 
     def scale_service(self, service_name, replica_count):
@@ -58,3 +61,6 @@ class DockerAPIClient(object):
             if container.attrs["Config"]["Labels"]["com.docker.swarm.service.name"] == service_name:
                 containers.append(container.attrs["Config"]["Hostname"])
         return containers
+
+
+
