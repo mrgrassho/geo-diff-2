@@ -164,9 +164,11 @@ services:
             SERVICE_MONITOR: geo-diff-work_worker
             SERVICE_DEALER: geo-diff-work_dealer
             STEP_BATCH_DEALER: 100
-            QTY_TASK: 1
-            REFRESH_RATE: 0.2
-            MIN_SCALE: 12
+            MIN_BATCH_DEALER: 400
+            MIN_BATCH_DEALER: 1500
+            QTY_TASK: 15
+            REFRESH_RATE: 5
+            MIN_SCALE: 8
             MAX_SCALE: 12
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
