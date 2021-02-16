@@ -90,7 +90,7 @@ class AdminWorker(object):
         if (message_count is not None):
             self._current_state['replica_count'] = self._docker_client.get_service_replica_count(service_name=self._service_monitor)
             self._current_state['msg_count'] = message_count
-            self._current_state['load'] = self._current_state['msg_count'] / (self._current_state['replica_count'] * self._qty_task)
+            self._current_state['load'] = self._current_state['msg_count'] / (self._current_state['replica_count'][0] * self._qty_task)
             self._current_state['ligth'] = self.get_ligth(self._current_state['load'])
 
 
@@ -105,7 +105,7 @@ class AdminWorker(object):
         count = 0
         while (True):
             self.update_queue_data()
-            print(BColors.__dict__[self._current_state['ligth']] + f" [+] Workers State - Work Load: {self._current_state['load']:.2f} - Active replicas: {self._current_state['replica_count']} - Msg count: {self._current_state['msg_count']}" + BColors.ENDC)
+            print(BColors.__dict__[self._current_state['ligth']] + f" [+] Workers State - Work Load: {self._current_state['load']:.2f} - Replicas: {'/'.join([str(i) for i in self._current_state['replica_count']])} - Msg count: {self._current_state['msg_count']}" + BColors.ENDC)
             print(f" [#] {datetime.now().strftime('%H:%M:%S.%f')} {self._current_state['load']:.2f} {self._current_state['ligth']}")
             if (self._current_state['ligth'] == 'GREY'):
                 # Our workers are idle so we kill some
@@ -133,10 +133,10 @@ class AdminWorker(object):
 
 
     def create_worker(self, scale_step=1):
-        scale_to = self._current_state['replica_count'] + scale_step
+        scale_to = self._current_state['replica_count'][1] + scale_step
         if (scale_to <= self._max_scale):
             if (self._debug):
-                print(f"Scaling up {self._service_monitor} from {self._current_state['replica_count']} to {scale_to} replicas")
+                print(f"Scaling up {self._service_monitor} from {self._current_state['replica_count'][1]} to {scale_to} replicas")
             self._docker_client.scale_service(service_name=self._service_monitor, replica_count=scale_to)
         else:
             self.update_delivery(-1*self._step_batch_dealer)
@@ -157,10 +157,10 @@ class AdminWorker(object):
 
 
     def remove_worker(self, scale_step=1):
-        scale_to = self._current_state['replica_count'] - scale_step
+        scale_to = self._current_state['replica_count'][1] - scale_step
         if (scale_to >= self._min_scale):
             if (self._debug):
-                print(f"Scaling down {self._service_monitor} from {self._current_state['replica_count']} to {scale_to} replicas")
+                print(f"Scaling down {self._service_monitor} from {self._current_state['replica_count'][1]} to {scale_to} replicas")
             self._docker_client.scale_service(service_name=self._service_monitor, replica_count=scale_to)
 
 
