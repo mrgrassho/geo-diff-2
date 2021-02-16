@@ -41,7 +41,7 @@ class DockerAPIClient(object):
         return env_to_dict(service.attrs['Spec']['TaskTemplate']['ContainerSpec']['Env']) if service is not None else None
 
 
-    def update_service_env_add(self, service_name, new_env={'BATCH': 10}):
+    def update_service_env_add(self, service_name, new_env):
         service = self._get_service(service_name)
         old_env = self.get_service_env(service_name)
         if all([old_env, service]): # if both values are not None

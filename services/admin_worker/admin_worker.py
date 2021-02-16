@@ -47,9 +47,9 @@ class AdminWorker(object):
         self._min_scale = int(environ['MIN_SCALE'])
         self._service_monitor = environ['SERVICE_MONITOR']
         self._service_dealer = environ['SERVICE_DEALER']
-        self._step_batch_dealer = environ['STEP_BATCH_DEALER']
-        self._min_batch_dealer = environ['MIN_BATCH_DEALER']
-        self._max_batch_dealer = environ['MAX_BATCH_DEALER']
+        self._step_batch_dealer = int(environ['STEP_BATCH_DEALER'])
+        self._min_batch_dealer = int(environ['MIN_BATCH_DEALER'])
+        self._max_batch_dealer = int(environ['MAX_BATCH_DEALER'])
         self._debug = debug
         self._refresh_rate = float(environ['REFRESH_RATE'])
         self._max_timeout = timedelta(seconds=int(environ['MAX_TIMEOUT']))
