@@ -14,11 +14,7 @@ from datetime import datetime, timedelta
 from rabbimq_client import RabbitMQClient
 from json import loads
 from copy import copy
-<<<<<<< HEAD
-from random import choices
 from ast import literal_eval
-=======
->>>>>>> f21729471cdc8a3d7943af31054b6e11918241c3
 
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
