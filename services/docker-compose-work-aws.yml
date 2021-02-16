@@ -57,7 +57,7 @@ services:
             RES_XCHG: RES_XCHG
             AMQP_TIMEOUT: 10
             WAIT: 2
-            BATCH: 600
+            BATCH: 200
             DIR_TILES: /tiles-full
             AMQP_URL: amqp://geoadmin:geoadmin@rabbitmq-server:5672/geovhost
         volumes:
@@ -105,7 +105,7 @@ services:
         tty: true
         deploy:
             mode: replicated
-            replicas: 12
+            replicas: 8
             update_config:
                 parallelism: 1
                 delay: 10s
@@ -164,8 +164,8 @@ services:
             SERVICE_MONITOR: geo-diff-work_worker
             SERVICE_DEALER: geo-diff-work_dealer
             STEP_BATCH_DEALER: 100
-            MIN_BATCH_DEALER: 400
-            MIN_BATCH_DEALER: 1500
+            MIN_BATCH_DEALER: 200
+            MAX_BATCH_DEALER: 1500
             QTY_TASK: 15
             REFRESH_RATE: 5
             MIN_SCALE: 8
