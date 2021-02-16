@@ -15,6 +15,7 @@ from rabbimq_client import RabbitMQClient
 from json import loads
 from copy import copy
 from random import choices
+from ast import literal_eval
 
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
@@ -145,7 +146,7 @@ class AdminWorker(object):
     def update_delivery(self, batch=100, wait=None):
         envs = self._docker_client.get_service_env(self._service_dealer)
         if envs is None: return
-        if self._min_batch_dealer <= envs['BATCH'] + batch <= self._max_batch_dealer:
+        if self._min_batch_dealer <= literal_eval(envs['BATCH']) + batch <= self._max_batch_dealer:
             if (self._debug): print(f"Updating {self._service_dealer}. BATCH += {batch} and WAIT += {wait} ")
             self._docker_client.update_service_env_add(
                 self._service_dealer,
