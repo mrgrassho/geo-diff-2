@@ -1,0 +1,366 @@
+[92m [+] Workers State - Work Load: 0.40 - Active replicas: 12 - Msg count: -1[0m
+ [#] 17:23:12.629313 0.40 GREEN
+ [!] RabbitMQ Host Unrecheable. Reconnecting in 10 seconds...
+[92m [+] Workers State - Work Load: 0.40 - Active replicas: 12 - Msg count: -1[0m
+ [#] 17:23:14.630000 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Active replicas: 12 - Msg count: -1[0m
+ [#] 17:23:16.632924 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Active replicas: 12 - Msg count: -1[0m
+ [#] 17:23:18.633989 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Active replicas: 12 - Msg count: -1[0m
+ [#] 17:23:20.636645 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Active replicas: 12 - Msg count: -1[0m
+ [#] 17:23:22.638954 0.40 GREEN
+ [!] RabbitMQ Host Unrecheable. Reconnecting in 10 seconds...
+[92m [+] Workers State - Work Load: 0.40 - Active replicas: 12 - Msg count: -1[0m
+ [#] 17:23:24.640193 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Active replicas: 12 - Msg count: -1[0m
+ [#] 17:23:26.642810 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Active replicas: 12 - Msg count: -1[0m
+ [#] 17:23:28.645400 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Active replicas: 12 - Msg count: -1[0m
+ [#] 17:23:30.647807 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Active replicas: 12 - Msg count: -1[0m
+ [#] 17:23:32.652187 0.40 GREEN
+ [x] Connected - Connection state: OPEN. 
+ [x] Channel - Channel state: OPEN. 
+ [x] Queue declared - Queue: TASK_QUEUE
+ [x] Queue declared - Queue: KEEP_ALIVE_QUEUE
+ [x] QOS set to 1
+ [x] Waiting for messages...
+ [x] QOS set to 1
+ [x] Waiting for messages...
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:23:34.680372 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:23:36.687383 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:23:38.716973 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:23:40.745168 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:23:42.752057 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:23:44.765269 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:23:46.771649 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:23:48.783643 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:23:50.831553 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:23:52.841067 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:23:54.889585 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:23:56.931872 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:23:58.938776 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:00.974072 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:02.980893 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:04.987667 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:07.007426 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:09.014028 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 1[0m
+ [#] 17:24:11.030257 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:13.037470 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:15.098150 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:17.129817 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:19.136416 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:21.177101 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:23.210504 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:25.217000 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:27.239081 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:29.245438 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:31.308359 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:33.316160 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:35.322860 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:37.360989 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:39.378753 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:41.385247 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:43.432353 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:45.450702 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:47.456601 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:49.484378 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:51.491352 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 3[0m
+ [#] 17:24:53.515669 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:55.522597 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 1[0m
+ [#] 17:24:57.569820 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:24:59.580033 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:01.587471 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 1[0m
+ [#] 17:25:03.612874 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:05.654262 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:07.660657 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:09.720787 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:11.727995 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:13.761458 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:15.782297 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:17.788523 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:19.816951 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:21.832314 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:23.837960 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:25.865869 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:27.872851 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:29.920141 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:31.957132 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:33.965015 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:35.987323 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:38.016464 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:40.025394 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:42.062926 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:44.069824 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:46.095390 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 2[0m
+ [#] 17:25:48.178245 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:50.185298 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:52.227317 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:54.234919 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:56.247172 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:25:58.281116 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:00.288399 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 3[0m
+ [#] 17:26:02.338377 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:04.361727 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:06.367034 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:08.372984 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:10.440362 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:12.447373 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:14.475111 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:16.481662 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:18.520972 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:20.531857 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:22.538015 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:24.593526 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:26.621954 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:28.630053 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:30.650959 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:32.658288 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:34.727018 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:36.733209 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:38.748176 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:40.777697 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:42.786017 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:44.822355 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:46.827879 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:48.846881 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:50.881190 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:52.887259 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:54.900028 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:56.973702 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:26:58.980084 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:01.018244 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:03.058307 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:05.065374 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:07.120151 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:09.180701 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:11.187317 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 3[0m
+ [#] 17:27:13.203885 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:15.210804 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:17.221034 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:19.260455 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:21.266289 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:23.285014 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:25.290736 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:27.301657 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:29.319680 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 4[0m
+ [#] 17:27:31.355124 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:33.383729 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:35.391234 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:37.430991 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:39.441335 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:41.447720 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:43.490534 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:45.510732 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:47.516750 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:49.553894 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:51.561245 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:53.606867 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:55.627600 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:57.634765 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:27:59.654951 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:01.682710 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:03.688891 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:05.715879 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:07.722860 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:09.750409 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:11.770279 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:13.776346 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:15.889765 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:17.895822 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:19.907492 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:21.932391 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:23.940083 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 3[0m
+ [#] 17:28:25.951927 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:27.958139 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:29.966065 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:31.982462 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:33.987942 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:36.017800 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:38.067689 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:40.073742 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:42.098838 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:44.111053 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:46.115428 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:48.158509 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:50.164434 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:52.204066 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:54.210140 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:56.269980 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:28:58.290178 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:29:00.296178 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:29:02.330763 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:29:04.337108 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:29:06.381487 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:29:08.404229 0.00 GREY
+[37;1m [+] Workers State - Work Load: 0.00 - Active replicas: 12 - Msg count: 0[0m
+ [#] 17:29:10.410557 0.00 GREY

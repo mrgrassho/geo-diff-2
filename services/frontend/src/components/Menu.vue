@@ -16,13 +16,6 @@
         <button class="btn minimize-menu right disable">
             <b-icon icon="arrow-bar-right"></b-icon>
         </button>
-
-        <div class="stats">
-            <p class="section-tittle">STATISTICS</p>
-            <div class="stat">
-                Ey Max, insert stats here.
-            </div> 
-        </div>
     </div> 
 </template>
 
@@ -93,6 +86,7 @@
     position: relative;
     transition: width 0.5s;
     width:90%;
+    height: 30%;
     z-index: 10;
 }
 
