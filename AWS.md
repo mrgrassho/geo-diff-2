@@ -36,13 +36,13 @@ En este grupo necesitamos que expongan los puertos necesarios para que cada VM w
 | `TCP/8080` | VueJS FrontEnd | UI Web (VueJS) |
 | `TCP/5000` | Flask Backend | Tiles Server |
 
-> Nota: Todos los puertos definidos anteriormente hacen referencia a trafico de ingreso (Ingress Traffic). Para el tráfico de egreso no lo limitaremos.
+> Nota: Todos los puertos definidos anteriormente hacen referencia a tráfico de ingreso (Ingress Traffic). Para el tráfico de egreso no lo limitaremos.
 
 #### Source IP
 
 Para todos los nodos del `grupo worker` definimos la source IP como todos aquellos que pertenezcan al `grupo worker` y al `grupo manager`.
 
-Para el `grupo manager`, RabbitMQ y Docker solo a las maquinas del `grupo worker`
+Para el `grupo manager`, RabbitMQ y Docker solo a las máquinas del `grupo worker`
 
 Para el `grupo web`, VueJS y Flask los dejamos accesibles a Internet.
 
@@ -54,11 +54,13 @@ En la siguiente sección describiremos como fueron configuradas las maquinas vir
 
 ### Getting Resources & Dependencies
 
-SSH en `<nombre-instancia>` con el certificado `<ssh.pem>`. Al momento de crear la instacia un certificado le fue entregado por AWS, por favor descargue el mismo que será utilizado durante todo este proceso.
+SSH en `<nombre-instancia>` con el certificado `<ssh.pem>`. 
 
 ```bash
 ssh -i <ssh.pem> ubuntu@<nombre-instancia>
 ```
+
+>Nota: Al momento de crear la instacia un certificado le fue entregado por AWS, por favor descargue el mismo que será utilizado durante todo este proceso.
 
 Ejemplo:
 
@@ -165,9 +167,7 @@ Como último paso, es necesario configurar el archivo `docker-compose-work-aws.y
 
 ### Manager - Web Stack
 
-Para la configuración del Web Stack es muy simple, los pasos requeridos son unirse a la Swarm como manager y agregar el label `typeNode=master-web`.
-
-Primero nos aseguramos de que la maquina `admin-web` este encendida.
+Para la configuración del Web Stack es muy simple, primero seguir los pasos definidos en en [esta sección](#getting-resources--dependencies).
 
 Ahora iniciamos la configuración, para el primer paso es necesario correr el siguiente comando en el `manager` original, es decir el manager que utilizamos para la work stack.
 
@@ -180,10 +180,10 @@ $ docker swarm join-token manager
 
 Como se puede ver, Docker ya nos retorna el comando necesario para unirse al Swarm. A continuación corra el comando provisto en máquina `admin-web`.
 
-Agregar el label `master-web`
+Luego agregar el label `master-web` a la maquina actual (`<admin-web>`)
 
 ```bash
-docker node update --label-add typeNode=master-web <manager>
+docker node update --label-add typeNode=master-web <admin-web>
 ```
 
 ### Deploy - Web Stack
@@ -194,15 +194,15 @@ Como último paso correr el siguiente comando.
 ./set_up_stack.sh docker-compose-web-aws.yml geo-diff-web-aws
 ```
 
-> Nota: Para correr la Web Stack no es necesario que estan encendidas las maquinas Worker pero si es imprescindible que el manager este activo ya que este es el que contiene todos los tiles procesados.
+> Nota: Para correr la Web Stack no es necesario que estan encendidas las máquinas Worker pero si es imprescindible que el manager este activo ya que este es el que contiene todos los tiles procesados.
 
 ---
 
 ## Disponibilidad
 
-Con la configuración actual y los recursos disponibles, ¿Como hacemos para aumentar la disponibilidad de la aplicación?
+Con la configuración actual y los recursos disponibles, ¿Cómo hacemos para aumentar la disponibilidad de la aplicación?
 
-A continuación definimos una serie de propuestas para aumentar la disponibilidad de la aplicación identificando los puntos críticos.
+A continuación definimos una serie de propuestas para aumentar la disponibilidad de la aplicación identificando los puntos críticos, debilidades y fortalezas.
 
 ### Arquitectura
 
@@ -210,7 +210,7 @@ Como vimos la aplicación está segmentada en 2 grandes grupos, `Web Stack` y `W
 
 En el hipotético caso en el que esta aplicación sea llevada a producción, se podría tener activa 24/7 la `Web Stack` ya que provee los resultados a los usuarios (Mapa y la segmentación de superficies), y mantener la `Work Stack` trabajando por turnos o en periodos de tiempo, maximizando asi los recursos disponibles y permitiendo ahorrar créditos en la nube.
 
-#### ¿Que pasa si un nodo (VM) falla?
+#### ¿Qué pasa si un nodo (VM) falla?
 
 Si llegara a fallar un nodo Worker no hay mucho problema porque el manager deployaria los distribuiria los servicios caidos en todos los demas workers si es que tienen disponibilidad.
 
@@ -227,18 +227,18 @@ En caso de que fallase la maquina `manager` en la arquitectura actual, se colaps
 
  1. Evaluar la posibilidad de utilizar un [Volume Plugin](https://docs.docker.com/engine/extend/plugins_volume/) que no haga depender ls tiles de una VM. Tal vez utilizando un servicio como S3.
 
-#### ¿Que pasa si un geo-diff-worker (script) falla?
+#### ¿Qué pasa si un geo-diff-worker (script) falla?
 
 En caso de que fallase un script `geo-diff-worker` el `geo-diff-admin_worker` lo detectaria, ya que todo cada cierto tiempo el `geo-diff-worker` notifica su estado en la `KEEP_ALIVE` queue de RabbitMQ
 
-#### ¿Que pasa si alguno de los scripts (`geo-diff-dealer` o `geo-diff-updater`) fallan?
+#### ¿Qué pasa si alguno de los scripts (`geo-diff-dealer` o `geo-diff-updater`) fallan?
 
 En caso de los scripts `geo-diff-dealer` o `geo-diff-updater` fallen se reinciaran como es su comportamiento por defecto definido en el `docker-compose`.
 
-#### ¿Que pasa si el RabbitMQ falla?
+#### ¿Qué pasa si el RabbitMQ falla?
 
 Utilizando la configuración actual, estamos en problemas. El servidor de RabbitMQ es de suma importancia ya que es el nexo entre las tareas a procesar y los resultados, además de ser el encargado de notificar el estado de los workers.
 
 **Solución #1:**
 
-Para solventar esta falencia, una posible solución seria implementar un cluster de RabbitMQ, pero para ello necesitariamos agregar mas instancias ya que la disponibilidad de las `t2.micro` es poca, ademas de agregar un servicio de proxy que actue de balanceador entre las instancias de RabbitMQ.
+Para solventar esta falencia, una posible solución sería implementar un cluster de RabbitMQ, pero para ello necesitariamos agregar mas instancias ya que la disponibilidad actual de las `t2.micro` es poca, además de agregar un servicio de proxy que actue de balanceador entre las instancias de RabbitMQ.
