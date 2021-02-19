@@ -54,7 +54,7 @@ En la siguiente sección describiremos como fueron configuradas las máquinas vi
 
 ### Getting Resources & Dependencies
 
-SSH en `<nombre-instancia>` con el certificado `<ssh.pem>`. 
+SSH en `<nombre-instancia>` con el certificado `<ssh.pem>`.
 
 ```bash
 ssh -i <ssh.pem> ubuntu@<nombre-instancia>
