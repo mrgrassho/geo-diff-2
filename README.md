@@ -57,6 +57,12 @@ Buildear stack work y deployar a swarm
 
 ---
 
+### Deploy en AWS
+
+Utilizando los servicios de AWS, armamos una guia de como realizamos la configuración de las instancias, grupos de fw y discutimos las disponibilidad de la configuración actual y como mejorarla. [VER GUIA AWS](AWS.md)
+
+---
+
 ## Documentación
 
 ## Arquitectura del Sistema
@@ -112,6 +118,12 @@ Para comunicar los resultados entre ambas stacks se utiliza un volumen de Docker
 * [MongoDB](https://www.mongodb.com/es) - NoSQL Database
 * [VueJS](https://vuejs.org/v2/guide/) - Frontend progressive framework
 * [OpenLayers](https://openlayers.org/) - Used for Map render
+
+---
+
+## Análisis de Carga - Work Stack
+
+En el siguiente informe se detalla diferentes pruebas utilizando configuraciónes de los parametros que afectan el scaling de la `work stack`. El principal objectivo del mismo es encontrar el número optimo de Workers para el hardware disponible. En este caso las pruebas fueron realizadas en una Dell XPS (1.6 GHz Dual-Core Intel Core i5, 8 GB 1600 MHz DDR3) con Ubuntu 20.04 LTS, y con los recursos provistos (~1.2GB en tiles)[VER ANÁLISIS](./analysis/workers-performance-comparison.pdf)
 
 ---
 
