@@ -82,12 +82,12 @@ Utilizando los servicios de AWS logramos deployar exitosamente las dos stacks, a
 
 | Aplicación     | Función     |
 | :------------- | :------------- |
-| RabbitMQ       | Servidor de Mesajeria   |
+| RabbitMQ       | Servidor de Mensajeria   |
 | Crawler        | Encargado de descargar los tiles |
 | Updater        | Actualiza resultados procesados por los workers   |
 | Dealer         | Repartidor de tareas a los workers   |
 | Worker         | Procesador de tareas   |
-| Admin-Worker  | Administrador de workers, garantiza que esten activos y realiza autoscaling de workers. Este container tiene acceso a la Docker API por la cual puede crear y eliminar workers a demanda |
+| Admin-Worker  | Administrador de workers, garantiza que estén activos y realiza autoscaling de workers. Este container tiene acceso a la Docker API por la cual puede crear y eliminar workers a demanda |
 
 ### Arquitectura de Queues
 
@@ -101,15 +101,15 @@ El servidor de mensajeria tiene 3 queues, las cuales tiene las siguientes funcio
 
 ### Recursos (Imagenes)
 
-La principal materia prima del sistema son los tiles crudos (RAW), que serán las imagenes satelitales en formato [XYZ - Tiled Web Map](https://en.wikipedia.org/wiki/Tiled_web_map) que procesará la work stack.
+La principal materia prima del sistema son los tiles crudos (RAW), que serán las imágenes satelitales en formato [XYZ - Tiled Web Map](https://en.wikipedia.org/wiki/Tiled_web_map) que procesará la work stack.
 
 #### GIBS API
 
-Los recursos son provistos por NASA utilizando la [GIBS API](https://wiki.earthdata.nasa.gov/display/GIBS/GIBS+API+for+Developers#GIBSAPIforDevelopers-GenericXYZTileAccess). Esta API brinda la posibilidad de descargar los recursos en diferentes formatos, en este caso, utilizando el acceso generico [XYZ - Tiled Web Map](https://en.wikipedia.org/wiki/Tiled_web_map) es lo mas fácil para crawlear JPEG/PNG que luego proces
+Los recursos son provistos por NASA utilizando la [GIBS API](https://wiki.earthdata.nasa.gov/display/GIBS/GIBS+API+for+Developers#GIBSAPIforDevelopers-GenericXYZTileAccess). Esta API brinda la posibilidad de descargar los recursos en diferentes formatos, en este caso, utilizamos el acceso generico [XYZ - Tiled Web Map](https://en.wikipedia.org/wiki/Tiled_web_map) ya que es lo mas fácil para crawlear en formato JPEG/PNG.
 
 #### Docker Volume
 
-Para comunicar los resultados entre ambas stacks se utiliza un volumen de Docker que seria una abstracción de un File System, esto permite que ambas stacks corran independientemente una de otra.
+Para comunicar los resultados entre ambas stacks se utiliza un volumen de Docker que sería una abstracción de un File System, esto permite que ambas stacks corran independientemente una de otra.
 
 ## Built With
 

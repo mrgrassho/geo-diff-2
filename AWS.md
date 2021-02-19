@@ -50,7 +50,7 @@ Para el `grupo web`, VueJS y Flask los dejamos accesibles a Internet.
 
 ## Configurando las instancias
 
-En la siguiente sección describiremos como fueron configuradas las maquinas virtuales. Haremos hincapié en el Work Stack, que es el conjunto de aplicaciones centrales de Geo-Diff. Los commandos descriptos a continuación deben ejecutarse en todas las VMs salvo los casos especificados.
+En la siguiente sección describiremos como fueron configuradas las máquinas virtuales. Haremos hincapié en el Work Stack, que es el conjunto de aplicaciones centrales de Geo-Diff. Los commandos descriptos a continuación deben ejecutarse en todas las VMs salvo los casos especificados.
 
 ### Getting Resources & Dependencies
 
@@ -97,7 +97,7 @@ sudo ./download_tiles.sh
 
 Descomprimir `tiles-full`. Es necesario juntar las partes del .zip primero. Ver [https://unix.stackexchange.com/questions/40480/how-to-unzip-a-multipart-spanned-zip-on-linux](https://unix.stackexchange.com/questions/40480/how-to-unzip-a-multipart-spanned-zip-on-linux)
 
-Crear volumen de docker utilizando el path absoluto (`<PATH-TILES>`) del los tiles descargados.
+Crear volumen de docker utilizando el path absoluto (`<PATH-TILES>`) de los tiles descargados.
 
 ```bash
 docker volume create --driver local \
@@ -122,7 +122,7 @@ Iniciar el swarm
 sudo docker swarm init
 ```
 
-Obtenemos el join token que nos permitira agregar los worker al enjambre.
+Obtenemos el join token que nos permitirá agregar los worker al Swarm.
 
 ```bash
 $ docker swarm join-token worker
@@ -180,7 +180,7 @@ $ docker swarm join-token manager
 
 Como se puede ver, Docker ya nos retorna el comando necesario para unirse al Swarm. A continuación corra el comando provisto en máquina `admin-web`.
 
-Luego agregar el label `master-web` a la maquina actual (`<admin-web>`)
+Luego agregar el label `master-web` a la máquina actual (`<admin-web>`)
 
 ```bash
 docker node update --label-add typeNode=master-web <admin-web>
@@ -214,7 +214,7 @@ En el hipotético caso en el que esta aplicación sea llevada a producción, se 
 
 Si llegara a fallar un nodo Worker no hay mucho problema porque el manager deployaria los distribuiria los servicios caidos en todos los demas workers si es que tienen disponibilidad.
 
-En caso de que fallase la maquina `manager` en la arquitectura actual, se colapsaria la aplicación. Para evitar esto se puede solucionar de una forma sencilla.
+En caso de que fallase la máquina `manager` en la arquitectura actual, se colapsaria la aplicación. Para evitar esto se puede solucionar de una forma sencilla.
 
 **Solución #1:**
 
