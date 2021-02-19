@@ -22,22 +22,24 @@ def graph_xy(valuesX, valuesY, namesX, labelX, labelY, title):
     
 # VARIABLES GLOBALES     
 # ---------------------------------------------------------------------------------------------
-experiment = 1
-path_logs =  ['./experiment_'+str(experiment)+'/worker1.csv',
-              './experiment_'+str(experiment)+'/worker2.csv',
-              './experiment_'+str(experiment)+'/worker3.csv',
-              './experiment_'+str(experiment)+'/worker4.csv',
-              './experiment_'+str(experiment)+'/manager.csv']
+experiment = 4
+path_logs =  ['./logs/experiment_'+str(experiment)+'/worker1.csv',
+              './logs/experiment_'+str(experiment)+'/worker2.csv',
+              './logs/experiment_'+str(experiment)+'/worker3.csv',
+              './logs/experiment_'+str(experiment)+'/worker4.csv',
+              './logs/experiment_'+str(experiment)+'/manager.csv']
 
-services = ["geo-diff-work_worker","geo-diff-work_updater","geo-diff-work_admin-worker"]
+services = ["geo-diff-work_worker","geo-diff-work_updater","geo-diff-work_admin-worker",
+            "geo-diff-work_dealer","geo-diff-work_rabbitmq-server"]
 #El servicio que queremos comparar entre logs de VMs
-selected_service = services[1]          
+selected_service = services[0]
 # ---------------------------------------------------------------------------------------------
 time_by_log = []
 ramMB_by_log = []
 ramPerc_by_log = []
 cpuPerc_by_log = []
 netOut_by_log = []
+netIn_by_log = []
 xnames_by_log = []
 
 # Recorre todos los logs y hace un grafico comparativo de como funciona el servicio geodif_worker en esa VM.
@@ -100,7 +102,8 @@ for current_path in path_logs:
         cpuPerc_by_log.append(resume_log["cpu_perc"])
         ramPerc_by_log.append(resume_log["ram_perc_avg"])
         netOut_by_log.append(resume_log["net_out"])
-        xnames_by_log.append(current_path.replace('.csv',''))
+        netIn_by_log.append(resume_log["net_in"])
+        xnames_by_log.append(current_path.replace('.csv','')[7:])
     else: print('[-] No se encontraron instancias del servicio '+ selected_service +' para el log '+current_path)    
     
 print('[+] Generando graficos...')
@@ -109,18 +112,25 @@ graph_xy(time_by_log,
          xnames_by_log,
          'tiempo (min)',
          'ram (mb)',
-         'relacion tiempo y uso de ram') 
+         'relacion tiempo y uso de ram en servicio '+ selected_service.split('_')[1]) 
 
 graph_xy(time_by_log,
          cpuPerc_by_log,
          xnames_by_log,
          'tiempo (min)',
          'cpu (%)',
-         'relacion tiempo y uso de cpu')    
+         'relacion tiempo y uso de cpu en servicio '+ selected_service.split('_')[1])
 
 graph_xy(time_by_log,
          netOut_by_log,
          xnames_by_log,
          'tiempo (min)',
-         'cpu (%)',
-         'relacion tiempo y uso de cpu')     
+         'bytes enviados (mb)',
+         'relacion tiempo y uso de red en servicio '+ selected_service.split('_')[1])    
+
+graph_xy(time_by_log,
+         netIn_by_log,
+         xnames_by_log,
+         'tiempo (min)',
+         'bytes recibidos (mb)',
+         'relacion tiempo y uso de red en servicio '+ selected_service.split('_')[1])     

@@ -1,0 +1,884 @@
+ [!] RabbitMQ Host Unrecheable. Reconnecting in 10 seconds...
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:30:12.971881 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:30:18.039308 0.40 GREEN
+ [!] RabbitMQ Host Unrecheable. Reconnecting in 10 seconds...
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:30:23.245712 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:30:28.349249 0.40 GREEN
+ [!] RabbitMQ Host Unrecheable. Reconnecting in 10 seconds...
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:30:33.410731 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:30:38.430243 0.40 GREEN
+ [!] RabbitMQ Host Unrecheable. Reconnecting in 10 seconds...
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:30:43.503888 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:30:48.513354 0.40 GREEN
+ [!] RabbitMQ Host Unrecheable. Reconnecting in 10 seconds...
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:30:53.619007 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:30:58.744019 0.40 GREEN
+ [!] RabbitMQ Host Unrecheable. Reconnecting in 10 seconds...
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:31:03.752802 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:31:08.761275 0.40 GREEN
+ [!] RabbitMQ Host Unrecheable. Reconnecting in 10 seconds...
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:31:13.767504 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:31:18.781268 0.40 GREEN
+ [!] RabbitMQ Host Unrecheable. Reconnecting in 10 seconds...
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:31:23.811582 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:31:28.831001 0.40 GREEN
+ [!] RabbitMQ Host Unrecheable. Reconnecting in 10 seconds...
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:31:33.836889 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:31:38.841854 0.40 GREEN
+ [!] RabbitMQ Host Unrecheable. Reconnecting in 10 seconds...
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:31:43.904513 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:31:48.925782 0.40 GREEN
+ [!] RabbitMQ Host Unrecheable. Reconnecting in 10 seconds...
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:31:53.942251 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:31:58.951180 0.40 GREEN
+ [!] RabbitMQ Host Unrecheable. Reconnecting in 10 seconds...
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:32:03.996844 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:32:09.161352 0.40 GREEN
+ [!] RabbitMQ Host Unrecheable. Reconnecting in 10 seconds...
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:32:14.321090 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:32:19.664931 0.40 GREEN
+ [!] RabbitMQ Host Unrecheable. Reconnecting in 10 seconds...
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:32:24.672911 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:32:29.747852 0.40 GREEN
+ [!] RabbitMQ Host Unrecheable. Reconnecting in 10 seconds...
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:32:34.765149 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:32:39.867896 0.40 GREEN
+ [x] Connected - Connection state: OPEN. 
+ [x] Channel - Channel state: OPEN. 
+ [x] Queue declared - Queue: TASK_QUEUE
+ [x] Queue declared - Queue: KEEP_ALIVE_QUEUE
+ [x] QOS set to 1
+ [x] Waiting for messages...
+ [x] QOS set to 1
+ [x] Waiting for messages...
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:32:44.873010 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:32:49.932270 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:32:55.138489 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:33:00.668779 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:33:05.672981 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:33:10.823243 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:33:15.857342 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:33:20.946060 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:33:25.954648 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:33:31.287208 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:33:36.361491 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:33:41.542009 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:33:46.594641 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:33:51.810426 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:33:56.930315 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:34:01.985515 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:34:07.038031 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:34:12.085549 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:34:17.101572 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:34:22.132218 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:34:27.168680 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:34:32.262540 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:34:37.619518 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:34:42.650891 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:34:47.676715 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:34:52.768957 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:34:57.773245 0.40 GREEN
+[92m [+] Workers State - Work Load: 0.40 - Replicas: 8/8 - Msg count: -1[0m
+ [#] 16:35:02.877277 0.40 GREEN
+[37;1m [+] Workers State - Work Load: 0.00 - Replicas: 8/8 - Msg count: 0.0[0m
+ [#] 16:35:07.955777 0.00 GREY
+[93m [+] Workers State - Work Load: 0.51 - Replicas: 8/8 - Msg count: 60.8[0m
+ [#] 16:35:13.044511 0.51 YELLOW
+Scaling up geo-diff-work_worker from 8 to 9 replicas
+[92m [+] Workers State - Work Load: 0.42 - Replicas: 9/9 - Msg count: 56.8[0m
+ [#] 16:35:18.335762 0.42 GREEN
+[37;1m [+] Workers State - Work Load: 0.16 - Replicas: 9/9 - Msg count: 21.0[0m
+ [#] 16:35:24.474840 0.16 GREY
+[37;1m [+] Workers State - Work Load: 0.03 - Replicas: 9/9 - Msg count: 4.6[0m
+ [#] 16:35:30.488791 0.03 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 9/9 - Msg count: 5.4[0m
+ [#] 16:35:37.168052 0.04 GREY
+Scaling down geo-diff-work_worker from 9 to 8 replicas
+[37;1m [+] Workers State - Work Load: 0.02 - Replicas: 9/8 - Msg count: 2.8[0m
+ [#] 16:35:45.705960 0.02 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 9/8 - Msg count: 6.4[0m
+ [#] 16:35:51.357404 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.03 - Replicas: 8/8 - Msg count: 3.8[0m
+ [#] 16:35:57.523412 0.03 GREY
+Scaling down geo-diff-work_worker from 8 to 7 replicas
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 7/7 - Msg count: 4.0[0m
+ [#] 16:36:03.730661 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 7/7 - Msg count: 3.8[0m
+ [#] 16:36:09.385786 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.03 - Replicas: 7/7 - Msg count: 3.0[0m
+ [#] 16:36:15.653274 0.03 GREY
+Scaling down geo-diff-work_worker from 7 to 6 replicas
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.4[0m
+ [#] 16:36:22.813371 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.6[0m
+ [#] 16:36:28.495072 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 16:36:34.333935 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.2[0m
+ [#] 16:36:39.828527 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.6[0m
+ [#] 16:36:46.107880 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.08 - Replicas: 6/6 - Msg count: 7.2[0m
+ [#] 16:36:51.671523 0.08 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 5/6 - Msg count: 4.2[0m
+ [#] 16:36:57.807233 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 16:37:03.374746 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.6[0m
+ [#] 16:37:08.898399 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.8[0m
+ [#] 16:37:15.140526 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 16:37:21.369905 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.4[0m
+ [#] 16:37:27.724869 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.4[0m
+ [#] 16:37:33.888679 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.4[0m
+ [#] 16:37:39.496091 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.0[0m
+ [#] 16:37:45.713666 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.0[0m
+ [#] 16:37:51.339638 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.0[0m
+ [#] 16:37:57.224127 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.8[0m
+ [#] 16:38:03.012881 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.4[0m
+ [#] 16:38:08.937153 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.6[0m
+ [#] 16:38:14.623373 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.11 - Replicas: 6/6 - Msg count: 9.8[0m
+ [#] 16:38:20.960342 0.11 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.2[0m
+ [#] 16:38:27.039497 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.8[0m
+ [#] 16:38:33.513680 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.4[0m
+ [#] 16:38:39.729555 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 16:38:46.039462 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.4[0m
+ [#] 16:38:51.736072 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.03 - Replicas: 6/6 - Msg count: 2.8[0m
+ [#] 16:38:57.316742 0.03 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.2[0m
+ [#] 16:39:03.914077 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.2[0m
+ [#] 16:39:09.588721 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 16:39:15.142108 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.8[0m
+ [#] 16:39:21.089434 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.08 - Replicas: 6/6 - Msg count: 7.2[0m
+ [#] 16:39:26.616156 0.08 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.4[0m
+ [#] 16:39:32.430544 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 4.0[0m
+ [#] 16:39:38.195913 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 16:39:44.582449 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.8[0m
+ [#] 16:39:50.657321 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.8[0m
+ [#] 16:39:56.667280 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.6[0m
+ [#] 16:40:03.180562 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.03 - Replicas: 6/6 - Msg count: 2.6[0m
+ [#] 16:40:09.332278 0.03 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 4.0[0m
+ [#] 16:40:14.739111 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.03 - Replicas: 6/6 - Msg count: 3.0[0m
+ [#] 16:40:20.816700 0.03 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.2[0m
+ [#] 16:40:26.838523 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.0[0m
+ [#] 16:40:32.417464 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.0[0m
+ [#] 16:40:38.956467 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.8[0m
+ [#] 16:40:45.602676 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.0[0m
+ [#] 16:40:51.582287 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.2[0m
+ [#] 16:40:56.668185 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.2[0m
+ [#] 16:41:02.404510 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.08 - Replicas: 6/6 - Msg count: 7.2[0m
+ [#] 16:41:08.830722 0.08 GREY
+[37;1m [+] Workers State - Work Load: 0.08 - Replicas: 6/6 - Msg count: 7.6[0m
+ [#] 16:41:14.985142 0.08 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.6[0m
+ [#] 16:41:20.910680 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 16:41:26.788298 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 4.0[0m
+ [#] 16:41:32.210099 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.0[0m
+ [#] 16:41:38.043694 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.0[0m
+ [#] 16:41:44.371876 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.4[0m
+ [#] 16:41:49.717032 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.8[0m
+ [#] 16:41:56.027854 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 4.0[0m
+ [#] 16:42:01.643907 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.6[0m
+ [#] 16:42:07.667888 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 16:42:13.308839 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.4[0m
+ [#] 16:42:19.571508 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 16:42:25.951821 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.0[0m
+ [#] 16:42:31.679240 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 16:42:37.575797 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.03 - Replicas: 6/6 - Msg count: 2.4[0m
+ [#] 16:42:43.578779 0.03 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 16:42:49.396224 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.03 - Replicas: 6/6 - Msg count: 3.0[0m
+ [#] 16:42:55.170448 0.03 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.0[0m
+ [#] 16:43:01.025038 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.8[0m
+ [#] 16:43:07.231645 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.6[0m
+ [#] 16:43:13.096004 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 16:43:19.813221 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.4[0m
+ [#] 16:43:25.483430 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.8[0m
+ [#] 16:43:31.118434 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.8[0m
+ [#] 16:43:37.029620 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.4[0m
+ [#] 16:43:43.155926 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.8[0m
+ [#] 16:43:50.270864 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.2[0m
+ [#] 16:43:56.389660 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.03 - Replicas: 6/6 - Msg count: 2.6[0m
+ [#] 16:44:01.993807 0.03 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.2[0m
+ [#] 16:44:07.947172 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.8[0m
+ [#] 16:44:13.892050 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.8[0m
+ [#] 16:44:20.745413 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.0[0m
+ [#] 16:44:26.516695 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.6[0m
+ [#] 16:44:31.815833 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.6[0m
+ [#] 16:44:37.273901 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.0[0m
+ [#] 16:44:43.515332 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.8[0m
+ [#] 16:44:49.401132 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.8[0m
+ [#] 16:44:55.831011 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 16:45:02.016807 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.09 - Replicas: 6/6 - Msg count: 8.0[0m
+ [#] 16:45:07.033739 0.09 GREY
+[93m [+] Workers State - Work Load: 0.64 - Replicas: 6/6 - Msg count: 57.8[0m
+ [#] 16:45:12.279156 0.64 YELLOW
+Scaling up geo-diff-work_worker from 6 to 7 replicas
+[93m [+] Workers State - Work Load: 0.53 - Replicas: 7/7 - Msg count: 55.8[0m
+ [#] 16:45:17.708639 0.53 YELLOW
+Scaling up geo-diff-work_worker from 7 to 8 replicas
+[37;1m [+] Workers State - Work Load: 0.10 - Replicas: 8/8 - Msg count: 11.8[0m
+ [#] 16:45:23.735192 0.10 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 8/8 - Msg count: 6.8[0m
+ [#] 16:45:29.722654 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.10 - Replicas: 8/8 - Msg count: 11.4[0m
+ [#] 16:45:35.813193 0.10 GREY
+Scaling down geo-diff-work_worker from 8 to 7 replicas
+[37;1m [+] Workers State - Work Load: 0.09 - Replicas: 8/7 - Msg count: 10.6[0m
+ [#] 16:45:42.957303 0.09 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 7/7 - Msg count: 6.2[0m
+ [#] 16:45:49.929480 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.03 - Replicas: 7/7 - Msg count: 3.2[0m
+ [#] 16:45:56.047834 0.03 GREY
+Scaling down geo-diff-work_worker from 7 to 6 replicas
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 7/6 - Msg count: 6.6[0m
+ [#] 16:46:03.363001 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 7/6 - Msg count: 5.0[0m
+ [#] 16:46:09.704119 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.03 - Replicas: 6/6 - Msg count: 3.0[0m
+ [#] 16:46:15.680414 0.03 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.4[0m
+ [#] 16:46:21.806601 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.4[0m
+ [#] 16:46:27.720278 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 16:46:33.393462 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.10 - Replicas: 6/6 - Msg count: 9.4[0m
+ [#] 16:46:40.122201 0.10 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 4.0[0m
+ [#] 16:46:45.797437 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.11 - Replicas: 6/6 - Msg count: 10.2[0m
+ [#] 16:46:51.285841 0.11 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.0[0m
+ [#] 16:46:57.216614 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 16:47:02.756126 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.03 - Replicas: 6/6 - Msg count: 2.6[0m
+ [#] 16:47:08.756531 0.03 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.8[0m
+ [#] 16:47:14.703576 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.6[0m
+ [#] 16:47:20.512910 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.8[0m
+ [#] 16:47:26.402424 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 16:47:32.324960 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.2[0m
+ [#] 16:47:38.364237 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.0[0m
+ [#] 16:47:44.537386 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.0[0m
+ [#] 16:47:51.124952 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.6[0m
+ [#] 16:47:56.940745 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.8[0m
+ [#] 16:48:03.394517 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.8[0m
+ [#] 16:48:10.188949 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.08 - Replicas: 6/6 - Msg count: 6.8[0m
+ [#] 16:48:15.968703 0.08 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 16:48:22.139739 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 4.0[0m
+ [#] 16:48:28.458377 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.08 - Replicas: 6/6 - Msg count: 7.6[0m
+ [#] 16:48:34.455176 0.08 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.0[0m
+ [#] 16:48:41.504644 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.6[0m
+ [#] 16:48:47.125483 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.0[0m
+ [#] 16:48:52.543938 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.2[0m
+ [#] 16:48:58.393182 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.8[0m
+ [#] 16:49:04.618331 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.2[0m
+ [#] 16:49:11.104064 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.6[0m
+ [#] 16:49:16.601174 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.6[0m
+ [#] 16:49:23.216993 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.0[0m
+ [#] 16:49:28.950619 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.2[0m
+ [#] 16:49:34.948455 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.8[0m
+ [#] 16:49:40.278054 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.8[0m
+ [#] 16:49:46.479600 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.8[0m
+ [#] 16:49:52.560267 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.8[0m
+ [#] 16:49:58.558048 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.2[0m
+ [#] 16:50:05.811435 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.8[0m
+ [#] 16:50:11.140855 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 16:50:17.088567 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 4.0[0m
+ [#] 16:50:23.120843 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.0[0m
+ [#] 16:50:28.979477 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.0[0m
+ [#] 16:50:35.381728 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 16:50:41.939868 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 16:50:48.638324 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.0[0m
+ [#] 16:50:54.742015 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.8[0m
+ [#] 16:51:00.514283 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 16:51:06.698179 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.8[0m
+ [#] 16:51:13.516772 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 16:51:19.248962 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.2[0m
+ [#] 16:51:25.746247 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.2[0m
+ [#] 16:51:31.114326 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.4[0m
+ [#] 16:51:37.270861 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.2[0m
+ [#] 16:51:43.728612 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.6[0m
+ [#] 16:51:49.521133 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.6[0m
+ [#] 16:51:55.283106 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.6[0m
+ [#] 16:52:02.043807 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.2[0m
+ [#] 16:52:08.169504 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.8[0m
+ [#] 16:52:14.588470 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.4[0m
+ [#] 16:52:20.466017 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 16:52:26.653047 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 16:52:32.354879 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 4.0[0m
+ [#] 16:52:38.187069 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.6[0m
+ [#] 16:52:44.145614 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.6[0m
+ [#] 16:52:50.154309 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.6[0m
+ [#] 16:52:56.089416 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.6[0m
+ [#] 16:53:02.476413 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 4.0[0m
+ [#] 16:53:08.297763 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 16:53:14.455181 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.4[0m
+ [#] 16:53:20.424192 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.4[0m
+ [#] 16:53:26.954934 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.6[0m
+ [#] 16:53:32.901441 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.4[0m
+ [#] 16:53:39.740452 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.6[0m
+ [#] 16:53:46.209831 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.0[0m
+ [#] 16:53:52.073311 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.4[0m
+ [#] 16:53:58.047310 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.0[0m
+ [#] 16:54:04.326153 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.4[0m
+ [#] 16:54:12.172930 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.8[0m
+ [#] 16:54:18.155311 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.08 - Replicas: 6/6 - Msg count: 6.8[0m
+ [#] 16:54:23.919170 0.08 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.6[0m
+ [#] 16:54:29.779681 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.08 - Replicas: 6/6 - Msg count: 7.4[0m
+ [#] 16:54:35.676551 0.08 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.0[0m
+ [#] 16:54:41.846864 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.4[0m
+ [#] 16:54:47.797259 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.09 - Replicas: 6/6 - Msg count: 8.4[0m
+ [#] 16:54:53.236341 0.09 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.4[0m
+ [#] 16:54:59.357503 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 16:55:05.053335 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 16:55:10.124728 0.06 GREY
+[91m [+] Workers State - Work Load: 0.78 - Replicas: 6/6 - Msg count: 70.2[0m
+ [#] 16:55:15.233372 0.78 RED
+Scaling up geo-diff-work_worker from 6 to 8 replicas
+[92m [+] Workers State - Work Load: 0.41 - Replicas: 8/8 - Msg count: 49.8[0m
+ [#] 16:55:21.327549 0.41 GREEN
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 8/8 - Msg count: 7.8[0m
+ [#] 16:55:26.978880 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 8/8 - Msg count: 6.2[0m
+ [#] 16:55:32.556075 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 8/8 - Msg count: 7.6[0m
+ [#] 16:55:38.511003 0.06 GREY
+Scaling down geo-diff-work_worker from 8 to 7 replicas
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 8/7 - Msg count: 5.6[0m
+ [#] 16:55:45.593110 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 8/7 - Msg count: 6.2[0m
+ [#] 16:55:52.058054 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 7/7 - Msg count: 6.0[0m
+ [#] 16:55:57.629930 0.06 GREY
+Scaling down geo-diff-work_worker from 7 to 6 replicas
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 7/6 - Msg count: 4.8[0m
+ [#] 16:56:04.045906 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 7/6 - Msg count: 5.4[0m
+ [#] 16:56:10.018141 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.6[0m
+ [#] 16:56:15.914513 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 16:56:22.012081 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 16:56:27.884081 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.6[0m
+ [#] 16:56:33.685707 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.8[0m
+ [#] 16:56:40.081209 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.6[0m
+ [#] 16:56:45.856618 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.8[0m
+ [#] 16:56:51.752204 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.0[0m
+ [#] 16:56:57.510548 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 16:57:03.441117 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 16:57:09.266003 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.6[0m
+ [#] 16:57:15.013626 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.0[0m
+ [#] 16:57:21.245776 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.8[0m
+ [#] 16:57:27.329031 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 16:57:33.252193 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.0[0m
+ [#] 16:57:38.995812 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.8[0m
+ [#] 16:57:45.512452 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.0[0m
+ [#] 16:57:51.580868 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.4[0m
+ [#] 16:57:57.232160 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 16:58:03.287397 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.0[0m
+ [#] 16:58:09.888244 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.0[0m
+ [#] 16:58:15.632296 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.4[0m
+ [#] 16:58:21.600718 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.6[0m
+ [#] 16:58:27.665541 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.6[0m
+ [#] 16:58:33.808040 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 16:58:39.436507 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.6[0m
+ [#] 16:58:45.539098 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.0[0m
+ [#] 16:58:51.255836 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.4[0m
+ [#] 16:58:57.064347 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.8[0m
+ [#] 16:59:03.054805 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.2[0m
+ [#] 16:59:08.979731 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.2[0m
+ [#] 16:59:15.012741 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 16:59:20.880378 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 16:59:27.013533 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.2[0m
+ [#] 16:59:32.974990 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.8[0m
+ [#] 16:59:38.926125 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 16:59:45.199558 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.2[0m
+ [#] 16:59:50.979679 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.4[0m
+ [#] 16:59:57.020555 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.0[0m
+ [#] 17:00:02.577709 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.09 - Replicas: 6/6 - Msg count: 8.0[0m
+ [#] 17:00:08.954996 0.09 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.4[0m
+ [#] 17:00:14.526575 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.2[0m
+ [#] 17:00:20.073672 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.12 - Replicas: 6/6 - Msg count: 11.0[0m
+ [#] 17:00:25.163944 0.12 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.6[0m
+ [#] 17:00:31.146857 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.09 - Replicas: 6/6 - Msg count: 7.8[0m
+ [#] 17:00:36.977457 0.09 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.0[0m
+ [#] 17:00:42.477084 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.11 - Replicas: 6/6 - Msg count: 9.8[0m
+ [#] 17:00:48.899445 0.11 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.2[0m
+ [#] 17:00:55.085291 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 17:01:00.899264 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.10 - Replicas: 6/6 - Msg count: 9.4[0m
+ [#] 17:01:06.316747 0.10 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.6[0m
+ [#] 17:01:11.748096 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.08 - Replicas: 6/6 - Msg count: 7.2[0m
+ [#] 17:01:17.815400 0.08 GREY
+[37;1m [+] Workers State - Work Load: 0.10 - Replicas: 6/6 - Msg count: 9.0[0m
+ [#] 17:01:23.563631 0.10 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.6[0m
+ [#] 17:01:29.259166 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.8[0m
+ [#] 17:01:35.242919 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.6[0m
+ [#] 17:01:41.315206 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.12 - Replicas: 6/6 - Msg count: 10.6[0m
+ [#] 17:01:47.369646 0.12 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.0[0m
+ [#] 17:01:52.473461 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.8[0m
+ [#] 17:01:57.902444 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.11 - Replicas: 6/6 - Msg count: 10.0[0m
+ [#] 17:02:03.774012 0.11 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 17:02:09.814937 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.8[0m
+ [#] 17:02:16.014788 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.6[0m
+ [#] 17:02:21.805903 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.08 - Replicas: 6/6 - Msg count: 6.8[0m
+ [#] 17:02:27.262851 0.08 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.4[0m
+ [#] 17:02:32.814487 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.0[0m
+ [#] 17:02:39.178784 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.6[0m
+ [#] 17:02:45.013684 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.11 - Replicas: 6/6 - Msg count: 10.0[0m
+ [#] 17:02:50.977967 0.11 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.6[0m
+ [#] 17:02:57.248958 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.4[0m
+ [#] 17:03:03.959967 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.09 - Replicas: 6/6 - Msg count: 8.2[0m
+ [#] 17:03:09.619087 0.09 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.4[0m
+ [#] 17:03:15.302752 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.0[0m
+ [#] 17:03:20.957158 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.08 - Replicas: 6/6 - Msg count: 7.4[0m
+ [#] 17:03:26.473817 0.08 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.6[0m
+ [#] 17:03:32.603005 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.8[0m
+ [#] 17:03:38.726964 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.6[0m
+ [#] 17:03:44.908636 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.0[0m
+ [#] 17:03:50.479188 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.0[0m
+ [#] 17:03:57.371977 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 17:04:03.237960 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.8[0m
+ [#] 17:04:09.105043 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 17:04:15.333031 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.6[0m
+ [#] 17:04:21.129566 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.6[0m
+ [#] 17:04:27.004579 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.2[0m
+ [#] 17:04:32.337715 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.8[0m
+ [#] 17:04:38.397599 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.8[0m
+ [#] 17:04:44.107061 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 17:04:50.128136 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.8[0m
+ [#] 17:04:55.973508 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 17:05:02.080369 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 17:05:07.094389 0.06 GREY
+[92m [+] Workers State - Work Load: 0.20 - Replicas: 6/6 - Msg count: 18.2[0m
+ [#] 17:05:12.251518 0.20 GREEN
+[93m [+] Workers State - Work Load: 0.65 - Replicas: 6/6 - Msg count: 58.6[0m
+ [#] 17:05:17.364035 0.65 YELLOW
+Scaling up geo-diff-work_worker from 6 to 7 replicas
+[37;1m [+] Workers State - Work Load: 0.15 - Replicas: 7/7 - Msg count: 15.6[0m
+ [#] 17:05:24.240850 0.15 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 7/7 - Msg count: 5.2[0m
+ [#] 17:05:30.428708 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 7/7 - Msg count: 3.8[0m
+ [#] 17:05:36.329988 0.04 GREY
+Scaling down geo-diff-work_worker from 7 to 6 replicas
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 7/6 - Msg count: 4.8[0m
+ [#] 17:05:42.364562 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 7/6 - Msg count: 5.4[0m
+ [#] 17:05:48.084198 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 17:05:53.761642 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.08 - Replicas: 6/6 - Msg count: 7.0[0m
+ [#] 17:05:59.853282 0.08 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.2[0m
+ [#] 17:06:05.351739 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.08 - Replicas: 6/6 - Msg count: 7.4[0m
+ [#] 17:06:11.158509 0.08 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 17:06:16.947335 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.4[0m
+ [#] 17:06:22.918308 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.12 - Replicas: 6/6 - Msg count: 11.2[0m
+ [#] 17:06:28.262358 0.12 GREY
+[37;1m [+] Workers State - Work Load: 0.08 - Replicas: 6/6 - Msg count: 7.4[0m
+ [#] 17:06:34.207463 0.08 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.6[0m
+ [#] 17:06:39.762489 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.10 - Replicas: 6/6 - Msg count: 8.8[0m
+ [#] 17:06:45.916432 0.10 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.6[0m
+ [#] 17:06:51.720786 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.4[0m
+ [#] 17:06:57.495911 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.8[0m
+ [#] 17:07:02.670644 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.08 - Replicas: 6/6 - Msg count: 6.8[0m
+ [#] 17:07:08.511148 0.08 GREY
+[37;1m [+] Workers State - Work Load: 0.10 - Replicas: 6/6 - Msg count: 8.8[0m
+ [#] 17:07:14.453687 0.10 GREY
+[37;1m [+] Workers State - Work Load: 0.11 - Replicas: 6/6 - Msg count: 9.8[0m
+ [#] 17:07:20.076808 0.11 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 17:07:25.857790 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 17:07:31.857921 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.8[0m
+ [#] 17:07:37.521948 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.4[0m
+ [#] 17:07:43.166781 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.15 - Replicas: 6/6 - Msg count: 13.6[0m
+ [#] 17:07:49.010848 0.15 GREY
+[37;1m [+] Workers State - Work Load: 0.09 - Replicas: 6/6 - Msg count: 8.2[0m
+ [#] 17:07:54.518495 0.09 GREY
+[37;1m [+] Workers State - Work Load: 0.12 - Replicas: 6/6 - Msg count: 11.2[0m
+ [#] 17:08:00.970693 0.12 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.0[0m
+ [#] 17:08:07.250424 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.6[0m
+ [#] 17:08:13.210362 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 17:08:19.223587 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 17:08:25.121911 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.0[0m
+ [#] 17:08:30.661612 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 4.0[0m
+ [#] 17:08:36.379656 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.08 - Replicas: 6/6 - Msg count: 7.0[0m
+ [#] 17:08:42.189620 0.08 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.8[0m
+ [#] 17:08:47.895272 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.2[0m
+ [#] 17:08:53.735569 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.08 - Replicas: 6/6 - Msg count: 7.0[0m
+ [#] 17:08:59.584488 0.08 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.8[0m
+ [#] 17:09:05.712839 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.09 - Replicas: 6/6 - Msg count: 7.8[0m
+ [#] 17:09:11.194848 0.09 GREY
+[37;1m [+] Workers State - Work Load: 0.08 - Replicas: 6/6 - Msg count: 7.2[0m
+ [#] 17:09:17.184931 0.08 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.2[0m
+ [#] 17:09:23.064659 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.09 - Replicas: 6/6 - Msg count: 7.8[0m
+ [#] 17:09:28.809887 0.09 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.6[0m
+ [#] 17:09:35.332520 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 17:09:41.717519 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.6[0m
+ [#] 17:09:47.245023 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.2[0m
+ [#] 17:09:53.278413 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.6[0m
+ [#] 17:09:59.340928 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.2[0m
+ [#] 17:10:05.482583 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.0[0m
+ [#] 17:10:11.805205 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.8[0m
+ [#] 17:10:16.904758 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.8[0m
+ [#] 17:10:23.054700 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.4[0m
+ [#] 17:10:28.946173 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.06 - Replicas: 6/6 - Msg count: 5.6[0m
+ [#] 17:10:35.570427 0.06 GREY
+[37;1m [+] Workers State - Work Load: 0.07 - Replicas: 6/6 - Msg count: 6.6[0m
+ [#] 17:10:41.764620 0.07 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.6[0m
+ [#] 17:10:48.854671 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.03 - Replicas: 6/6 - Msg count: 2.8[0m
+ [#] 17:10:55.627361 0.03 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.2[0m
+ [#] 17:11:01.579616 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.8[0m
+ [#] 17:11:07.770598 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.05 - Replicas: 6/6 - Msg count: 4.4[0m
+ [#] 17:11:13.428936 0.05 GREY
+[37;1m [+] Workers State - Work Load: 0.04 - Replicas: 6/6 - Msg count: 3.2[0m
+ [#] 17:11:20.194858 0.04 GREY
+[37;1m [+] Workers State - Work Load: 0.02 - Replicas: 6/6 - Msg count: 1.6[0m
+ [#] 17:11:26.950169 0.02 GREY
+[37;1m [+] Workers State - Work Load: 0.03 - Replicas: 6/6 - Msg count: 3.0[0m
+ [#] 17:11:32.610395 0.03 GREY
