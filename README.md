@@ -22,7 +22,7 @@ También es necesario descargar los [TILES](https://app.box.com/s/pakte9wz7u0xfo
 
 A continuación definiremos los pasos para correr el proyecto.
 
-```
+```bash
 git clone https://github.com/mrgrassho/geo-diff
 ```
 
@@ -57,9 +57,9 @@ Buildear stack work y deployar a swarm
 
 ---
 
-### Deploy en AWS
+## Deploy en AWS
 
-Utilizando los servicios de AWS, armamos una guia de como realizamos la configuración de las instancias, grupos de fw y discutimos las disponibilidad de la configuración actual y como mejorarla. [VER GUIA AWS](AWS.md)
+Utilizando los servicios de AWS logramos deployar exitosamente las dos stacks, a partir de ello armamos una guía de como realizamos la configuración de las instancias y grupos de fw. Además discutimos las disponibilidad de la configuración actual y como mejorarla. [VER GUIA AWS](AWS.md)
 
 ---
 
@@ -69,7 +69,7 @@ Utilizando los servicios de AWS, armamos una guia de como realizamos la configur
 
 ![Arquitectura](diagrams/GeoDiffDiagram.png)
 
-### Web Stack 
+### Web Stack
 
 | Aplicación     | Función     |
 | :------------- | :------------- |
@@ -78,7 +78,7 @@ Utilizando los servicios de AWS, armamos una guia de como realizamos la configur
 | Backend  | Tile Server (Flask) |
 | Frontend  | UI Web (VueJS) |
 
-### Work Stack 
+### Work Stack
 
 | Aplicación     | Función     |
 | :------------- | :------------- |
@@ -123,7 +123,7 @@ Para comunicar los resultados entre ambas stacks se utiliza un volumen de Docker
 
 ## Análisis de Carga - Work Stack
 
-En el siguiente informe se detalla diferentes pruebas utilizando configuraciónes de los parametros que afectan el scaling de la `work stack`. El principal objectivo del mismo es encontrar el número optimo de Workers para el hardware disponible. En este caso las pruebas fueron realizadas en una Dell XPS (1.6 GHz Dual-Core Intel Core i5, 8 GB 1600 MHz DDR3) con Ubuntu 20.04 LTS, y con los recursos provistos (~1.2GB en tiles)[VER ANÁLISIS](./analysis/workers-performance-comparison.pdf)
+En el siguiente informe se detalla diferentes pruebas utilizando configuraciones de los parametros que afectan el scaling de la `work stack`. El principal objetivo del mismo es encontrar el número óptimo de Workers para el hardware disponible. En este caso las pruebas fueron realizadas en una Dell XPS (1.6 GHz Dual-Core Intel Core i5, 8 GB 1600 MHz DDR3) con Ubuntu 20.04 LTS, y con los recursos provistos (~1.2GB en tiles). [VER ANÁLISIS](./analysis/workers-performance-comparison.pdf)
 
 ---
 

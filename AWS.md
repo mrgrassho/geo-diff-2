@@ -1,4 +1,5 @@
 # AWS - Guía
+
 ## AWS - Console
 
 Primero iniciaremos creando las instancias. En nuestro caso utilizaremos 6 instancias `t2.micro` (con Ubuntu 20.04 LTS) ya que son las instancias mas accesibles.
@@ -39,7 +40,7 @@ En este grupo necesitamos que expongan los puertos necesarios para que cada VM w
 
 #### Source IP
 
-Para todos los nodos del `grupo worker` definimos la source IP como todos aquellos que pertenezcan al `grupo worker` y al `grupo manager`. 
+Para todos los nodos del `grupo worker` definimos la source IP como todos aquellos que pertenezcan al `grupo worker` y al `grupo manager`.
 
 Para el `grupo manager`, RabbitMQ y Docker solo a las maquinas del `grupo worker`
 
@@ -49,59 +50,59 @@ Para el `grupo web`, VueJS y Flask los dejamos accesibles a Internet.
 
 ## Configurando las instancias
 
-En la siguiente sección describiremos como fueron configuradas las maquinas virtuales. Haremos hincapié en el Work Stack, que es el conjunto de aplicaciones centrales de Geo-Diff.
+En la siguiente sección describiremos como fueron configuradas las maquinas virtuales. Haremos hincapié en el Work Stack, que es el conjunto de aplicaciones centrales de Geo-Diff. Los commandos descriptos a continuación deben ejecutarse en todas las VMs salvo los casos especificados.
 
 ### Getting Resources & Dependencies
 
-SSH en `<nombre-instancia>` con el certificado `<ssh.pem>`
+SSH en `<nombre-instancia>` con el certificado `<ssh.pem>`. Al momento de crear la instacia un certificado le fue entregado por AWS, por favor descargue el mismo que será utilizado durante todo este proceso.
 
-    ```bash
-    ssh -i <ssh.pem> ubuntu@<nombre-instancia>
-    ```
+```bash
+ssh -i <ssh.pem> ubuntu@<nombre-instancia>
+```
 
-    Ejemplo:
+Ejemplo:
 
-    ```bash
-    ssh -i "geodiff.pem" ubuntu@ec2-54-173-23-136.compute-1.amazonaws.com
-    ```
+```bash
+ssh -i "geodiff.pem" ubuntu@ec2-54-173-23-136.compute-1.amazonaws.com
+```
 
 Clonar repositorio de github
 
-    ```bash
-    git clone https://github.com/mrgrassho/geo-diff-2.git
-    ```
+```bash
+git clone https://github.com/mrgrassho/geo-diff-2.git
+```
 
 Copiar scripts en el home (`~/`)
 
-    ```
-    cd ~/
-    cp -r geo-diff-2/scripts/* .
-    ```
+```bash
+cd ~/
+cp -r geo-diff-2/scripts/* .
+```
 
 Instalar docker con `scripts/docker_install.sh` (es necesario  instalarlo en todas las instancias)
 
-    ```bash
-    sudo ./docker_install.sh
-    ```
+```bash
+sudo ./docker_install.sh
+```
 
-### Solo en el manager
+### Solo en el manager/admin
 
 Descargar tiles con `scripts/download_tiles.sh`
 
-    ```bash
-    sudo ./download_tiles.sh
-    ```
+```bash
+sudo ./download_tiles.sh
+```
 
-Descomprimir `tiles-full`. Es necesario juntar las partes del .zip primero. Ver https://unix.stackexchange.com/questions/40480/how-to-unzip-a-multipart-spanned-zip-on-linux
+Descomprimir `tiles-full`. Es necesario juntar las partes del .zip primero. Ver [https://unix.stackexchange.com/questions/40480/how-to-unzip-a-multipart-spanned-zip-on-linux](https://unix.stackexchange.com/questions/40480/how-to-unzip-a-multipart-spanned-zip-on-linux)
 
-Crear volumen de docker utilizando el PATH absoluto del los tiles descargados.
+Crear volumen de docker utilizando el path absoluto (`<PATH-TILES>`) del los tiles descargados.
 
-    ```bash
-    docker volume create --driver local \
-                        --opt type=none \
-                        --opt device=<PATH-TILES> \
-                        --opt o=bind tiles-data
-    ```
+```bash
+docker volume create --driver local \
+                    --opt type=none \
+                    --opt device=<PATH-TILES> \
+                    --opt o=bind tiles-data
+```
 
 ## Configurando el Swarm
 
@@ -109,36 +110,36 @@ Crear volumen de docker utilizando el PATH absoluto del los tiles descargados.
 
 SSH en `<nombre-instancia>` con el certificado `<ssh.pem>` en el Nodo Manager
 
-    ```bash
-    ssh -i <ssh.pem> ubuntu@<nombre-instancia>
-    ```
+```bash
+ssh -i <ssh.pem> ubuntu@<nombre-instancia>
+```
 
 Iniciar el swarm
 
-    ```sh
-    sudo docker swarm init
-    ```
+```sh
+sudo docker swarm init
+```
 
 Obtenemos el join token que nos permitira agregar los worker al enjambre.
 
-    ```bash
-    $ docker swarm join-token worker
-    To add a worker to this swarm, run the following command:
+```bash
+$ docker swarm join-token worker
+To add a worker to this swarm, run the following command:
 
-        docker swarm join \
-        --token SWMTKN-1-49nj1cmql0jkz5s954yi3oex3nedyz0fb0xx14ie39trti4wxv-8vxv8rssmk743ojnwacrr2e7c \
-        192.168.99.100:2377
-    ```
+    docker swarm join \
+    --token SWMTKN-1-49nj1cmql0jkz5s954yi3oex3nedyz0fb0xx14ie39trti4wxv-8vxv8rssmk743ojnwacrr2e7c \
+    192.168.99.100:2377
+```
 
 Agregar el label `master`
 
-    ```bash
-    docker node update --label-add typeNode=master <manager>
-    ```
+```bash
+docker node update --label-add typeNode=master <manager>
+```
 
 ### Worker - Work Stack
 
-SSH en <nombre-instancia> con el certificado <ssh.pem> en los nodos Worker
+SSH en `<nombre-instancia>` con el certificado `<ssh.pem>` en los nodos Worker
 
 ```bash
 ssh -i <ssh.pem> ubuntu@<nombre-instancia>
@@ -146,11 +147,11 @@ ssh -i <ssh.pem> ubuntu@<nombre-instancia>
 
 Lo agregamos al Swarm con el token previamente obtenido:
 
-    ```bash
-    docker swarm join \
-    --token SWMTKN-1-49nj1cmql0jkz5s954yi3oex3nedyz0fb0xx14ie39trti4wxv-8vxv8rssmk743ojnwacrr2e7c \
-    192.168.99.100:2377
-    ```
+```bash
+docker swarm join \
+--token SWMTKN-1-49nj1cmql0jkz5s954yi3oex3nedyz0fb0xx14ie39trti4wxv-8vxv8rssmk743ojnwacrr2e7c \
+192.168.99.100:2377
+```
 
 ### Deploy - Work Stack
 
@@ -164,30 +165,28 @@ Como último paso, es necesario configurar el archivo `docker-compose-work-aws.y
 
 ### Manager - Web Stack
 
-Para la configuración del Web Stack es muy simple, los pasos requeridos son unirse a la Swarm como manager y agregar el label `typeNode=master-web`. 
+Para la configuración del Web Stack es muy simple, los pasos requeridos son unirse a la Swarm como manager y agregar el label `typeNode=master-web`.
 
-Primero nos aseguramos de que la maquina `admin-web` este encendida. 
-
-
+Primero nos aseguramos de que la maquina `admin-web` este encendida.
 
 Ahora iniciamos la configuración, para el primer paso es necesario correr el siguiente comando en el `manager` original, es decir el manager que utilizamos para la work stack.
-    
-    ```bash
-    $ docker swarm join-token manager
-        To add a manager to this swarm, run the following command:
 
-            docker swarm join --token SWMTKN-1-3t9xeavm8olcv3dd44tqdzmuy7b9hcsoacd56iskphoxdxblfs-18a1p3slhdb943vgb9fjc6kcq 192.168.65.3:2377
-    ```
+```bash
+$ docker swarm join-token manager
+    To add a manager to this swarm, run the following command:
+
+        docker swarm join --token SWMTKN-1-3t9xeavm8olcv3dd44tqdzmuy7b9hcsoacd56iskphoxdxblfs-18a1p3slhdb943vgb9fjc6kcq 192.168.65.3:2377
+```
 
 Como se puede ver, Docker ya nos retorna el comando necesario para unirse al Swarm. A continuación corra el comando provisto en máquina `admin-web`.
 
 Agregar el label `master-web`
 
-    ```bash
-    docker node update --label-add typeNode=master-web <manager>
-    ```
+```bash
+docker node update --label-add typeNode=master-web <manager>
+```
 
-### Deploy - Work Stack
+### Deploy - Web Stack
 
 Como último paso correr el siguiente comando.
 
@@ -199,7 +198,7 @@ Como último paso correr el siguiente comando.
 
 ---
 
-## Disponibilidad 
+## Disponibilidad
 
 Con la configuración actual y los recursos disponibles, ¿Como hacemos para aumentar la disponibilidad de la aplicación?
 
@@ -243,4 +242,3 @@ Utilizando la configuración actual, estamos en problemas. El servidor de Rabbit
 **Solución #1:**
 
 Para solventar esta falencia, una posible solución seria implementar un cluster de RabbitMQ, pero para ello necesitariamos agregar mas instancias ya que la disponibilidad de las `t2.micro` es poca, ademas de agregar un servicio de proxy que actue de balanceador entre las instancias de RabbitMQ.
-
