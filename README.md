@@ -121,9 +121,15 @@ Para comunicar los resultados entre ambas stacks se utiliza un volumen de Docker
 
 ---
 
-## Análisis de Carga - Work Stack
+## Performance - Work Stack
+
+### Análisis en localhost
 
 En el siguiente informe se detalla diferentes pruebas utilizando configuraciones de los parametros que afectan el scaling de la `work stack`. El principal objetivo del mismo es encontrar el número óptimo de Workers para el hardware disponible. En este caso las pruebas fueron realizadas en una Dell XPS (1.6 GHz Dual-Core Intel Core i5, 8 GB 1600 MHz DDR3) con Ubuntu 20.04 LTS, y con los recursos provistos (~1.2GB en tiles). [VER ANÁLISIS](./analysis/workers-performance-comparison.pdf)
+
+### Análisis en la nube (AWS)
+
+En el siguiente análsis se evaluan diferentes configuraciones del cluster y se analiza la performance bajo diferentes configuraciones. El objetivo principal es definir los parametros adecuados maximizando los recursos disponibles. Además analizamos los tipos de hardware definidos, los parametros que modifican el comportamiento del cluster y las ventajas de utilizar los servicios de cloud para este tipo de proyectos.  [VER ANÁLISIS](./analysis/aws-performance-comparison.md)
 
 ---
 
