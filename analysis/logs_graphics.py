@@ -14,11 +14,13 @@ import datetime
 # Graficar relacion entre dos atributos de un dataframe
 def graph_xy(valuesX, valuesY, namesX, labelX, labelY, title):
     fig, ax = plt.subplots()
+    
     for i in range(0,len(valuesX)):
         ax.plot(valuesX[i], valuesY[i], label=namesX[i])         # grafico cada serie del array valuesX.
     ax.set(xlabel=labelX, ylabel=labelY, title=title)
     plt.legend(loc='best')
-    ax.grid()
+    #plt.xlim(0, 10)                                             # Cambiar zoom al eje X
+    ax.grid() 
     
 # VARIABLES GLOBALES     
 # ---------------------------------------------------------------------------------------------
@@ -27,7 +29,8 @@ path_logs =  ['./logs/experiment_'+str(experiment)+'/worker1.csv',
               './logs/experiment_'+str(experiment)+'/worker2.csv',
               './logs/experiment_'+str(experiment)+'/worker3.csv',
               './logs/experiment_'+str(experiment)+'/worker4.csv',
-              './logs/experiment_'+str(experiment)+'/manager.csv']
+              './logs/experiment_'+str(experiment)+'/manager.csv'
+              ]
 
 services = ["geo-diff-work_worker","geo-diff-work_updater","geo-diff-work_admin-worker",
             "geo-diff-work_dealer","geo-diff-work_rabbitmq-server"]
