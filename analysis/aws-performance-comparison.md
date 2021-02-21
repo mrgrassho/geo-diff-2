@@ -147,6 +147,8 @@ services:
             MAX_SCALE: 8
 ```
 
+> En aquellos casos que los parámetros no fueron indicados utilizaremos los parametros por default indicados en la tabla de [Parámetros](#parámetros).
+
 ### Objetivo
 
 En este primera iteración es exploratoria, principalmente veremos si es posible ejecutar el cluster con parámetros mínimos.
@@ -185,7 +187,7 @@ Excelente! Logramos ejecutar toda la stack y con un rendimiento muy bueno. Todos
 
 Ahora veamos cuanto tardaron los `geo-diff-worker` en realizar el trabajo y cuanta data generaron.
 
-![NET I](graphics/experiment_1/service%20worker/netin.png)
+![NET OUT](graphics/experiment_1/service%20worker/net_out.png)
 
 Bien! Vemos que estuvimos en el orden de los 20GB (5000MB por 4 nodos worker). Vease que el gráfico es la cantidad de bytes enviados en manera acumulativa, es decir en el instante 70 se habian enviado ~5000MB.
 
@@ -363,11 +365,11 @@ Observamos un claro incremento en la entrega de mensajes, los cuales rondan los 
 
 ### Experimento 3 - Admin Worker
 
-Observamos la carga total del cluster a traves de los logs del admin worker. Además de la cantidad de replicas `geo-diff-worker` activas.
+Observamos la carga total del cluster a traves de los logs del admin worker. Además de la cantidad de réplicas `geo-diff-worker` activas.
 
 ![LOAD](graphics/experiment_3/service%20admin_worker/load.png)
 
-![REPLICAS](graphics/experiment_3/service%20admin_worker/replicas.png)
+![réplicas](graphics/experiment_3/service%20admin_worker/réplicas.png)
 
 Podemos ver como sobre el final la carga de tareas disminuye y por lo tanto se eliminan `geo-diff-worker`. Si lo extrapolamos al consumo de memoria y CPU (Figuras en el proximo apartado), podemos observar como repentinamente cae el uso de RAM/CPU pero vuelve a subir rápidamente, esto sospechamos que es debido a que la carga restante es repartida en los nodos que quedaron activos por lo tanto hace que se incrementen ambos parámetros.
 
@@ -404,15 +406,15 @@ services:
 
 ### Objetivo
 
-El objetivo de este última iteración es distinguir entre las replicas activas y las esperadas, algo que notamos durante el analisis anterior es que no estabamos contemplando las replicas que estaban efectivamente levantadas sino que veiamos solo las replicas que deberian estar corriendo, esto porque Swarm deja en esta `PENDING` aquellas replicas que no pudo levantar pero aun asi el contador sigue desactualizado por eso fue necesario modificar el `admin-worker` para tomar la cantidad de réplicas activas.
+El objetivo de este última iteración es distinguir entre las réplicas activas y las esperadas, algo que notamos durante el análisis anterior es que no estabamos contemplando las réplicas que estaban efectivamente levantadas sino que veiamos solo las réplicas que deberían estar corriendo, esto porque Swarm deja en estado `PENDING` aquellas réplicas que no pudo levantar pero aun asi el contador sigue desactualizado por eso fue necesario modificar el `admin-worker` para tomar la cantidad de réplicas activas.
 
-Luego de verificar que el contador de replicas funcione correctamente, realizaremos una última corrida utilizando 6 a 12 `geo-diff-worker` y aumentando el parametro `WAIT` a 10 min.
+Luego de verificar que el contador de réplicas funcione correctamente, realizaremos una última corrida utilizando 6 a 12 `geo-diff-worker` y aumentando el parametro `dealer.WAIT` a 10 min.
 
 ### Experimento 4 - Admin Worker
 
-Efectivamente estamos viendo el número correcto de replicas, y podemos ver como tarda unos segundos en actualizar las replicas activas (Ver gráfico debajo).
+Efectivamente estamos viendo el número correcto de réplicas, y podemos ver como tarda unos segundos en actualizar las réplicas activas (Ver gráfico debajo). Además podemos observar como cada 10min suben la cantidad de tareas por lo tanto el cluster necesita escalar la cantidad de replicas activas.
 
-![REPLICAS](graphics/experiment_4/service%20admin-worker/replicas.png)
+![réplicas](graphics/experiment_4/service%20admin-worker/réplicas.png)
 
 ### Experimento 4 - RabbitMQ
 
@@ -422,10 +424,9 @@ Podemos observar como cada 10 minutos crece la carga en la queue `TASK_QUEUE`.
 
 ![RABBITMQ](graphics/experiment_4/service%20admin-worker/rabbitmq.png)
 
-
 ### Experimento 4 - `geo-diff-worker`
 
-Ahora chequeamos que los `geo-diff-worker` hayan estado en funciomiento, y podemos ver que también hubo picos cada 10 min aprox, momento es los que la carga de tareas aumentó.
+Ahora chequeamos que los `geo-diff-worker` hayan estado en funciomiento, y podemos ver que también hubo picos cada 10 min aprox, momentos en los que la carga de tareas aumentó.
 
 ![CPU BIN](graphics/experiment_4/service%20worker/cpu-bin.png)
 
