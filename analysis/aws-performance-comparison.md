@@ -4,7 +4,7 @@ A continuación describimos los experimentos realizados.
 
 ## Aclaraciones
 
-Durante el analisis cada vez que mencionemos a `geo-diff-worker` hacemos refencia al script worker que corre en el stack procesando las tareas, si decimos `nodos worker` hacemos referencia a las VMs o instancias worker dentro de AWS.
+Durante el analisis cada vez que mencionemos a `geo-diff-worker` hacemos referencia al script worker que corre en el stack procesando las tareas, si decimos `nodos worker` hacemos referencia a las VMs o instancias worker dentro de AWS.
 
 ## Parámetros
 
@@ -31,7 +31,7 @@ En los siguientes experimentos nos focalizaremos en los primordialmente en estos
 - `admin_worker.MAX_SCALE`
 - `admin_worker.MIN_SCALE`
 
-Además variaremos lijeramente los siguientes atributos para evaular el rendimiento con igual cantidad de `geo-diff-worker`
+Además variaremos ligeramente los siguientes atributos para evaluar el rendimiento con igual cantidad de `geo-diff-worker`
 
 - `admin_worker.REFRESH_RATE`
 - `admin_worker.QTY_TASK`
@@ -322,7 +322,7 @@ Efectivamente estamos desperdiciando ciclos de CPU, no es mucho pero por momento
 
 ![AWS CREDITS COST](graphics/experiment_2.3/service%20worker/aws-screen2.png)
 
-Cuesta 0.1 créditos cada 5 minutos (0.1/6 = 1%) por cada instancia, puede ser un número insignificante pero hay que tener en cuenta que correr el cluster con carga cuesta ~1 crédito cada 5 minutos (1/6 = 1%), si consideramos que esta prueba se extendió por ~1hr, nos termino costando 5.1 (Ver Figura abajo) créditos por instancia, lo que casi excede los 6 créditos por instancia.
+Cuesta 0.1 créditos cada 5 minutos (0.1/6 = 1%) por cada instancia, puede ser un número insignificante pero hay que tener en cuenta que correr el cluster con carga cuesta ~1 crédito cada 5 minutos (1/6 = 1%), si consideramos que esta prueba se extendió por ~1hr, nos termino costando 5.1 (Ver Figura abajo) créditos por instancia, lo que casi excede los 6 créditos por instancia que nos costaria recargos (Ver [Instancia Amazon EC2 - ¿Cómo funcionan los créditos?](#instancia-amazon-ec2)).
 
 ![AWS CREDITS TOTAL](graphics/experiment_2.3/service%20worker/aws-screen1.png)
 

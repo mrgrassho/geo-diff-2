@@ -129,9 +129,9 @@ En el siguiente informe se detalla diferentes pruebas utilizando configuraciones
 
 ### Análisis en la nube (AWS)
 
-En el siguiente análsis se evaluan diferentes configuraciones del cluster y se analiza la performance bajo diferentes configuraciones. El objetivo principal es definir los parametros adecuados maximizando los recursos disponibles. Además analizamos los tipos de hardware definidos, los parámetros que modifican el comportamiento del cluster y las ventajas de utilizar los servicios de cloud para este tipo de proyectos. En este caso las pruebas fueron realizadas en AWS utilizando 5 instancias `t2.micro` (3.3 GHz Intel Xeon 1 Core, 1GB de RAM, 8GB* de almacenaminto). [VER ANÁLISIS](./analysis/aws-performance-comparison.md)
+En el siguiente análsis se evaluan diferentes configuraciones del cluster y se analiza la performance bajo diferentes configuraciones. El objetivo principal es definir los parametros adecuados maximizando los recursos disponibles. Además analizamos los tipos de hardware definidos, los parámetros que modifican el comportamiento del cluster y las ventajas de utilizar los servicios de cloud para este tipo de proyectos. En este caso las pruebas fueron realizadas en AWS utilizando 5 instancias `t2.micro` (3.3 GHz Intel Xeon 1 Core, 1GB de RAM, 8GB* de almacenamiento). [VER ANÁLISIS](./analysis/aws-performance-comparison.md)
 
-* Todas las instancias salvo el `manager`/`admin` que tiene 30GB de almacenamiento.
+> *Todas las instancias salvo el `manager`/`admin` que tiene 30GB de almacenamiento.
 
 ---
 
