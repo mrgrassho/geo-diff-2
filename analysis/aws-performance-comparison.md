@@ -1,24 +1,26 @@
-# AWS - Análisis de Carga
+# AWS - Análisis de Performance
 
 A continuación describimos los experimentos realizados.
 
 ## Parámetros
 
-Nuevamente, definimos los parametros importantes del cluster. En esta serie de experimentos se mantienen como objetivo los parametos propios del `admin_worker` adjuntando los propios del `dealer`.
+Nuevamente, definimos los parametros importantes del cluster. En esta serie de experimentos se mantienen como objetivo los parametros propios del `admin_worker` adjuntando los propios del `dealer`.
 
-Variable | Valor | Descripción
+Variable | Valor* | Descripción
 |--|--|--|
 `admin_worker.GREY_LIGHT` | 0.2 | Si LOAD es menor al Valor de la GREY_LIGHT quiere decir que la red esta ociosa por lo tanto hay workers demás -> eliminar nodo
 `admin_worker.GREEN_LIGHT` | 0.5 | Si LOAD es menor al Valor de GREEN_LIGHT quiere decir que la carga esta bien, por lo tanto no hago nada
 `admin_worker.YELLOW_LIGHT` | 0.7 | Si LOAD es menor al Valor de YELLOW_LIGHT quiere decir que la carga necesitamos mas nodos -> crear nodo
 `admin_worker.RED_LIGHT` | 1 | Si LOAD es menor al Valor de RED_LIGHT quiere decir que la carga necesitamos mas nodos -> crear nodo (x2)
 `admin_worker.QTY_TASK` | 100 | Cuantos mensajes puede procesar un worker si afectar el rendimiento (Este es un estimado, partiendo de la premisa que un worker tarda 900ms)
-`admin_worker.MAX_SCALE` | 10 | Nro. workers Maximo
+`admin_worker.MAX_SCALE` | 10 | Nro. workers máximo
 `admin_worker.MIN_SCALE` | 1 | Nro. workers mínimo
 `admin_worker.MAX_TIMEOUT` | 120 | Cuanto tiempo tiene que esperar el worker para eliminar un container que no responde
 `admin_worker.REFRESH_RATE` | 10 | Cada cuanto pide data al RabbitMQ sobre los workers
 `dealer.WAIT` | 2 | Intervalo de segundos que el dealer espera antes de encolar nuevas tareas.
 `dealer.BATCH` | 300 | Cantidad de tareas que el dealer encola antes de esperar los segundos definidos en `dealer.WAIT`
+
+> *El valor definido es el default, en esta serie de iteraciones variaran depende donde, que y como lo probemos.
 
 En los siguientes experimentos nos focalizaremos en los primordialmente en estos atributos:
 
@@ -32,17 +34,19 @@ Además variaremos lijeramente los siguientes atributos para evaular el rendimie
 - `dealer.BATCH`
 - `dealer.WAIT`
 
-¿Por que se incluyó al `dealer` en este estudio?
+**¿Por qué se incluyó al `dealer` en este estudio?**
 
 Este script es que determina la cantidad de mensajes por segundo que se encolaran en la `TASK_QUEUE`, aumentando y disminuyendo tanto `dealer.BATCH` como `dealer.WAIT` podemos incrementar el input al cluster y asi aumentar la velocidad de proceso, siempre y cuando no colapsemos la red y los nodos `workers`.
 
 ## Instancia Amazon EC2
 
+Utilizamos las instancias `t2.micro` principalmente por su reducido costo. Para ver mas detalles del set-up utilizado ver [Guía AWS](../AWS.md)
+
 Instancia  | CPU virtual*  | Créditos por hora de CPU | Memoria (GiB)  |  Almacenamiento | Rendimiento de red
 |--|--|--|--|--|--|
 `t2.micro`  | 1  | 6  | 1  | Solo EBS | De bajo a moderado
 
-¿Cómo funcionan los créditos?
+**¿Cómo funcionan los créditos?**
 
 Las instancias T2 reciben créditos de CPU continuamente a un índice fijo en función del tamaño de la instancia, acumulando así créditos de CPU cuando están inactivas y consumiéndolos cuando están activas. Estos créditos se pueden aplicar a la factura. Sin embargo, si los créditos se agotan, es necesario pagar costos adicionales por los excesos.
 
@@ -104,11 +108,11 @@ services:
                     memory: 50M
 ```
 
-Todos estos límites y reservas de hardware fueron definidos a partir de la ejecución en localhost ([VER ANÁLISIS](./analysis/workers-performance-comparison.pdf)). Pueden no ser exactos pero dan una idea de los recursos que minimamente deben estar presentes en el cluster.
+Todos estos límites y reservas de hardware fueron definidos a partir de la ejecución en localhost ([VER ANÁLISIS](./workers-performance-comparison.pdf)). Pueden no ser exactos pero dan una idea de los recursos que minimamente deben estar presentes en el cluster.
 
 ### Dataset
 
-Utilizamos los tiles provistos ([TILES](https://app.box.com/s/pakte9wz7u0xfoitmktxsspbz01wsijc)) que rondan en el ~1.5GB de tamaño. El mismo es una colección extraida de la API de la NASA que tiene tiles con periodicidad de un mes que van desde 2016-01 al 2019-12. Cada tarea ejecutada por el worker genera 3 tiles asi que lo esperado es que los datos generados ronden los ~10GB (un poco más de 8GB por aplicar redimensión y otras operaciones sobre las imagenes).
+Utilizamos los tiles provistos ([TILES](https://app.box.com/s/pakte9wz7u0xfoitmktxsspbz01wsijc)) que rondan en el ~1.5GB de tamaño. El mismo es una colección extraida de la API de la NASA que tiene tiles con periodicidad de un mes que van del 2016-01 al 2019-12. Cada tarea ejecutada por el worker genera 3 tiles asi que lo esperado es que los datos generados ronden los ~10GB (un poco más de 8GB por aplicar redimensión y otras operaciones sobre las imágenes).
 
 ---
 
@@ -261,6 +265,10 @@ En esta iteración vamos a estudiar que sucede si modificamos el parametro `deal
 
 Como podemos obervar se dió el efecto totalmente contrario al esperado, la cantidad de paquetes enviados fue menor. Es muy posible que sea ligado a la restricciones que tenemos con las máquinas `t2.micro`. En definitiva para los próximos análisis volvemos al valor de `dealer.BATCH` de 300.
 
+**Tráfico OUT del Dealer - Experimento anterior (2.1)**
+
+![NET O](graphics/experiment_2.1/service%20dealer/netout.png)
+
 ## Experimento 2.3
 
 En este experimento estudiaremos como se comporta el cluster bajo los siguientes parametros:
@@ -306,7 +314,7 @@ Como dijimos anteriormente, observamos que el tráfico de red durante este perio
 
 Efectivamente estamos desperdiciando ciclos de CPU, no es mucho pero por momentos llega al 5% de Uso (y con picos que superan el 20%, lo podemos observar en la Figura de CPU sin aplicar bins).
 
-#### ¿Pero cuanto estamos desperdiciando si no utilizamos el autoscaling de `geo-diff-worker` en casos que este ocioso el cluster?
+#### Pero, ¿Cuánto estamos desperdiciando si no utilizamos el autoscaling de `geo-diff-worker` en casos que este ocioso el cluster?
 
 ![AWS CREDITS COST](graphics/experiment_2.3/service%20worker/aws-screen2.png)
 
@@ -341,11 +349,27 @@ services:
 
 ### Objetivo
 
-...
+En esta iteración evaluaremos el comportamiento de los `geo-diff-workers` bajo la configuración definida. Lo que esperamos es que el cluster crezca y descrezca a medida que la carga aumente o decremente.
+
+### Experimento 3 - Dealer
+
+Observamos un claro incremento en la entrega de mensajes, los cuales rondan los 60-100 por segundo. Estos datos son extraidos de la tasa de publicación promedio de la queue `TASK_QUEUE` que es de donde los workers consumen las tareas.
+
+![TASK QUEUE](graphics/experiment_3/service%20dealer/rabbitmq.png)
+
+### Experimento 3 - Admin Worker
+
+Observamos la carga total del cluster a traves de los logs del admin worker. Además de la cantidad de replicas `geo-diff-worker` activas.
+
+![LOAD](graphics/experiment_3/service%20admin_worker/load.png)
+
+![REPLICAS](graphics/experiment_3/service%20admin_worker/replicas.png)
+
+Podemos ver como sobre el final la carga de tareas disminuye y por lo tanto se eliminan workers. Si lo extrapolamos al consumo de memoria y CPU (Figuras en el proximo apartado), podemos observar como repentinamente cae el uso de RAM/CPU pero vuelve a subir rápidamente, esto sospechamos que es debido a que la carga restante es repartida en los nodos que quedaron activos por lo tanto hace que se incrementen ambos parámetros.
 
 ### Experimento 3 - Workers
 
-![CPU](graphics/experiment_3/service%20worker/cpu.png)
+![CPU BIN](graphics/experiment_3/service%20worker/cpu-bin.png)
 
 ![RAM](graphics/experiment_3/service%20worker/ram.png)
 
@@ -360,7 +384,7 @@ services:
         ...
         environment:
             ...
-            WAIT: 2
+            WAIT: 600 # 10 min
             BATCH: 600
             ...
 
@@ -374,12 +398,32 @@ services:
             MAX_SCALE: 12
 ```
 
-
 ### Objetivo
 
-...
+El objetivo de este última iteración es distinguir entre las replicas activas y las esperadas, algo que notamos durante el analisis anterior es que no estabamos contemplando las replicas que estaban efectivamente levantadas sino que veiamos solo las replicas que deberian estar corriendo, esto porque Swarm deja en esta `PENDING` aquellas replicas que no pudo levantar pero aun asi el contador sigue desactualizado por eso fue necesario modificar el `admin-worker` para tomar la cantidad de réplicas activas.
+
+Luego de verificar que el contador de replicas funcione correctamente, realizaremos una última corrida utilizando 6 a 12 workers y aumentando el parametro `WAIT` a 10 min.
+
+### Experimento 4 - Admin Worker
+
+Efectivamente estamos viendo el número correcto de replicas, y podemos ver como tarda unos segundos en actualizar las replicas activas (Ver gráfico debajo).
+
+![REPLICAS](graphics/experiment_4/service%20admin-worker/replicas.png)
+
+### Experimento 4 - RabbitMQ
+
+Podemos observar como cada 10 minutos crece la carga en la queue `TASK_QUEUE`.
+
+![LOAD](graphics/experiment_4/service%20admin-worker/load.png)
+
+![RABBITMQ](graphics/experiment_4/service%20admin-worker/rabbitmq.png)
+
 
 ### Experimento 4 - Workers
+
+Ahora chequeamos que los workers hayan estado en funciomiento, y podemos ver que también hubo picos cada 10 min aprox, momento es los que la carga de tareas aumentó.
+
+![CPU BIN](graphics/experiment_4/service%20worker/cpu-bin.png)
 
 ![CPU](graphics/experiment_4/service%20worker/cpu.png)
 
