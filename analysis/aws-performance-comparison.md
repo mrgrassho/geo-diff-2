@@ -151,7 +151,7 @@ services:
 
 ### Objetivo
 
-En este primera iteración es exploratoria, principalmente veremos si es posible ejecutar el cluster con parámetros mínimos.
+Esta primera iteración es exploratoria, principalmente veremos si es posible ejecutar el cluster con parámetros mínimos.
 
 ### Experimento 1 - Admin Worker
 
@@ -229,8 +229,6 @@ El 20% de CPU es razonable para la cantidad de nodos disponibles y los tiempos e
 > Nota: El gráfico anterior se ha suavizado aplicando un promedio por grupos de 5 muestras. Su alta variación hacía imposible su visualización.
 
 ![RAM](graphics/experiment_2.1/service%20worker/ram.png)
-
-`![NET I](graphics/experiment_2.1/service%20worker/netin.png)`
 
 Podemos observar como la cantidad de bytes aumenta completando los ~10GB (2.5 * 4) de tiles procesados que son el resultante del dataset ya segmentado.
 
@@ -369,7 +367,7 @@ Observamos la carga total del cluster a traves de los logs del admin worker. Ade
 
 ![LOAD](graphics/experiment_3/service%20admin_worker/load.png)
 
-![réplicas](graphics/experiment_3/service%20admin_worker/réplicas.png)
+![réplicas](graphics/experiment_3/service%20admin_worker/replicas.png)
 
 Podemos ver como sobre el final la carga de tareas disminuye y por lo tanto se eliminan `geo-diff-worker`. Si lo extrapolamos al consumo de memoria y CPU (Figuras en el proximo apartado), podemos observar como repentinamente cae el uso de RAM/CPU pero vuelve a subir rápidamente, esto sospechamos que es debido a que la carga restante es repartida en los nodos que quedaron activos por lo tanto hace que se incrementen ambos parámetros.
 
@@ -414,7 +412,7 @@ Luego de verificar que el contador de réplicas funcione correctamente, realizar
 
 Efectivamente estamos viendo el número correcto de réplicas, y podemos ver como tarda unos segundos en actualizar las réplicas activas (Ver gráfico debajo). Además podemos observar como cada 10min suben la cantidad de tareas por lo tanto el cluster necesita escalar la cantidad de replicas activas.
 
-![réplicas](graphics/experiment_4/service%20admin-worker/réplicas.png)
+![réplicas](graphics/experiment_4/service%20admin-worker/replicas.png)
 
 ### Experimento 4 - RabbitMQ
 
