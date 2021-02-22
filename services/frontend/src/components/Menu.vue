@@ -78,10 +78,12 @@
 <style scoped>
 #menu-bar {
     background-color: var(--secondary-bg-color);
-    border-radius: 4px 0px 4px 4px;
-    border-top: 0px;
+    border-radius: 2% 2% 2% 2%;
+    border: 2px outset #afc7a9;
+    box-shadow: 2px 2px rgb(0, 0, 0, 20%);
     display: inline-block;
     grid-area: menu;
+    margin: 7px;
     overflow-x: hidden; 
     position: relative;
     transition: width 0.5s;
@@ -142,4 +144,9 @@
     height: 200px;
 }
 
+@media only screen and (max-width: 600px) {
+  #menu-bar {
+    height: 37%;
+  }
+}
 </style>

@@ -55,14 +55,6 @@ body {
   height: 100%;
 }
 
-.box {
-    border: 2px outset #afc7a9;
-    margin: 7px;
-    box-shadow: 2px 2px rgb(0, 0, 0, 20%);
-    border-radius: 2% 2% 2% 2%;
-    background-color: var(--secondary-bg-color);
-}
-
 .home {
     width: 100%;
     height: 100%;
@@ -83,6 +75,7 @@ body {
     border: 2px outset #afc7a9;
     display: flex;
     height: 60px;
+    margin: 7px;
     background-color: var(--secondary-bg-color);
     width: 200px;
     z-index: 10;
@@ -129,6 +122,13 @@ body {
 
 #logo:hover > #title h2 {
     margin: 0%;
+}
+
+@media only screen and (max-width: 600px) {
+  .home {
+    grid-template-columns: 45% 55%;
+    grid-template-rows: 12% 63% 25%;
+  }
 }
 
 </style>

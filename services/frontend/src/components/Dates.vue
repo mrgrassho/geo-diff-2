@@ -55,10 +55,10 @@
                 if (month=="03") {month_name = "MAR"}
                 if (month=="04") {month_name = "APR"}
                 if (month=="05") {month_name = "MAY"}
-                if (month=="06") {month_name = "JUNE"}
-                if (month=="07") {month_name = "JULY"}
+                if (month=="06") {month_name = "JUN"}
+                if (month=="07") {month_name = "JUL"}
                 if (month=="08") {month_name = "AUG"}
-                if (month=="09") {month_name = "SEPT"}
+                if (month=="09") {month_name = "SEP"}
                 if (month=="10") {month_name = "OCT"}
                 if (month=="11") {month_name = "NOV"}
                 if (month=="12") {month_name = "DEC"}
@@ -140,12 +140,12 @@
 }
 
 #dates-bar {
-    background-color: var(--primary-bg-color);
     display: grid;
     grid-area: dates;
     grid-template-areas: "date-selected timeline-years";
     grid-template-columns: 18% 82%;
     height: 94px;
+    margin: 7px;
     position: relative;
 /*    margin-bottom: 20px;*/
     z-index: 10;
@@ -154,21 +154,28 @@
 #date-selected {
     align-content: center;
     background-color: var(--secondary-bg-color);
+    border-radius: 2% 0% 0% 2%;
     display: flex;
     flex-direction: column;
     font-size: 3vw;
     grid-area: date-selected;
     justify-content: center;
+     border: 2px outset #afc7a9;
+    box-shadow: 2px 2px rgb(0, 0, 0, 20%);
     padding: 5px;
 }
 
 #timeline-years {
     display: flex;
     overflow-x: hidden;
+    background-color: var(--primary-bg-color);
+    border: 2px outset #afc7a9;
+    box-shadow: 2px 2px rgb(0, 0, 0, 20%);
+    border-radius: 0% 2% 2% 0%;
 }
 
 .timeline-year {
-    border-left: 6px solid black;
+    border-left: 4px solid lightslategray;
     display: block;
 }
 .year.value{
@@ -180,7 +187,7 @@
     display: flex;
 }
 .timeline-month{
-    border-left: 4px solid brown;   
+    border-left: 4px solid var(--select-color);   
 }
 .month.value{
     padding-left: 10%;
@@ -190,7 +197,7 @@
     display: flex;
 }
 .day.value{
-    border-left: 2px solid grey;
+    border-left: 3px solid greenyellow;
     padding-left: 2%;
     width: 50px;
 }
@@ -235,5 +242,34 @@
     right: 0%;
 }
 
+@media only screen and (max-width: 600px) {
+  #dates-bar {
+    grid-template-areas: "date-selected" "timeline-years";
+    grid-template-rows: 29% 71%;
+    grid-template-columns: 100%;
+    height: 90%;
+  }
+  
+  #timeline-years{
+    margin: 0px 7px 7px 7px;
+    border: 1px outset #afc7a9;
+  }
+  
+  #date-selected {
+    font-size: 4vw;
+    width: 30%;
+    margin-left: 7px;
+    display: flex;
+    flex-direction: column;
+    grid-area: date-selected;
+    justify-content: center;
+    padding: 0px;
+    border: 1px solid black;
+    border-bottom: 0px;
+  }
+  .right.scroll{
+    right: 2%;
+}
+}
 
 </style>
